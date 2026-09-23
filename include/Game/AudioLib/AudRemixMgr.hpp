@@ -9,7 +9,7 @@ struct RemixNoteData {
     s32 _0;
     s32 _4;
     s32 _8;
-    s32 _C;
+    s32 _0C;
 };
 
 struct RemixNoteTrackData {
@@ -21,7 +21,7 @@ struct RemixNoteGroupData {
     /* 0x0  */ s32 mIndex;
     /* 0x4  */ s32 mTrackCount;
     /* 0x8  */ s32 mNoteCount;
-    u32* _C;
+    u32* _0C;
     /* 0x10 */ RemixNoteTrackData* mRemixTracks;
 };
 

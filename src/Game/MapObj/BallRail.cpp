@@ -74,8 +74,8 @@ bool BallRail::receiveOtherMsg(u32 msg, HitSensor* pSender, HitSensor* pReceiver
 
 namespace {
     inline void initPointSide(BallRailPoint* pPoint, const TVec3f& rUp) {
-        pPoint->_C.cross(pPoint->_24, rUp);
-        MR::normalizeOrZero(&pPoint->_C);
+        pPoint->_0C.cross(pPoint->_24, rUp);
+        MR::normalizeOrZero(&pPoint->_0C);
     }
 }  // namespace
 
@@ -108,14 +108,14 @@ void BallRail::initRailPoints() {
 
     for (u32 i = 0; i < mNumPoints; i++) {
         pPoint = &mRailPoints[i];
-        pPoint->_C.cross(pPoint->_24, up);
-        MR::normalizeOrZero(&pPoint->_C);
+        pPoint->_0C.cross(pPoint->_24, up);
+        MR::normalizeOrZero(&pPoint->_0C);
     }
 
     if (mNumPoints >= 2U) {
         pLastPoint = &mRailPoints[mNumPoints - 1];
-        pLastPoint->_C.cross(pLastPoint->_24, up);
-        MR::normalizeOrZero(&pLastPoint->_C);
+        pLastPoint->_0C.cross(pLastPoint->_24, up);
+        MR::normalizeOrZero(&pLastPoint->_0C);
     }
 }
 
@@ -202,7 +202,7 @@ void BallRail::exeNoBind() {
     }
 }
 
-BallRailPoint::BallRailPoint() : _0(0, 0, 0), _C(1, 0, 0), _18(0, 1, 0), _24(0, 0, 1) {
+BallRailPoint::BallRailPoint() : _0(0, 0, 0), _0C(1, 0, 0), _18(0, 1, 0), _24(0, 0, 1) {
 }
 
 BallRail::~BallRail() {

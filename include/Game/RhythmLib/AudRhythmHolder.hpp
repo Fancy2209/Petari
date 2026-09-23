@@ -13,7 +13,7 @@ struct RhythmInfo {
     /* 0x00 */ bool mIsActive;
     /* 0x04 */ u32 _4;
     /* 0x08 */ u32 _8;
-    /* 0x0C */ f32 _C;
+    /* 0x0C */ f32 _0C;
     /* 0x10 */ s64 mStartTime;
     /* 0x18 */ s64 mPlayTime;
     /* 0x20 */ s64 mLastMeasuredTime;

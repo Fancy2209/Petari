@@ -21,7 +21,7 @@ public:
     /* 0x00 */ const WPad* mPad;
     /* 0x04 */ u32 _4;
     /* 0x08 */ f32 _8;
-    /* 0x0C */ f32 _C;
+    /* 0x0C */ f32 _0C;
     /* 0x10 */ TVec3f _10;
     /* 0x1C */ f32 _1C;
     /* 0x20 */ bool _20;

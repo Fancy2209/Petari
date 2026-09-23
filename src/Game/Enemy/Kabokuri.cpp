@@ -145,7 +145,7 @@ void Kabokuri::control() {
 
 void Kabokuri::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, mRotationQuat);
-    MR::setBaseScale(this, mAnimeScale->_C * mScale);
+    MR::setBaseScale(this, mAnimeScale->_0C * mScale);
 }
 
 void Kabokuri::updatePose() {

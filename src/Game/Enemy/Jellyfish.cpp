@@ -135,7 +135,7 @@ void Jellyfish::calcAndSetBaseMtx() {
     TPos3f baseMtx;
     MR::makeMtxFrontUpPos(&baseMtx, _98, -mGravity, mPosition);
     MR::setBaseTRMtx(this, baseMtx);
-    TVec3f baseScale(mController->_C * mScale);
+    TVec3f baseScale(mController->_0C * mScale);
     MR::setBaseScale(this, baseScale);
 }
 

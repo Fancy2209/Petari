@@ -5,7 +5,7 @@
 #include <JSystem/JUtility/JUTVideo.hpp>
 
 ImageEffectResource::ImageEffectResource()
-    : _0(nullptr), _4(nullptr), _8(nullptr), _C(nullptr), _10(nullptr), _14(nullptr), _18(nullptr), _1C(nullptr), _20(nullptr) {
+    : _0(nullptr), _4(nullptr), _8(nullptr), _0C(nullptr), _10(nullptr), _14(nullptr), _18(nullptr), _1C(nullptr), _20(nullptr) {
 }
 
 void ImageEffectResource::createBloomTexture() {
@@ -17,8 +17,8 @@ void ImageEffectResource::createBloomTexture() {
         _4 = createTexture(0.5f, GX_TF_RGB565);
     }
 
-    if (_C == nullptr) {
-        _C = createTexture(0.25f, GX_TF_RGB565);
+    if (_0C == nullptr) {
+        _0C = createTexture(0.25f, GX_TF_RGB565);
     }
 
     if (_10 == nullptr) {
@@ -61,8 +61,8 @@ void ImageEffectResource::createDOFTexture() {
         _4 = createTexture(0.5f, GX_TF_RGB565);
     }
 
-    if (_C == nullptr) {
-        _C = createTexture(0.25f, GX_TF_RGB565);
+    if (_0C == nullptr) {
+        _0C = createTexture(0.25f, GX_TF_RGB565);
     }
 
     if (_10 == nullptr) {

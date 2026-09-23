@@ -79,15 +79,15 @@ void AreaFormCube::calcWorldBox(TDirBox3f* pBox) const {
     calcWorldMtx(&pos);
 
     pBox->_0.x = pos.mMtx[0][0];
-    pBox->_C.x = pos.mMtx[0][1];
+    pBox->_0C.x = pos.mMtx[0][1];
     pBox->_18.x = pos.mMtx[0][2];
     pBox->_24.x = pos.mMtx[0][3];
     pBox->_0.y = pos.mMtx[1][0];
-    pBox->_C.y = pos.mMtx[1][1];
+    pBox->_0C.y = pos.mMtx[1][1];
     pBox->_18.y = pos.mMtx[1][2];
     pBox->_24.y = pos.mMtx[1][3];
     pBox->_0.z = pos.mMtx[2][0];
-    pBox->_C.z = pos.mMtx[2][1];
+    pBox->_0C.z = pos.mMtx[2][1];
     pBox->_18.z = pos.mMtx[2][2];
     pBox->_24.z = pos.mMtx[2][3];
 

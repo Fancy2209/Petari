@@ -22,7 +22,7 @@ CameraCover::CameraCover(const char* pName) : NameObj(pName) {
     mActor = new CaptureScreenActor(MR::DrawType_CaptureScreenCamera, "Camera");
     MR::connectToScene(this, MR::MovementType_CameraCover, MR::CalcAnimType_None, MR::DrawBufferType_None, MR::DrawType_CameraCover);
     MR::joinToNameObjGroup(this, "IgnorePauseNameObj");
-    _C.identity();
+    _0C.identity();
     mActor->initWithoutIter();
 }
 
@@ -67,7 +67,7 @@ bool CameraCover::isCameraHopping() const {
 }
 
 void CameraCover::copyCamera() {
-    _C.set(MR::getCameraInvViewMtx());
+    _0C.set(MR::getCameraInvViewMtx());
 }
 
 CameraCover::~CameraCover() {

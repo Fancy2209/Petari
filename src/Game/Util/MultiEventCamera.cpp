@@ -4,7 +4,7 @@
 #include "Game/Util/PlayerUtil.hpp"
 #include <cstdio>
 
-MultiEventCamera::MultiEventCamera() : mName(), mCameraNum(), _8(-1), _C(), _10(), mCameraType(), mCameraInfo(), mTarget() {
+MultiEventCamera::MultiEventCamera() : mName(), mCameraNum(), _8(-1), _0C(), _10(), mCameraType(), mCameraInfo(), mTarget() {
 }
 
 bool MultiEventCamera::isEnd() const {
@@ -40,7 +40,7 @@ void MultiEventCamera::start(const CameraTargetArg& rParam1, s32 param2) {
         return;
     }
 
-    _C = 0;
+    _0C = 0;
     _8 = param2;
     mTarget = rParam1;
 
@@ -52,14 +52,14 @@ void MultiEventCamera::update() {
         return;
     }
 
-    if (_10 <= _C && _8 < mCameraNum - 1) {
-        _C = 0;
+    if (_10 <= _0C && _8 < mCameraNum - 1) {
+        _0C = 0;
         _8++;
 
         startCamera();
     }
 
-    _C++;
+    _0C++;
 }
 
 void MultiEventCamera::nextForce() {
@@ -68,7 +68,7 @@ void MultiEventCamera::nextForce() {
     }
 
     if (_8 < mCameraNum - 1) {
-        _C = 0;
+        _0C = 0;
         _8++;
 
         startCamera();

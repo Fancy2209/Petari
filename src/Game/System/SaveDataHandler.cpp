@@ -32,7 +32,7 @@ namespace {
 };  // namespace
 
 SaveDataHandler::SaveDataHandler(const SysConfigFile* pSysConfigFile, const UserFile* pUserFile)
-    : NerveExecutor("SaveDataHandler"), mNANDRequestInfo(nullptr), _C(0), _10(0), _14(nullptr), _18(nullptr), mBannerCreator(nullptr) {
+    : NerveExecutor("SaveDataHandler"), mNANDRequestInfo(nullptr), _0C(0), _10(0), _14(nullptr), _18(nullptr), mBannerCreator(nullptr) {
     mNANDRequestInfo = new NANDRequestInfo();
 
     createCommunicationBuffer();
@@ -59,7 +59,7 @@ void SaveDataHandler::requestCheckEnableToCreate() {
 
 void SaveDataHandler::requestLoadSaveData() {
     MR::zeroMemory(_14, 0x10000);
-    mNANDRequestInfo->setReadSeq(::cSaveFileName, _14, 0x10000, &_C);
+    mNANDRequestInfo->setReadSeq(::cSaveFileName, _14, 0x10000, &_0C);
     MR::addRequestToNANDManager(mNANDRequestInfo);
 
     setNerve(GET_NERVE_ANON(SaveDataHandlerProcessing));
@@ -72,7 +72,7 @@ bool SaveDataHandler::requestVerifyAfterLoadGameDataFile() {
 
     SaveDataFileHeader* pFileHeader = reinterpret_cast< SaveDataFileHeader* >(_14);
 
-    if (_C != OSRoundUp32B(pFileHeader->mFileSize)) {
+    if (_0C != OSRoundUp32B(pFileHeader->mFileSize)) {
         return false;
     }
 

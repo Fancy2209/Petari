@@ -19,7 +19,7 @@ FollowCollisionArea::FollowCollisionArea(const TVec3f& rSize, MtxPtr pMatrix, f3
     _34 = pMatrix;
     _44 = offset;
     MR::connectToSceneAreaObj(this);
-    _C = 0;
+    _0C = 0;
     _10 = 0.0f;
     _20 = -1;
     _24 = 0;
@@ -55,7 +55,7 @@ void FollowCollisionArea::movement() {
             }
         } else if (!_28 && _20 == -1) {
             TVec3f push;
-            if (_C == 0) {
+            if (_0C == 0) {
                 push = hitNormal;
                 push.setLength(radius + _10);
             } else {
@@ -127,7 +127,7 @@ bool FollowCollisionArea::hitCheck(const TVec3f& rPos, f32 radius, TVec3f* pPoin
         count++;
     }
 
-    _C = count;
+    _0C = count;
     TVec3f corner;
     TVec3f depth;
     if (count == 3) {

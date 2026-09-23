@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#if PLATFORM_PS3
+#ifndef __MWERKS__
 static inline void OSf32tou16(register f32* in, volatile register u16* out) { 
     *out = *in;
 }

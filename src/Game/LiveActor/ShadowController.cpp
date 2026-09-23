@@ -22,9 +22,9 @@ void ShadowController_FORCE_MATCH_SDATA2() {
     (void)-1.0f;
 }
 
-ShadowControllerHolder::ShadowControllerHolder() : NameObj("影管理"), _C(), _18(), _24() {
+ShadowControllerHolder::ShadowControllerHolder() : NameObj("影管理"), _0C(), _18(), _24() {
     mFarClip = 4000.0f;
-    _C.init(0x500);
+    _0C.init(0x500);
     _18.init(0x400);
     MR::connectToScene(this, MR::MovementType_ShadowControllerHolder, MR::CalcAnimType_None, MR::DrawBufferType_None, MR::DrawType_None);
 
@@ -51,10 +51,10 @@ void ShadowControllerHolder::movement() {
 
 void ShadowControllerHolder::initAfterPlacement() {
     ShadowController* pController;
-    int size = _C.size();
+    int size = _0C.size();
 
     for (u32 i = 0; i < size; i++) {
-        pController = _C[i];
+        pController = _0C[i];
 
         pController->updateDirection();
         pController->updateProjection();
@@ -461,7 +461,7 @@ void ShadowController::invalidate() {
 
 namespace MR {
     void addShadowController(ShadowController* pController) {
-        getSceneObj< ShadowControllerHolder >(SceneObj_ShadowControllerHolder)->_C.push_back(pController);
+        getSceneObj< ShadowControllerHolder >(SceneObj_ShadowControllerHolder)->_0C.push_back(pController);
     }
 
     void requestCalcActorShadowAppear(LiveActor* pActor) {

@@ -22,7 +22,7 @@ public:
     void loadLightPlayer() const;
     void loadLightCoin() const;
 
-    /* 0x0C */ LightAreaHolder* _C;
+    /* 0x0C */ LightAreaHolder* _0C;
     /* 0x10 */ LightDataHolder* mDataHolder;
     /* 0x14 */ LightZoneDataHolder* mZoneDataHolder;
     /* 0x18 */ AreaLightInfo* mDefaultAreaLight;

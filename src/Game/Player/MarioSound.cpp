@@ -20,7 +20,7 @@ struct SoundList {
     u32 _4;
 
     SoundFlags _8;
-    const char* _C;
+    const char* _0C;
 
     u32 _10;
     u32 _14;
@@ -1764,7 +1764,7 @@ void Mario::playSoundJ(const char* pSoundName, s32 timing) {
         case 0x4:
         case 0x8:
             if (mDrawStates.mIsUnderwater || mDrawStates._13) {
-                playSoundJ(soundlist[index]._C, -1);
+                playSoundJ(soundlist[index]._0C, -1);
             }
             break;
         }

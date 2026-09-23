@@ -1199,7 +1199,7 @@ void MarioActor::updateEffect() {
 }
 
 MarioEffect::MarioEffect(MarioActor* pActor) : MarioModule(pActor) {
-    _C = -1;
+    _0C = -1;
     _10 = -1;
     _14 = -1;
     _18 = 0;
@@ -1209,7 +1209,7 @@ MarioEffect::MarioEffect(MarioActor* pActor) : MarioModule(pActor) {
 }
 
 void MarioEffect::playSwingEffect() {
-    if (_C == 1) {
+    if (_0C == 1) {
         switch (_10) {
         default:
             break;
@@ -1231,13 +1231,13 @@ void MarioEffect::doCubeEffect() {
 
     s32 unsetArg = -1;
     _10 = unsetArg;
-    _C = unsetArg;
+    _0C = unsetArg;
 
     AreaObj* area = MR::getAreaObj("EffectCylinder", mActor->mPosition);
     if (area != nullptr) {
         s32 arg0 = MR::getAreaObjArg(area, 0);
         _10 = MR::getAreaObjArg(area, 1);
-        _C = arg0;
+        _0C = arg0;
     } else {
         _14 = unsetArg;
     }

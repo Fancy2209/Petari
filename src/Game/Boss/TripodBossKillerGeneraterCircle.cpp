@@ -14,7 +14,7 @@ struct SetUpData {
     /* 0x00 */ const char* mName;
     /* 0x04 */ const f32* mAngleTable;
     /* 0x08 */ s32 mAngleNum;
-    /* 0x0C */ f32 _C;
+    /* 0x0C */ f32 _0C;
     /* 0x10 */ f32 _10;
     /* 0x14 */ f32 _14;
     /* 0x18 */ f32 _18;
@@ -60,7 +60,7 @@ void TripodBossKillerGeneraterCircle::init(const JMapInfoIter& rIter) {
 
     mAngleTable = dataPtr->mAngleTable;
     mAngleNum = dataPtr->mAngleNum;
-    _34 = dataPtr->_C;
+    _34 = dataPtr->_0C;
     _38 = dataPtr->_10;
     _3C = dataPtr->_14;
     _30 = dataPtr->_18;

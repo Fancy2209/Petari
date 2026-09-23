@@ -101,7 +101,7 @@ void Tico::initBase(const JMapInfoIter& rIter, s32 color) {
     _120 = fly;
     _10C = 8.0f;
     _110 = 0.2f;
-    mParam._C = 0.5f;
+    mParam._0C = 0.5f;
     mParam._10 = 12.0f;
     initialize(rIter, caps);
     if (color != -1) {

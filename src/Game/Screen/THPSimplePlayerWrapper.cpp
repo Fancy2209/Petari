@@ -39,7 +39,7 @@ namespace {
 THPSimplePlayerWrapper::THPSimplePlayerWrapper(const char* pName) : NerveExecutor(pName) {
     _8 = 0;
     _9 = 0;
-    _C = 0;
+    _0C = 0;
     _10 = 0;
     mTHPWork = nullptr;
     mOpen = 0;
@@ -510,7 +510,7 @@ bool THPSimplePlayerWrapper::tryDvdOpen(const char* pFileName) {
         return false;
     }
 
-    _C = 0;
+    _0C = 0;
     _9 = 0;
     return true;
 }
@@ -545,29 +545,29 @@ void THPSimplePlayerWrapper::exeWait() {
 void THPSimplePlayerWrapper::exeReadHeader() {
     if (MR::isFirstStep(this)) {
         mFileInfo.cb.userData = this;
-        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 64, _C, ::readAsyncCallBackFunc, 2);
+        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 64, _0C, ::readAsyncCallBackFunc, 2);
     }
 }
 
 void THPSimplePlayerWrapper::exeReadFrameComp() {
     if (MR::isFirstStep(this)) {
         mFileInfo.cb.userData = this;
-        _C = mHeader.compInfoDataOffsets;
-        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _C, ::readAsyncCallBackFunc, 2);
+        _0C = mHeader.compInfoDataOffsets;
+        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _0C, ::readAsyncCallBackFunc, 2);
     }
 }
 
 void THPSimplePlayerWrapper::exeReadVideoComp() {
     if (MR::isFirstStep(this)) {
         mFileInfo.cb.userData = this;
-        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _C, ::readAsyncCallBackFunc, 2);
+        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _0C, ::readAsyncCallBackFunc, 2);
     }
 }
 
 void THPSimplePlayerWrapper::exeReadAudioComp() {
     if (MR::isFirstStep(this)) {
         mFileInfo.cb.userData = this;
-        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _C, ::readAsyncCallBackFunc, 2);
+        DVDReadAsyncPrio(&mFileInfo, WorkBuffer, 32, _0C, ::readAsyncCallBackFunc, 2);
     }
 }
 
@@ -586,19 +586,19 @@ void THPSimplePlayerWrapper::endReadHeader() {
 void THPSimplePlayerWrapper::endReadFrameComp() {
     memcpy(&mFrameComp, WorkBuffer, sizeof(mFrameComp));
     mAudioExist = 0;
-    _C += 0x14;
+    _0C += 0x14;
 }
 
 void THPSimplePlayerWrapper::endReadVideoComp() {
     memcpy(&mVideoInfo, WorkBuffer, sizeof(mVideoInfo));
-    _C += 12;
+    _0C += 12;
     _10++;
 }
 
 void THPSimplePlayerWrapper::endReadAudioComp() {
     memcpy(&mAudioInfo, WorkBuffer, sizeof(mAudioInfo));
     mAudioExist = 1;
-    _C += 0x10;
+    _0C += 0x10;
     _10++;
 }
 

@@ -68,19 +68,17 @@ namespace nw4r {
             return;
         }
 
-        #ifndef PLATFORM_PS3
+        #ifdef __MWERKS__
         __declspec(weak)
         #else
         __attribute__((weak))
         #endif
         void VPanic(const char* file, int line, const char* fmt, va_list vlist, bool halt) {
             register u32 stackPointer;
-                    #if !PLATFORM_PS3
-            asm {
-        mr  stackPointer, r1
-            }
+            #ifdef __MWERKS__
+            asm { mr  stackPointer, r1 }
             stackPointer = *((u32*)stackPointer);
-        #endif
+            #endif
             (void)OSDisableInterrupts();
             (void)OSDisableScheduler();
 
@@ -111,7 +109,7 @@ namespace nw4r {
             }
         }
 
-        #ifndef PLATFORM_PS3
+        #ifdef __MWERKS__
         __declspec(weak)
         #else
         __attribute__((weak))

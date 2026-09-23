@@ -39,7 +39,7 @@ namespace MR {
 
         GameSystemSceneController* pSceneController = SingletonHolder< GameSystem >::get()->mSceneController;
         GalaxyMoveArgument argument(5, pSceneController->mCurrSceneControlInfo.mStage, pSceneController->getCurrentScenarioNo(), &info);
-        argument._C = pSceneController->getCurrentSelectedScenarioNo();
+        argument._0C = pSceneController->getCurrentSelectedScenarioNo();
 
         GameSequenceFunction::requestGalaxyMove(argument);
     }

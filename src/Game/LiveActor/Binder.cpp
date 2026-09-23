@@ -15,7 +15,7 @@ namespace {
 }  // namespace
 
 Binder::Binder(MtxPtr pMtx, const TVec3f* pPosition, const TVec3f* pGravity, f32 radius, f32 offsetY, u32 planeNum)
-    : mTriangleFilter(), mCollisionPartsFilter(), mExCollisionParts(), _C(pMtx), _10(pPosition), _14(pGravity), mRadius(radius), mOffsetY(offsetY),
+    : mTriangleFilter(), mCollisionPartsFilter(), mExCollisionParts(), _0C(pMtx), _10(pPosition), _14(pGravity), mRadius(radius), mOffsetY(offsetY),
       mOffsetVec(), _24(planeNum), mPlaneNum(), mPlane(), mFixReactionVector(0, 0, 0), mGroundInfo(), _C8(), mWallInfo(), _158(), mRoofInfo(),
       _1E8() {
     if (_24 == 0) {
@@ -102,25 +102,25 @@ const TVec3f Binder::bind(const TVec3f& rVelocity) {
     }
 
     if (mOffsetVec) {
-        if (_1EC._4 && _C) {
-            position.x += _C[0][0] * mOffsetVec->x;
-            position.y += _C[1][0] * mOffsetVec->x;
-            position.z += _C[2][0] * mOffsetVec->x;
-            position.x += _C[0][1] * mOffsetVec->y;
-            position.y += _C[1][1] * mOffsetVec->y;
-            position.z += _C[2][1] * mOffsetVec->y;
-            position.x += _C[0][2] * mOffsetVec->z;
-            position.y += _C[1][2] * mOffsetVec->z;
-            position.z += _C[2][2] * mOffsetVec->z;
+        if (_1EC._4 && _0C) {
+            position.x += _0C[0][0] * mOffsetVec->x;
+            position.y += _0C[1][0] * mOffsetVec->x;
+            position.z += _0C[2][0] * mOffsetVec->x;
+            position.x += _0C[0][1] * mOffsetVec->y;
+            position.y += _0C[1][1] * mOffsetVec->y;
+            position.z += _0C[2][1] * mOffsetVec->y;
+            position.x += _0C[0][2] * mOffsetVec->z;
+            position.y += _0C[1][2] * mOffsetVec->z;
+            position.z += _0C[2][2] * mOffsetVec->z;
         } else {
             position.x += mOffsetVec->x;
             position.y += mOffsetVec->y;
             position.z += mOffsetVec->z;
         }
-    } else if (_C) {
-        position.x += _C[0][1] * mOffsetY;
-        position.y += _C[1][1] * mOffsetY;
-        position.z += _C[2][1] * mOffsetY;
+    } else if (_0C) {
+        position.x += _0C[0][1] * mOffsetY;
+        position.y += _0C[1][1] * mOffsetY;
+        position.z += _0C[2][1] * mOffsetY;
     } else {
         position.y += mOffsetY;
     }

@@ -171,7 +171,7 @@ void TakoHei::control() {
 
 void TakoHei::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _94);
-    TVec3f scale = _8C->_C * mScale;
+    TVec3f scale = _8C->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

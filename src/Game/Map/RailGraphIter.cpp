@@ -25,7 +25,7 @@ void RailGraphIter::setNode(s32 a1) {
 
 void RailGraphIter::watchStartEdge() {
     RailGraphNode* node = mGraph->getNode(_4);
-    mNextEdge = node->_C;
+    mNextEdge = node->_0C;
 }
 
 void RailGraphIter::watchNextEdge() {

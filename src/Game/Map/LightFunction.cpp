@@ -117,11 +117,11 @@ void LightFunction::registerPlayerLightCtrl(const ActorLightCtrl* pCtrl) {
 }
 
 void LightFunction::registerLightAreaHolder(LightAreaHolder* pHolder) {
-    MR::getSceneObj< LightDirector >(SceneObj_LightDirector)->_C = pHolder;
+    MR::getSceneObj< LightDirector >(SceneObj_LightDirector)->_0C = pHolder;
 }
 
 bool LightFunction::tryFindNewAreaLightID(const TVec3f& rPos, ZoneLightID* pId) {
-    return MR::getSceneObj< LightDirector >(SceneObj_LightDirector)->_C->tryFindLightID(rPos, pId);
+    return MR::getSceneObj< LightDirector >(SceneObj_LightDirector)->_0C->tryFindLightID(rPos, pId);
 }
 
 AreaLightInfo* LightFunction::getAreaLightInfo(const ZoneLightID& rId) {

@@ -599,7 +599,7 @@ bool Pukupuku::receiveMsgEnemyAttack(u32 msg, HitSensor* pSender, HitSensor* pRe
 void Pukupuku::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _A8);
     TVec3f scale = mScale;
-    scale.mul(scale, mScaleCtrl->_C);
+    scale.mul(scale, mScaleCtrl->_0C);
     MR::setBaseScale(this, scale);
 }
 

@@ -8,7 +8,7 @@ DemoStartInfo::DemoStartInfo() {
     _0 = nullptr;
     _4 = nullptr;
     _8 = nullptr;
-    _C = nullptr;
+    _0C = nullptr;
     _10 = nullptr;
     mDemoExecutor = nullptr;
     mDemoName = nullptr;
@@ -25,7 +25,7 @@ DemoStartInfo& DemoStartInfo::operator=(const DemoStartInfo& rOther) {
     _0 = rOther._0;
     _4 = rOther._4;
     _8 = rOther._8;
-    _C = rOther._C;
+    _0C = rOther._0C;
     _10 = rOther._10;
     mDemoExecutor = rOther.mDemoExecutor;
     mDemoName = rOther.mDemoName;
@@ -150,7 +150,7 @@ DemoStartInfo* DemoStartRequestHolder::find(const NerveExecutor* pExecutor, cons
 
 DemoStartInfo* DemoStartRequestHolder::find(const NameObj* pObj, const char* pName) const {
     for (DemoStartInfo* const* pIter = mStartInfos; pIter != &mStartInfos[mNumInfos]; pIter++) {
-        if ((*pIter)->_C == pObj && MR::isEqualString((*pIter)->mDemoName, pName)) {
+        if ((*pIter)->_0C == pObj && MR::isEqualString((*pIter)->mDemoName, pName)) {
             return *pIter;
         }
     }

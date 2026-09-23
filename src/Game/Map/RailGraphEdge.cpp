@@ -5,7 +5,7 @@ RailGraphEdge::RailGraphEdge() {
     _4 = -1;
     mDistance = 0.0f;
     _8 = -1;
-    _C = -1;
+    _0C = -1;
     _10 = -1;
     mPointArg0 = -1;
     mPointArg1 = -1;
@@ -21,7 +21,7 @@ void RailGraphEdge::clearConnectInfo() {
     _4 = -1;
     mDistance = 0.0f;
     _8 = -1;
-    _C = -1;
+    _0C = -1;
     _10 = -1;
 }
 
@@ -41,7 +41,7 @@ s32 RailGraphEdge::getNextNode(s32 a1) const {
 
 s32 RailGraphEdge::getNextEdge(s32 a1) const {
     if (_4 == a1) {
-        return _C;
+        return _0C;
     }
 
     if (_8 == a1) {
@@ -53,7 +53,7 @@ s32 RailGraphEdge::getNextEdge(s32 a1) const {
 
 void RailGraphEdge::setNextEdge(s32 a1, s32 a2) {
     if (_4 == a2) {
-        _C = a1;
+        _0C = a1;
     } else if (_8 == a2) {
         _10 = a1;
     }

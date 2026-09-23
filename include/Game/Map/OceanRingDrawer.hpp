@@ -55,7 +55,7 @@ public:
     const OceanRing* mRing;              // 0x0
     s32 mDrawerCount;                    // 0x4
     OceanRingPartDrawer** mPartDrawers;  // 0x8
-    f32 _C;
+    f32 _0C;
     f32 _10;
     f32 _14;
     f32 _18;

@@ -69,7 +69,7 @@ void SkeletalFishBabyRailGroupNode::tidy() {
 
 void SkeletalFishBabyRailGroupNode::createChild() {
     SkeletalFishBabyRailSetLinkNode* node = new SkeletalFishBabyRailSetLinkNode();
-    node->_C = _1C;
+    node->_0C = _1C;
     _1C->_10 = node;
     _1C = node;
     mNumNodes++;
@@ -134,6 +134,6 @@ SkeletalFishBabyRailSetLinkNode::SkeletalFishBabyRailSetLinkNode() {
     _0 = 0;
     _4 = nullptr;
     _8 = 0;
-    _C = nullptr;
+    _0C = nullptr;
     _10 = nullptr;
 }

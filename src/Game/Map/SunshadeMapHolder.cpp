@@ -7,7 +7,7 @@ void SunshadeMapHolder_FORCE_MATCH_SDATA2() {
     (void)1.0f;
 }
 
-SunshadeMapHolder::SunshadeMapHolder() : NameObj("日よけコリジョン管理"), _C(0.0f, 1.0f, 0.0f) {
+SunshadeMapHolder::SunshadeMapHolder() : NameObj("日よけコリジョン管理"), _0C(0.0f, 1.0f, 0.0f) {
 }
 
 namespace MR {
@@ -22,7 +22,7 @@ namespace MR {
 
         SunshadeMapHolder* holder = MR::getSceneObj< SunshadeMapHolder >(SceneObj_SunshadeMapHolder);
 
-        return Collision::checkStrikeLineToSunshade(rPos, holder->_C * a2, 0, nullptr, nullptr);
+        return Collision::checkStrikeLineToSunshade(rPos, holder->_0C * a2, 0, nullptr, nullptr);
     }
 
     void createSunshadeMapHolder() {

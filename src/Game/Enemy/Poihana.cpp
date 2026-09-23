@@ -199,7 +199,7 @@ void Poihana::calcAndSetBaseMtx() {
 
     MR::setBaseTRMtx(this, baseMtx);
 
-    TVec3f scale = mAnimScaleCtrl->_C * mScale;
+    TVec3f scale = mAnimScaleCtrl->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

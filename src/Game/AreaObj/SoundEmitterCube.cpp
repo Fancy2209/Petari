@@ -48,13 +48,13 @@ void SoundEmitterCube::movement() {
     TVec3f cornerY;
     TVec3f cornerX;
     cornerX.scaleAdd(worldBox._30.x, worldBox._0, worldBox._24);
-    cornerY.scaleAdd(worldBox._30.y, worldBox._C, worldBox._24);
+    cornerY.scaleAdd(worldBox._30.y, worldBox._0C, worldBox._24);
     cornerZ.scaleAdd(worldBox._30.z, worldBox._18, worldBox._24);
     bounds.extend(cornerX);
     bounds.extend(cornerY);
     bounds.extend(cornerZ);
 
-    cornerX.scaleAdd(worldBox._30.y, worldBox._C, cornerX);
+    cornerX.scaleAdd(worldBox._30.y, worldBox._0C, cornerX);
     cornerY.scaleAdd(worldBox._30.z, worldBox._18, cornerY);
     cornerZ.scaleAdd(worldBox._30.x, worldBox._0, cornerZ);
     bounds.extend(cornerX);

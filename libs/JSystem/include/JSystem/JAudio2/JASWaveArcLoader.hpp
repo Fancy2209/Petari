@@ -59,7 +59,7 @@ struct JASWaveArc : JASDisposer {
         /* 0x0 */ JASWaveArc* mWavArc;
         /* 0x4 */ s32 mEntryNum;
         /* 0x8 */ u32 mBase;
-        /* 0xC */ u32 _C;
+        /* 0xC */ u32 _0C;
     };
 
     /* 0x04 */ mutable JASHeap mHeap;

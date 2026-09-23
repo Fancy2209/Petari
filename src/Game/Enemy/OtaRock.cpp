@@ -94,7 +94,7 @@ void OtaRock::control() {
 
 void OtaRock::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _A4);
-    TVec3f scale = mAnimScaleController->_C * mScale;
+    TVec3f scale = mAnimScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

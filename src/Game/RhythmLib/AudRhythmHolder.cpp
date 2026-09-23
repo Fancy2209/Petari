@@ -62,7 +62,7 @@ void AudRhythmHolder::init() {
         mInfos[i].mIsActive = false;
         mInfos[i]._4 = 0;
         mInfos[i]._8 = 0;
-        mInfos[i]._C = 0.0f;
+        mInfos[i]._0C = 0.0f;
         mInfos[i].mStartTime = 0;
         mInfos[i].mPlayTime = 0;
         mInfos[i]._30 = 0;
@@ -85,7 +85,7 @@ void AudRhythmHolder::copyInfoFromParserOne(u32 type, u32 velocity, u32 noteOff,
         mInfos[type]._4++;
     }
     mInfos[type].mStartTime = time;
-    mInfos[type]._C = noteOff / 120.0f * (60.0f / mModifiedTempo);
+    mInfos[type]._0C = noteOff / 120.0f * (60.0f / mModifiedTempo);
     mInfos[type]._30++;
     mInfos[type].mPausedTime = 0;
 }

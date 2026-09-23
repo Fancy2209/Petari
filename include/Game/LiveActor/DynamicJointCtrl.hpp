@@ -18,7 +18,7 @@ public:
     /* 0x00 */ f32 _0;
     /* 0x04 */ s32 _4;
     /* 0x08 */ s32 _8;
-    /* 0x0C */ s32 _C;
+    /* 0x0C */ s32 _0C;
 };
 
 struct DynamicJointCtrlParam {

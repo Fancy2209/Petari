@@ -166,11 +166,11 @@ void GameSystemObjHolder::initDisplay() {
     s32 size = MR::getRequiredExternalFrameBufferSize();
     JKRHeap* stationedHeap = MR::getStationedHeapGDDR3();
 
-    _C = new (stationedHeap, 32) u8[size];
+    _0C = new (stationedHeap, 32) u8[size];
     _10 = new (stationedHeap, 32) u8[size];
     _14 = new (stationedHeap, 32) u8[size];
 
-    manager = MainLoopFramework::createManager(nullptr, _C, _10, _14, true);
+    manager = MainLoopFramework::createManager(nullptr, _0C, _10, _14, true);
     manager->mClearColor = (GXColor){30, 30, 200, 0};
 
     mCaptureScreenDirector = new CaptureScreenDirector();

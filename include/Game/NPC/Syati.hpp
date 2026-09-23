@@ -85,8 +85,8 @@ public:
     inline PlayerPoseSetterInWater(const TVec3f& rVec, Syati* pSyati);
     void update();
 
-    /* 0x00 */ TVec3f _0;
-    /* 0x0C */ TQuat4f _C;
-    /* 0x1C */ s32 _1C;
-    /* 0x20 */ Vec* _20;
+    TVec3f _0;
+    TQuat4f _0C;
+    s32 _1C;
+    Vec* _20;
 };

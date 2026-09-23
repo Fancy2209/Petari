@@ -78,7 +78,7 @@ void Banekiti::endDPDSwoon() {
 
 void Banekiti::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
-    MR::setBaseScale(this, mAnimScaleCtrl->_C * mScale);
+    MR::setBaseScale(this, mAnimScaleCtrl->_0C * mScale);
 }
 
 void Banekiti::control() {

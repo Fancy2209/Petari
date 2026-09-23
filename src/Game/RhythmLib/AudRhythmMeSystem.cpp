@@ -9,7 +9,7 @@
 #include <JSystem/JKernel/JKRHeap.hpp>
 
 AudRhythmMeSystem::AudRhythmMeSystem(JKRHeap* pHeap, u32 numSeqParsers, bool hasMgr)
-    : JASGlobalInstance< AudRhythmMeSystem >(true), mBgmIdx(), _C(), mMeMgr() {
+    : JASGlobalInstance< AudRhythmMeSystem >(true), mBgmIdx(), _0C(), mMeMgr() {
     mSeqParsers = new (pHeap, 0) AudRhythmSeqParser*[numSeqParsers];
     mRhythmHolders = new (pHeap, 0) AudRhythmHolder[numSeqParsers];
 
@@ -47,7 +47,7 @@ bool AudRhythmMeSystem::setSeq(JAISoundHandle& rHandle, s32 parserNo) {
             return false;
         }
 
-        track = track->getChild(_C);
+        track = track->getChild(_0C);
         if (track == nullptr) {
             return false;
         }

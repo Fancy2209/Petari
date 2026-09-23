@@ -8,7 +8,7 @@
 #include "Game/Util/ObjUtil.hpp"
 
 LightDirector::LightDirector()
-    : NameObj("ライト指揮"), _C(), mDataHolder(), mZoneDataHolder(), mDefaultAreaLight(), _1C(), mPointCtrl(), mResourceHolder() {
+    : NameObj("ライト指揮"), _0C(), mDataHolder(), mZoneDataHolder(), mDefaultAreaLight(), _1C(), mPointCtrl(), mResourceHolder() {
 }
 
 void LightDirector::init(const JMapInfoIter& rIter) {

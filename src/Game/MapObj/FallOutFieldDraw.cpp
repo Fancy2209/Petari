@@ -39,7 +39,7 @@ namespace {
     static Color8 sEdgeColor = Color8(0, 46, 200, 128);
 };  // namespace
 
-FallOutFieldDraw::FallOutFieldDraw(const char* pName) : NameObj(pName), _C() {
+FallOutFieldDraw::FallOutFieldDraw(const char* pName) : NameObj(pName), _0C() {
     MR::createClipAreaHolder();
     MR::connectToScene(this, MR::MovementType_None, MR::CalcAnimType_None, MR::DrawBufferType_None, MR::DrawType_FallOutFieldDraw);
     MR::createScreenAlphaSceneObj(2, 0.5f);
@@ -53,8 +53,8 @@ void FallOutFieldDraw::setUpFillScreen() const {
     GXSetTevKColor(GX_KCOLOR0, Color8(0, 0, 0, 1));
     GXSetTevKAlphaSel(GX_TEVSTAGE0, GX_TEV_KASEL_K0_A);
 
-    GXTevAlphaArg alphaA = _C ? GX_CA_TEXA : GX_CA_KONST;
-    GXTevAlphaArg alphaB = _C ? GX_CA_KONST : GX_CA_TEXA;
+    GXTevAlphaArg alphaA = _0C ? GX_CA_TEXA : GX_CA_KONST;
+    GXTevAlphaArg alphaB = _0C ? GX_CA_KONST : GX_CA_TEXA;
 
     GXSetTevAlphaIn(GX_TEVSTAGE0, alphaA, alphaB, GX_CA_A0, GX_CA_ZERO);
     GXSetTevAlphaOp(GX_TEVSTAGE0, ::sAlphaTevOperater, GX_TB_ZERO, GX_CS_SCALE_1, GX_TRUE, GX_TEVPREV);
@@ -85,7 +85,7 @@ void FallOutFieldDraw::init(const JMapInfoIter& rIter) {
 
     bool arg0;
     MR::getJMapInfoArg0WithInit(rIter, &arg0);
-    _C = arg0;
+    _0C = arg0;
 
     if (MR::isExistStageSwitchAppear(rIter)) {
         MR::listenNameObjStageSwitchOnOffAppear(this, MR::createStageSwitchCtrl(this, rIter), MR::Functor(this, &FallOutFieldDraw::activate),
@@ -122,14 +122,14 @@ void FallOutFieldDraw::draw() const {
     GXSetTevKColorSel(GX_TEVSTAGE0, GX_TEV_KCSEL_K0_A);
     GXSetTevColor(GX_TEVREG0, Color8(255, 255, 255, 255));
 
-    GXTevColorArg colorA = _C ? GX_CC_TEXA : GX_CC_KONST;
-    GXTevColorArg colorB = _C ? GX_CC_KONST : GX_CC_TEXA;
+    GXTevColorArg colorA = _0C ? GX_CC_TEXA : GX_CC_KONST;
+    GXTevColorArg colorB = _0C ? GX_CC_KONST : GX_CC_TEXA;
 
     GXSetTevColorIn(GX_TEVSTAGE0, colorA, colorB, GX_CC_ZERO, GX_CC_ZERO);
     GXSetTevColorOp(GX_TEVSTAGE0, GX_TEV_COMP_RGB8_GT, GX_TB_ZERO, GX_CS_SCALE_1, GX_TRUE, GX_TEVPREV);
 
-    GXTevAlphaArg alphaA = _C ? GX_CA_TEXA : GX_CA_KONST;
-    GXTevAlphaArg alphaB = _C ? GX_CA_KONST : GX_CA_TEXA;
+    GXTevAlphaArg alphaA = _0C ? GX_CA_TEXA : GX_CA_KONST;
+    GXTevAlphaArg alphaB = _0C ? GX_CA_KONST : GX_CA_TEXA;
 
     GXSetTevAlphaIn(GX_TEVSTAGE0, alphaA, alphaB, GX_CA_A0, GX_CA_ZERO);
     GXSetTevAlphaOp(GX_TEVSTAGE0, GX_TEV_COMP_A8_GT, GX_TB_ZERO, GX_CS_SCALE_1, GX_TRUE, GX_TEVPREV);

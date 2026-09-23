@@ -35,7 +35,7 @@ public:
     const TVec3f& getDrawPos(u32, u32) const;
     const TVec2f& getDrawTx(u32, u32) const;
 
-    /* 0x00C */ u8 _C;
+    /* 0x00C */ u8 _0C;
     /* 0x00E */ u16 _E;
     /* 0x010 */ f32 _10;
     /* 0x014 */ f32 _14;

@@ -38,7 +38,7 @@ namespace FileSelectItemSub {
         void sleep();
 
         FileSelectItem* mItem;  // 0x08
-        s32 _C;
+        s32 _0C;
         s32 _10;
     };
 };  // namespace FileSelectItemSub

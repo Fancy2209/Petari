@@ -209,7 +209,7 @@ void Mario::tryJump() {
     }
 
     if (getPlayerMode() != 6 && !_10._1A) {
-        if (mDrawStates._C && isSlipPolygon(_45C)) {
+        if (mDrawStates._0C && isSlipPolygon(_45C)) {
             const bool dotFront = mFrontVec.dot(_368) < 0.0f;
             const bool dotPad = mWorldPadDir.dot(_368) <= 0.0f;
             const bool diff = MR::diffAngleAbsHorizontal(_16C, _368, getAirGravityVec()) > 1.5707964f;
@@ -1139,11 +1139,11 @@ void Mario::initJumpParam() {
 
     _408 = 0;
     _76C = 0;
-    mMovementStates._C = false;
+    mMovementStates._0C = false;
     mMovementStates._10 = false;
     mMovementStates._4 = false;
     mMovementStates._20 = false;
-    _10._C = false;
+    _10._0C = false;
     _3D2 = 0;
     _3D0 = 0;
     _3CE = 0;
@@ -1772,7 +1772,7 @@ void Mario::procHipDrop() {
                     shouldEnd = true;
                 }
 
-                if (mDrawStates._C) {
+                if (mDrawStates._0C) {
                     shouldEnd = true;
                 }
             }
@@ -2487,7 +2487,7 @@ void Mario::doLanding() {
 
     fixFrontVecByGravity();
 
-    if (!doHardLanding && !mDrawStates._C && _430 != 0xE && !isAnimationRun("飛び込みジャンプ") && !isAnimationRun("後方飛び込みジャンプ") &&
+    if (!doHardLanding && !mDrawStates._0C && _430 != 0xE && !isAnimationRun("飛び込みジャンプ") && !isAnimationRun("後方飛び込みジャンプ") &&
         !_10._8 && !isAnimationRun("水上ダメージ中")) {
         if (_430 == 5 && checkSquat(false)) {
             mMovementStates._A = true;
@@ -2576,7 +2576,7 @@ void Mario::doLanding() {
         goto POST_LANDING;
     }
 
-    if (!mDrawStates._C) {
+    if (!mDrawStates._0C) {
         clearSlope();
         switch (_430) {
         case 0:
@@ -2655,7 +2655,7 @@ void Mario::doLanding() {
     }
 
 POST_LANDING:
-    if (mDrawStates._C) {
+    if (mDrawStates._0C) {
         TVec3f jumpNoGrav;
         MR::vecKillElement(mJumpVec, *getGravityVec(), &jumpNoGrav);
 

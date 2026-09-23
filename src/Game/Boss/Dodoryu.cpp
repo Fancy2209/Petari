@@ -671,7 +671,7 @@ void Dodoryu::displayRabbitMessage() {
 
 void Dodoryu::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, mBaseMtx);
-    TVec3f scale = mAnimScaleCtrl->_C * mScale;
+    TVec3f scale = mAnimScaleCtrl->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

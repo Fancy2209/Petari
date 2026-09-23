@@ -817,7 +817,7 @@ void DharmaSamboParts::setHead(bool head) {
 
 void DharmaSambo::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
-    TVec3f scale(mAnimScaleController->_C);
+    TVec3f scale(mAnimScaleController->_0C);
     scale.mul(scale, mScale);
     MR::setBaseScale(this, scale);
 }
@@ -826,7 +826,7 @@ void DharmaSamboParts::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
 
     if (mIsHead && mHost->mPartsCount == 1 && mHost->isNerve(GET_NERVE(DharmaSambo, HostTypeNrvStarPointerBind))) {
-        TVec3f scale(mHost->mAnimScaleController->_C);
+        TVec3f scale(mHost->mAnimScaleController->_0C);
         scale.mul(scale, mScale);
         MR::setBaseScale(this, scale);
     } else {

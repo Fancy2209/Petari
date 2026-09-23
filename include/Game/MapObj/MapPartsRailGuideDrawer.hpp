@@ -2,6 +2,7 @@
 
 #include "Game/MapObj/MapPartsFunction.hpp"
 #include "Game/Util/Array.hpp"
+#include "Game/Util.hpp"
 
 class MapPartsRailGuidePoint;
 

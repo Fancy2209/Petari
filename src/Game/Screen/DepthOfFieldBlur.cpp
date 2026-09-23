@@ -32,7 +32,7 @@ DepthOfFieldBlur::DepthOfFieldBlur(const char* pName)
     _18 = MR::getImageEffectResource()->_10;
     _1C = MR::getImageEffectResource()->_4;
     _20 = MR::getImageEffectResource()->_8;
-    _24 = MR::getImageEffectResource()->_C;
+    _24 = MR::getImageEffectResource()->_0C;
     _28 = new JUTTexture(128, 2, GX_TF_I8);
     _28->mWrapS = GX_CLAMP;
     _28->mWrapT = GX_CLAMP;

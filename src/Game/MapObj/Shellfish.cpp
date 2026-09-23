@@ -83,7 +83,7 @@ void Shellfish::initAfterPlacement() {
 void Shellfish::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
     TVec3f scale;
-    scale.mul(mScaleController->_C, mScale);
+    scale.mul(mScaleController->_0C, mScale);
     MR::setBaseScale(this, scale);
 }
 

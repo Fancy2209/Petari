@@ -114,7 +114,7 @@ void SimpleEffectObj::exeMove() {
         v1 = ::findDataElement(_8C);
         s32 v4;
         if (v1 != nullptr) {
-            v4 = v1->_C;
+            v4 = v1->_0C;
         } else {
             v4 = -1;
         }

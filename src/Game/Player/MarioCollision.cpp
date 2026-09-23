@@ -1135,7 +1135,7 @@ void Mario::saveLastSafetyTrans() {
         return;
     }
 
-    if (mDrawStates._C) {
+    if (mDrawStates._0C) {
         return;
     }
 

@@ -160,7 +160,7 @@ void ResourceHolder::mount(JKRArchive* pArchive, char* pPath) {
             ResFileInfo* info = createAndRegisterObject(finder->mName, pArchive->getResource(finder->mFileID));
             info->_8 = pArchive->getResource(finder->mFileID);
             info->_4 = pArchive->getResSize(info->_8);
-            info->_C = finder->mFileID;
+            info->_0C = finder->mFileID;
             mTotalResourceSize += info->_4;
         }
         finder->findNextFile();

@@ -41,7 +41,7 @@ public:
     bool trySave(bool*, bool);
 
     /* 0x08 */ NANDRequestInfo* mNANDRequestInfo;
-    /* 0x0C */ u32 _C;
+    /* 0x0C */ u32 _0C;
     /* 0x10 */ u32 _10;
     /* 0x14 */ u8* _14;
     /* 0x18 */ u8* _18;

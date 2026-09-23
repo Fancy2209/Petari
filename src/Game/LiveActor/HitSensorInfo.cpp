@@ -10,7 +10,7 @@ HitSensorInfo::HitSensorInfo(const char* pName, HitSensor* pSensor, const TVec3f
     mHashCode = MR::getHashCode(pName);
     mSensor = pSensor;
 
-    _C = rOffset;
+    _0C = rOffset;
 
     _18 = pPosition;
     _1C = pMtx;
@@ -26,9 +26,9 @@ void HitSensorInfo::update() {
     TVec3f position;
     if (_1C) {
         position.set< f32 >(_1C[0][3], _1C[1][3], _1C[2][3]);
-        position.x += _1C[0][0] * _C.x + _1C[0][1] * _C.y + _1C[0][2] * _C.z;
-        position.y += _1C[1][0] * _C.x + _1C[1][1] * _C.y + _1C[1][2] * _C.z;
-        position.z += _1C[2][0] * _C.x + _1C[2][1] * _C.y + _1C[2][2] * _C.z;
+        position.x += _1C[0][0] * _0C.x + _1C[0][1] * _0C.y + _1C[0][2] * _0C.z;
+        position.y += _1C[1][0] * _0C.x + _1C[1][1] * _0C.y + _1C[1][2] * _0C.z;
+        position.z += _1C[2][0] * _0C.x + _1C[2][1] * _0C.y + _1C[2][2] * _0C.z;
     } else {
         if (_18) {
             position.set< f32 >(_18->x, _18->y, _18->z);
@@ -38,11 +38,11 @@ void HitSensorInfo::update() {
 
         MtxPtr baseMtx = mSensor->mHost->getBaseMtx();
         if (baseMtx) {
-            position.x += baseMtx[0][0] * _C.x + baseMtx[0][1] * _C.y + baseMtx[0][2] * _C.z;
-            position.y += baseMtx[1][0] * _C.x + baseMtx[1][1] * _C.y + baseMtx[1][2] * _C.z;
-            position.z += baseMtx[2][0] * _C.x + baseMtx[2][1] * _C.y + baseMtx[2][2] * _C.z;
+            position.x += baseMtx[0][0] * _0C.x + baseMtx[0][1] * _0C.y + baseMtx[0][2] * _0C.z;
+            position.y += baseMtx[1][0] * _0C.x + baseMtx[1][1] * _0C.y + baseMtx[1][2] * _0C.z;
+            position.z += baseMtx[2][0] * _0C.x + baseMtx[2][1] * _0C.y + baseMtx[2][2] * _0C.z;
         } else {
-            position.add(_C);
+            position.add(_0C);
         }
     }
 

@@ -13,9 +13,9 @@ namespace {
 }
 
 WPadAcceleration::WPadAcceleration(const WPad* pPad, u32 device)
-    : mPad(pPad), _4(device), _8(), _C(0.15f), _10(0, 0, 0), _1C(), _20(true), _624(-1), _628(), _62C(0, 0, 0), _638(0.0f, 0.0f, 0.0f), _644(128),
+    : mPad(pPad), _4(device), _8(), _0C(0.15f), _10(0, 0, 0), _1C(), _20(true), _624(-1), _628(), _62C(0, 0, 0), _638(0.0f, 0.0f, 0.0f), _644(128),
       _648(), _64C() {
-    KPADSetAccParam(mPad->mChannel, _8, _C);
+    KPADSetAccParam(mPad->mChannel, _8, _0C);
 }
 
 bool WPadAcceleration::getAcceleration(TVec3f* pOut) const {

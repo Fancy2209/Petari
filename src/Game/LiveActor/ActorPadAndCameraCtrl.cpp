@@ -19,7 +19,7 @@ namespace {
 }  // namespace
 
 ActorPadAndCameraCtrl::ActorPadAndCameraCtrl(const ModelManager* pModelManager, const TVec3f* pPosition)
-    : _0(pModelManager), _4(pPosition), _8(pModelManager->getResourceHolder()), _C(), mInfoNum(), mInfo() {
+    : _0(pModelManager), _4(pPosition), _8(pModelManager->getResourceHolder()), _0C(), mInfoNum(), mInfo() {
     JMapInfo* parser = MR::tryCreateCsvParser(_8, "%s.bcsv", ::sFileName);
     if (!parser) {
         return;
@@ -68,8 +68,8 @@ ActorPadAndCameraCtrl* ActorPadAndCameraCtrl::tryCreate(const ModelManager* pMod
 
 void ActorPadAndCameraCtrl::update() {
     ActorPadAndCameraCtrlInfo* info;
-    if (_C != _0->getPlayingBckName()) {
-        _C = _0->getPlayingBckName();
+    if (_0C != _0->getPlayingBckName()) {
+        _0C = _0->getPlayingBckName();
         updateInfoBck();
     }
 
@@ -93,14 +93,14 @@ void ActorPadAndCameraCtrl::update() {
 
 void ActorPadAndCameraCtrl::updateInfoBck() {
     ActorPadAndCameraCtrlInfo* info;
-    if (!_C) {
+    if (!_0C) {
         return;
     }
 
     for (s32 i = 0; i < mInfoNum; i++) {
         info = &mInfo[i];
         if (info->mBckName) {
-            if (MR::isEqualStringCase(_C, info->mBckName)) {
+            if (MR::isEqualStringCase(_0C, info->mBckName)) {
                 info->_30 = true;
             } else {
                 info->_30 = false;

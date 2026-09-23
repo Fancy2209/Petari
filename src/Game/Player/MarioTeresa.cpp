@@ -236,7 +236,7 @@ void MarioTeresa::checkGroundReflect() {
     }
 
     if (!getPlayer()->mMovementStates.jumping && getPlayer()->_3CE) {
-        getPlayer()->mDrawStates._C = false;
+        getPlayer()->mDrawStates._0C = false;
         getPlayer()->tryJump();
         cutGravityElementFromJumpVec(true);
         f32 vertical = MR::vecKillElement(_34, getAirGravityVec(), &_34);

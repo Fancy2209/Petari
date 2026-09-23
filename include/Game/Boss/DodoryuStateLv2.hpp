@@ -15,7 +15,7 @@ struct DodoryuChaseParam {
     /* 0x000 */ s32 mReadyChaseStep;
     /* 0x004 */ f32 _4;
     /* 0x008 */ f32 _8;
-    /* 0x00C */ f32 _C;
+    /* 0x00C */ f32 _0C;
     /* 0x010 */ f32 _10;
     /* 0x014 */ f32 _14;
     /* 0x018 */ s32 mAppearSignStep;

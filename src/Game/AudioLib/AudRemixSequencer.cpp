@@ -20,7 +20,7 @@ AudRmxSeqNoteOnTimer::AudRmxSeqNoteOnTimer() {
     _8 = nullptr;
     _0 = 0.0f;
     _4 = 0.0f;
-    _C = nullptr;
+    _0C = nullptr;
     initData();
 }
 
@@ -28,13 +28,13 @@ void AudRmxSeqNoteOnTimer::initData() {
     _8 = nullptr;
     _4 = 0.0f;
     _0 = 0.0f;
-    _C = nullptr;
+    _0C = nullptr;
 }
 
 void AudRmxSeqNoteOnTimer::setData(const RemixNoteTrackData* trackData, const RemixNoteData* data) {
-    _C = trackData;
+    _0C = trackData;
     _8 = data;
-    _0 = data->_C;
+    _0 = data->_0C;
     _4 = _0 + data->_8;
 }
 
@@ -47,11 +47,11 @@ bool AudRmxSeqNoteOnTimer::update(f32 f1) {
     _4 -= f1;
 
     if (_0 <= 0.0f) {
-        if (_C != nullptr && _8 != nullptr) {
+        if (_0C != nullptr && _8 != nullptr) {
             AudRemixSequencer* pSeq = AudWrap::getRemixSequencer();
             JAISoundID id = getFreeSeID();
             JAISoundHandle* pHandle = AudWrap::getRemixSeqObject()->startSound(id);
-            AudWrap::getSystemSeObject()->writePort(pHandle, 0xc, _C->_0);
+            AudWrap::getSystemSeObject()->writePort(pHandle, 0xc, _0C->_0);
             AudWrap::getSystemSeObject()->writePort(pHandle, 0xb, _8->_0);
             AudWrap::getSystemSeObject()->writePort(pHandle, 0xf, _8->_4);
 
@@ -63,7 +63,7 @@ bool AudRmxSeqNoteOnTimer::update(f32 f1) {
                 length = 1440;
             }
             AudWrap::getSystemSeObject()->writePort(pHandle, 0xe, length);
-            _C = nullptr;
+            _0C = nullptr;
             _8 = nullptr;
         }
         return true;

@@ -58,7 +58,7 @@ namespace MR {
 
 WarpPodMgr::WarpPodMgr(const char* pName) : NameObj(pName) {
     _10 = new LiveActorGroup("ワープポッド群", 128);
-    _C = nullptr;
+    _0C = nullptr;
     _14 = 0;
 
     MR::connectToScene(this, MR::MovementType_None, MR::CalcAnimType_None, MR::DrawBufferType_None, MR::DrawType_WarpPodPath);
@@ -90,22 +90,22 @@ WarpPod* WarpPodMgr::getPairPod(const LiveActor* pParam1) {
 
 void WarpPodMgr::startEventCamera(const LiveActor* pWarpPod) {
     static_cast< const WarpPod* >(pWarpPod)->startEventCamera();
-    _C = pWarpPod;
+    _0C = pWarpPod;
 }
 
 void WarpPodMgr::endEventCamera() {
-    if (_C == nullptr) {
+    if (_0C == nullptr) {
         return;
     }
 
-    const_cast< WarpPod* >(static_cast< const WarpPod* >(_C))->endEventCamera();
+    const_cast< WarpPod* >(static_cast< const WarpPod* >(_0C))->endEventCamera();
 
-    WarpPod* pPairPod = getPairPod(_C);
+    WarpPod* pPairPod = getPairPod(_0C);
     pPairPod->mDelay = 60;
     MR::startBck(pPairPod, "Wait");
     MR::startBrk(pPairPod, "Wait");
 
-    _C = nullptr;
+    _0C = nullptr;
 }
 
 void WarpPodMgr::notifyWarpEnd(WarpPod* pWarpPod) {
@@ -118,7 +118,7 @@ void WarpPodMgr::notifyWarpEnd(WarpPod* pWarpPod) {
     MR::startBck(pPairPod, "Wait");
     MR::startBrk(pPairPod, "Wait");
 
-    _C = nullptr;
+    _0C = nullptr;
 }
 
 void WarpPodMgr::draw() const {

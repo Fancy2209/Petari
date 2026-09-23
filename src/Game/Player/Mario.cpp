@@ -559,7 +559,7 @@ void Mario::doExtraServices() {
     }
 
     if (getCurrentStatus() != 0 || mActor->_3C0 != 0 || mActor->_EA4) {
-        _10._C = 0;
+        _10._0C = 0;
     }
 }
 
@@ -1654,7 +1654,7 @@ void Mario::writeBackPhyisicalVector() {
                 }
             }
         }
-    } else if (!_1C._C && mActor->_288.dot(_368) < 0.707f && !MR::isNearZero(mActor->_288, 1.0f)) {
+    } else if (!_1C._0C && mActor->_288.dot(_368) < 0.707f && !MR::isNearZero(mActor->_288, 1.0f)) {
         TVec3f stack_a4(mActor->_288);
         MR::normalizeOrZero(&stack_a4);
         TVec3f stack_98;
@@ -1966,7 +1966,7 @@ void Mario::updateGroundInfo() {
     if (mMovementStates._1) {
         mMovementStates._29 = 0;
         if (_43A == 0 && isSlipPolygon(mGroundPolygon)) {
-            mDrawStates._C = 1;
+            mDrawStates._0C = 1;
         }
     }
 

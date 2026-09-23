@@ -7,7 +7,7 @@
 #include "Game/Util/MathUtil.hpp"
 
 void Mario::beeMarioOnGround() {
-    if (getPlayerMode() == PlayerMode_Bee && !mDrawStates._C && mMovementStates._1 && !mMovementStates._23 && !isStatusActive(MarioStatus_Slider)) {
+    if (getPlayerMode() == PlayerMode_Bee && !mDrawStates._0C && mMovementStates._1 && !mMovementStates._23 && !isStatusActive(MarioStatus_Slider)) {
         getPlayer()->incAirWalkTimer();
         getPlayer()->incAirWalkTimer();
         getPlayer()->incAirWalkTimer();

@@ -13,7 +13,7 @@ void MirrorCamera_FORCE_MATCH_SDATA2() {
     2.0f;
 }
 
-MirrorCamera::MirrorCamera(const char* pName) : NameObj(pName), _C(0.0f, 0.0f, 0.0f), _18(0.0f, 1.0f, 0.0f), _24() {
+MirrorCamera::MirrorCamera(const char* pName) : NameObj(pName), _0C(0.0f, 0.0f, 0.0f), _18(0.0f, 1.0f, 0.0f), _24() {
     mViewMtx.identity();
     mModelTexMtx.identity();
 }
@@ -37,8 +37,8 @@ namespace {
 
 void MirrorCamera::setMirrorMapInfo(const TVec3f& rNormal, const TVec3f& rPosition) {
     _18.set(rNormal);
-    _C.set(rPosition);
-    _24 = -PSVECDotProduct(_18, _C);
+    _0C.set(rPosition);
+    _24 = -PSVECDotProduct(_18, _0C);
 }
 
 void MirrorCamera::setMirrorMapInfo(J3DModelData* pModelData) {
@@ -100,7 +100,7 @@ void MirrorCamera::updateModelTexMtx() {
 f32 MirrorCamera::getDistance(const TVec3f& rPosition) const {
     JGeometry::TPartition3< f32 > plane;
     plane.mNormal.set(_18);
-    plane.mDot = plane.mNormal.dot(_C);
+    plane.mDot = plane.mNormal.dot(_0C);
     return plane.mNormal.dot(rPosition) - plane.mDot;
 }
 

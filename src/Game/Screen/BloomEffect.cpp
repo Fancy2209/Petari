@@ -53,7 +53,7 @@ BloomEffect::BloomEffect(const char* pName) : ImageEffectBase(pName), _14(255), 
 
     _24 = MR::getImageEffectResource()->_0;
     _28 = MR::getImageEffectResource()->_4;
-    _2C = MR::getImageEffectResource()->_C;
+    _2C = MR::getImageEffectResource()->_0C;
     _30 = MR::getImageEffectResource()->_10;
     _34 = MR::getImageEffectResource()->_14;
     _38 = MR::getImageEffectResource()->_18;

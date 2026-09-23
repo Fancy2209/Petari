@@ -237,7 +237,7 @@ void Balloonfish::calcAndSetBaseMtx() {
     mtx.setTrans(mPosition);
     MR::setBaseTRMtx(this, mtx);
 
-    TVec3f scale(mAnimScaleController->_C * mScale);
+    TVec3f scale(mAnimScaleController->_0C * mScale);
     MR::setBaseScale(this, scale);
 }
 

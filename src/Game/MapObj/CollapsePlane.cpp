@@ -100,7 +100,7 @@ void CollapsePlane::calcAndSetBaseMtx() {
     }
 
     if (MR::isInitializeStateEnd()) {
-        MR::setBaseScale(this, mScaleController->_C * mScale);
+        MR::setBaseScale(this, mScaleController->_0C * mScale);
     }
 }
 

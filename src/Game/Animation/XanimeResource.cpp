@@ -202,7 +202,7 @@ u32 XanimeResourceTable::initGroupInfo(ResourceHolder* pResourceHolder, XanimeGr
 
         if (search(ofsTables, entry->mParent.mAnimationName, sizeof(XanimeOfsInfo))) {
             entry->mStart = reinterpret_cast< XanimeOfsInfo* >(ofsTables[0])->_4;
-            entry->mLoop = reinterpret_cast< XanimeOfsInfo* >(ofsTables[0])->_C;
+            entry->mLoop = reinterpret_cast< XanimeOfsInfo* >(ofsTables[0])->_0C;
             entry->mEnd = reinterpret_cast< XanimeOfsInfo* >(ofsTables[0])->_8;
             entry->mAttribute = reinterpret_cast< XanimeOfsInfo* >(ofsTables[0])->_10;
         }

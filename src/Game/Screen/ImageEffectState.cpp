@@ -23,12 +23,12 @@ void ImageEffectState::update() {
             return;
         }
 
-        if (getEffect()->_C) {
+        if (getEffect()->_0C) {
             return;
         }
 
         ImageEffectBase* pBase = getEffect();
-        pBase->_C = true;
+        pBase->_0C = true;
         pBase->notifyTurnOn();
         return;
     }
@@ -36,8 +36,8 @@ void ImageEffectState::update() {
     ImageEffectBase* pBase = mHost->mCurrentEffect;
 
     if (pBase != nullptr) {
-        if (pBase->_C) {
-            pBase->_C = false;
+        if (pBase->_0C) {
+            pBase->_0C = false;
             pBase->notifyTurnOff();
             return;
         }
@@ -49,7 +49,7 @@ void ImageEffectState::update() {
 
     if (getEffect() != nullptr) {
         ImageEffectBase* pBase = getEffect();
-        pBase->_C = true;
+        pBase->_0C = true;
         pBase->notifyTurnOn();
     }
 
@@ -66,14 +66,14 @@ void ImageEffectState::forceOff() {
 
     pBase = getEffect();
     pBase->_D = false;
-    pBase->_C = false;
+    pBase->_0C = false;
     pBase->_10 = 0.0f;
     pBase->notifyForceOff();
 }
 
 namespace ImageEffectStateImpl {
     StateBloomNormal::StateBloomNormal(ImageEffectDirector* pHost)
-        : ImageEffectState(pHost), _8(true), _C(), _10(), mBloomIntensity(), _18(), mThreshold(), _20(), mIntensity1(), _28(), mIntensity2() {
+        : ImageEffectState(pHost), _8(true), _0C(), _10(), mBloomIntensity(), _18(), mThreshold(), _20(), mIntensity1(), _28(), mIntensity2() {
     }
 
     void StateBloomNormal::update() {

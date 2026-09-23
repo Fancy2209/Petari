@@ -72,8 +72,9 @@
 #include "Game/Util/ValueControl.hpp"
 #include "Game/Util/VectorUtil.hpp"
 
-#ifdef PLATFORM_PS3
+#ifndef __MWERKS__
 #include <algorithm>
+#include <functional>
 namespace std {
     template < class InputIterator, class Function >
     inline Function for_each_array(InputIterator* pFirst, InputIterator* pLast, Function f) {

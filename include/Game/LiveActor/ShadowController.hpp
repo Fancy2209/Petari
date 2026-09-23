@@ -36,7 +36,7 @@ public:
 
     void updateController();
 
-    /* 0x0C */ MR::Vector< MR::AssignableArray< ShadowController* > > _C;
+    /* 0x0C */ MR::Vector< MR::AssignableArray< ShadowController* > > _0C;
     /* 0x18 */ MR::Vector< MR::AssignableArray< ShadowController* > > _18;
     /* 0x24 */ bool _24;
     /* 0x28 */ f32 mFarClip;

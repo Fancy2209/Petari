@@ -254,7 +254,7 @@ void MapObjActor::initialize(const JMapInfoIter& rIter, const MapObjActorInitInf
         mRailRotator->init(rIter);
     }
 
-    if (rInfo._C) {
+    if (rInfo._0C) {
         mRotator = new MapPartsSeesaw1AxisRotator(this, rInfo.mSeesaw1AxisRotatorName, rInfo.mSeesaw1AxisRotatorRadius);
         mRotator->init(rIter);
     }

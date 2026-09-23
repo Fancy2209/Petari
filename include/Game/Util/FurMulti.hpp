@@ -23,7 +23,7 @@ public:
     /* 0x02 */ u8 mCount;
     /* 0x04 */ u8* mShapeIndices;
     /* 0x08 */ u8* mDrawOrders;
-    /* 0x0C */ u32 _C;
+    /* 0x0C */ u32 _0C;
     /* 0x10 */ u32 _10;
     /* 0x14 */ u32 _14;
     /* 0x18 */ LiveActor* mActor;

@@ -775,14 +775,14 @@ namespace FileSelectItemSub {
 
     BlinkController::BlinkController(FileSelectItem* pItem) : NerveExecutor("ファイルセレクタアイコン瞬き管理") {
         mItem = pItem;
-        _C = 0;
+        _0C = 0;
         _10 = 0;
         initNerve(GET_NERVE_DIRECT(FileSelectItemSub, BlinkControllerNrvOpen));
     }
 
     void BlinkController::exeOpen() {
         if (MR::isFirstStep(this)) {
-            _C = MR::getRandom(180l, 300l);
+            _0C = MR::getRandom(180l, 300l);
             _10 = 0;
         }
 
@@ -801,7 +801,7 @@ namespace FileSelectItemSub {
         if (_10 > 180) {
             setNerve(GET_NERVE_DIRECT(FileSelectItemSub, BlinkControllerNrvSleep));
         } else {
-            if (MR::isGreaterEqualStep(this, _C)) {
+            if (MR::isGreaterEqualStep(this, _0C)) {
                 setNerve(GET_NERVE_DIRECT(FileSelectItemSub, BlinkControllerNrvShut));
             }
         }

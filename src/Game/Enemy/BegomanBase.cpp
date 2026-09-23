@@ -279,7 +279,7 @@ void BegomanBase::exeWaitCore(const MR::ActorMoveParam& rMoveParam, const Nerve*
         MR::startAction(this, "Wait");
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     if (!isNearInitPos()) {
@@ -330,7 +330,7 @@ void BegomanBase::exeWaitCore(const MR::ActorMoveParam& rMoveParam, const Nerve*
 }
 
 void BegomanBase::exeSignAttackCore(const MR::ActorMoveParam& rMoveParam, const Nerve* pNerve) {
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     if (!requestAttack()) {
@@ -363,7 +363,7 @@ void BegomanBase::exePursueCore(const MR::ActorMoveParam& rMoveParam, const Nerv
         return;
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0 * f1, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0 * f1, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
 
     if (MR::isGreaterStep(this, ::hPursueDashFrame)) {
         reboundWallAndGround(&mFaceVec, false);
@@ -451,10 +451,10 @@ void BegomanBase::exeBrakeCore(const Nerve* pNerve) {
     }
 
     if (MR::isOnGround(this)) {
-        MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hBrakeParam._0, ::hBrakeParam._4, ::hBrakeParam._8, ::hBrakeParam._C);
+        MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hBrakeParam._0, ::hBrakeParam._4, ::hBrakeParam._8, ::hBrakeParam._0C);
     } else {
         MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hBrakeOnAirParam._0, ::hBrakeOnAirParam._4, ::hBrakeOnAirParam._8,
-                                   ::hBrakeOnAirParam._C);
+                                   ::hBrakeOnAirParam._0C);
     }
 
     reboundWallAndGround(&mFaceVec, true);
@@ -473,7 +473,7 @@ void BegomanBase::exeStepBackCore(const MR::ActorMoveParam& rMoveParam, const Ne
     if (MR::isFirstStep(this)) {
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     if (MR::isOnGround(this)) {
         setNerve(pNerve);
     }
@@ -484,7 +484,7 @@ void BegomanBase::exeProvokeCore(const MR::ActorMoveParam& rMoveParam, const Ner
         MR::startAction(this, "Provoke");
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     TVec3f* gravity;
@@ -501,7 +501,7 @@ void BegomanBase::exeHitReactionCore(const MR::ActorMoveParam& rMoveParam, const
         MR::startAction(this, "HitReaction");
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     if (MR::isActionEnd(this)) {
@@ -514,7 +514,7 @@ void BegomanBase::exeTiredCore(const MR::ActorMoveParam& rMoveParam, const Nerve
         MR::startAction(this, "Tired");
     }
 
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     if (MR::isGreaterStep(this, 120)) {
@@ -529,10 +529,10 @@ void BegomanBase::exeReturnCore(const Nerve* pNerve) {
 
     if (MR::isLessStep(this, ::hReturnWaitTime)) {
         MR::moveAndTurnToTarget(this, &mFaceVec, mInitPos, ::hReturnWaitParam._0, ::hReturnWaitParam._4, ::hReturnWaitParam._8,
-                                ::hReturnWaitParam._C);
+                                ::hReturnWaitParam._0C);
     } else {
         MR::moveAndTurnToTarget(this, &mFaceVec, mInitPos, ::hReturnMoveParam._0, ::hReturnMoveParam._4, ::hReturnMoveParam._8,
-                                ::hReturnMoveParam._C);
+                                ::hReturnMoveParam._0C);
     }
 
     reboundWallAndGround(&mFaceVec, false);
@@ -555,14 +555,14 @@ void BegomanBase::exeKeepDistanceCore(const Nerve* pNerve1, const Nerve* pNerve2
 
     if (farDist < distToPlayer) {
         MR::moveAndTurnToPlayer(this, &mFaceVec, ::hKeepDistanceFarParam._0, ::hKeepDistanceFarParam._4, ::hKeepDistanceFarParam._8,
-                                ::hKeepDistanceFarParam._C);
+                                ::hKeepDistanceFarParam._0C);
     } else if (distToPlayer < nearDist) {
         MR::moveAndTurnToPlayer(this, &mFaceVec, ::hKeepDistanceNearParam._0, ::hKeepDistanceNearParam._4, ::hKeepDistanceNearParam._8,
-                                ::hKeepDistanceNearParam._C);
+                                ::hKeepDistanceNearParam._0C);
         addVelocityEscapeToSide(::hKeepDistSideVel);
     } else {
         MR::moveAndTurnToPlayer(this, &mFaceVec, ::hKeepDistanceWaitParam._0, ::hKeepDistanceWaitParam._4, ::hKeepDistanceWaitParam._8,
-                                ::hKeepDistanceWaitParam._C);
+                                ::hKeepDistanceWaitParam._0C);
     }
 
     if (isFallNextMove(150.0f, 150.0f)) {
@@ -997,7 +997,7 @@ void BegomanBase::calcAndSetBaseMtx() {
     if (mScaleControler != nullptr) {
         TVec3f scale;
 
-        scale.set(mScaleControler->_C);
+        scale.set(mScaleControler->_0C);
         _B4.set(scale);
         scale *= mScale;
         MR::setBaseScale(this, scale);

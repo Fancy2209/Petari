@@ -175,7 +175,7 @@ void KuriboMini::control() {
 
 void KuriboMini::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _A8);
-    MR::setBaseScale(this, mScaleController->_C * mScale);
+    MR::setBaseScale(this, mScaleController->_0C * mScale);
 }
 
 void KuriboMini::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

@@ -17,7 +17,7 @@ void SpinHitController::setParameter(const NameObj* pObj, s32 a2, s32 a3, s32 a4
     _0 = a2;
     _4 = a3;
     _8 = a4;
-    _C = a5;
+    _0C = a5;
     _10 = a6;
     _14 = a7;
     _19 = a9;
@@ -54,7 +54,7 @@ bool SpinHitController::execute(LiveActor* pActor) {
         }
     }
 
-    f32 val = _C;
+    f32 val = _0C;
     TVec3f v12(pActor->mGravity);
     v12 *= val;
     pActor->mVelocity.add(v12);

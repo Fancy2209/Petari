@@ -26,7 +26,7 @@ CollisionShadow::~CollisionShadow() {
 }
 
 void CollisionShadow::setMode(u32 mode) {
-    if (_C == mode) {
+    if (_0C == mode) {
         return;
     }
 
@@ -45,7 +45,7 @@ void CollisionShadow::setMode(u32 mode) {
         break;
     }
 
-    _C = mode;
+    _0C = mode;
 }
 
 CollisionShadow::CollisionShadow(f32 radius, f32 length) : NameObj("投影シャドウ") {
@@ -79,7 +79,7 @@ CollisionShadow::CollisionShadow(f32 radius, f32 length) : NameObj("投影シャ
     _10 = radius;
     _20 = length;
     _54 = 0;
-    _C = 255;
+    _0C = 255;
     setMode(0);
     initCaptureTex();
     _58 = 128;
@@ -130,7 +130,7 @@ void CollisionShadow::create(const TVec3f& rPosition, const TVec3f& rDirection, 
     }
 
     _2F0 = rPosition;
-    if (_C == 3) {
+    if (_0C == 3) {
         return;
     }
 
@@ -372,7 +372,7 @@ void CollisionShadow::calcView(J3DModelX* pModel, u32 view, J3DModelX* pReferenc
     const TVec3f& rDirection = _24;
     _304 = 0;
     _306 = 1;
-    if (_C == 3) {
+    if (_0C == 3) {
         Mtx matrix;
         PSMTXCopy(pReference->getBaseTRMtx(), matrix);
         if (pReference != nullptr) {
@@ -387,7 +387,7 @@ void CollisionShadow::calcView(J3DModelX* pModel, u32 view, J3DModelX* pReferenc
         }
     }
 
-    if (_C == 2) {
+    if (_0C == 2) {
         doSortPolygons();
     }
 }
@@ -397,7 +397,7 @@ void CollisionShadow::drawAndCaptureTex(J3DModelX* pModel, const TVec3f& rPositi
         return;
     }
 
-    if (_C == 3) {
+    if (_0C == 3) {
         _340 = pModel;
         return;
     }
@@ -495,7 +495,7 @@ void CollisionShadow::drawVolumeBox(const TVec3f& rPosition, const TVec3f& rDept
 void CollisionShadow::draw() const {
     MR::loadViewMtx();
     MR::loadProjectionMtx();
-    switch (_C) {
+    switch (_0C) {
     case 0:
         draw1();
         break;

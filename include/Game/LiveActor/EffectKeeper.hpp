@@ -56,7 +56,7 @@ public:
     /* 0x00 */ const char* _0;
     /* 0x04 */ ResourceHolder* _4;  // mResourceHolder
     /* 0x08 */ const char* _8;      // mResourceName
-    /* 0x0C */ MR::Vector< MR::AssignableArray< MultiEmitter* > > _C;
+    /* 0x0C */ MR::Vector< MR::AssignableArray< MultiEmitter* > > _0C;
     /* 0x18 */ HashSortTable* _18;
     /* 0x1C */ u32 _1C;
     /* 0x20 */ SyncBckEffectChecker* _20;

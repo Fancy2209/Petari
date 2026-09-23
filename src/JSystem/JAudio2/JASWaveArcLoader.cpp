@@ -77,7 +77,7 @@ void JASWaveArc::loadToAramCallback(void* this_) {
         return;
     }
     wavArc->_5A--;
-    if (wavArc->loadSetup(tmp->_C)) {
+    if (wavArc->loadSetup(tmp->_0C)) {
         wavArc->onLoadDone();
     }
 }
@@ -90,7 +90,7 @@ bool JASWaveArc::sendLoadCmd() {
     commandInfo.mWavArc = this;
     commandInfo.mEntryNum = mEntryNum;
     commandInfo.mBase = (uintptr_t)mHeap.getBase();
-    commandInfo._C = ++_58;
+    commandInfo._0C = ++_58;
 
     _5A++;
 

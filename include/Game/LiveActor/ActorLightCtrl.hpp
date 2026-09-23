@@ -26,7 +26,7 @@ public:
     /* 0x00 */ const LiveActor* mActor;
     /* 0x04 */ s32 _4;
     /* 0x08 */ DrawBuffer* _8;
-    /* 0x0C */ u8 _C;
+    /* 0x0C */ u8 _0C;
     /* 0x10 */ AreaLightInfo* mAreaLightInf;
     /* 0x14 */ ZoneLightID mLightID;
     /* 0x1C */ const ActorLightInfo* _1C;

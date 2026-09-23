@@ -134,7 +134,7 @@ bool Mario::checkGroundOnSlope() {
     TVec3f position(mGroundPos);
     if (_10._22) {
         _10._22 = false;
-        _1C._C = true;
+        _1C._0C = true;
     } else if ((mMovementStates._23 || mTargetWalkSpeedIndex) && getPlayerMode() != PlayerMode_Teresa) {
         if (MR::abs((position - mPosition).dot(down)) < distance) {
             TVec3f offset(position - mPosition);

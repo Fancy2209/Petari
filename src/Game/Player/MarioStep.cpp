@@ -63,7 +63,7 @@ void Mario::checkStep() {
         return;
     }
 
-    if (mDrawStates._C) {
+    if (mDrawStates._0C) {
         return;
     }
 

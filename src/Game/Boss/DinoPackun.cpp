@@ -268,7 +268,7 @@ bool DinoPackun::isHitReaction(s32 a1) const {
 }
 
 bool DinoPackun::hitScaleJoint(TPos3f* pA1, const JointControllerInfo& rA2) {
-    TVec3f v5(_B8->_C);
+    TVec3f v5(_B8->_0C);
     TVec3f v4;
     v4.x = v5.y;
     v4.y = v5.z;

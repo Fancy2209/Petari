@@ -41,12 +41,12 @@ namespace {
 };  // namespace
 
 EffectKeeper::EffectKeeper(const char* pParam1, ResourceHolder* pParam2, int param3, const char* pParam4)
-    : _0(pParam1), _4(pParam2), _8(pParam4), _C(), _18(), _1C(), _20(), mBinder(), _28(), _2C(), _30() {
+    : _0(pParam1), _4(pParam2), _8(pParam4), _0C(), _18(), _1C(), _20(), mBinder(), _28(), _2C(), _30() {
     if (_8 == nullptr && _4 != nullptr) {
         _8 = _4->getModelName();
     }
 
-    _C.init(MR::Effect::getAutoEffectNum(_8) + param3);
+    _0C.init(MR::Effect::getAutoEffectNum(_8) + param3);
 }
 
 void EffectKeeper::init(LiveActor* pActor) {
@@ -149,11 +149,11 @@ void EffectKeeper::forceDeleteEmitter(const char* pParam1) {
 }
 
 void EffectKeeper::deleteEmitterAll() {
-    std::for_each(_C.begin(), _C.end(), std::mem_func(&MultiEmitter::deleteEmitter));
+    std::for_each(_0C.begin(), _0C.end(), std::mem_func(&MultiEmitter::deleteEmitter));
 }
 
 void EffectKeeper::forceDeleteEmitterAll() {
-    std::for_each(_C.begin(), _C.end(), std::mem_func(&MultiEmitter::forceDeleteEmitter));
+    std::for_each(_0C.begin(), _0C.end(), std::mem_func(&MultiEmitter::forceDeleteEmitter));
 }
 
 MultiEmitter* EffectKeeper::getEmitter(const char* pParam1) const {
@@ -180,7 +180,7 @@ MultiEmitter* EffectKeeper::getEmitter(const char* pParam1) const {
 
     u16 name = MR::getHashCode(pParam1);
 
-    for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+    for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
         if ((*it)->isEqualName(name)) {
             return *it;
         }
@@ -190,7 +190,7 @@ MultiEmitter* EffectKeeper::getEmitter(const char* pParam1) const {
 }
 
 MultiEmitter* EffectKeeper::getEmitter(s32 index) const {
-    return _C[index];
+    return _0C[index];
 }
 
 void EffectKeeper::changeEffectName(const char* pParam1, const char* pName) {
@@ -213,7 +213,7 @@ void EffectKeeper::updateSyncBckEffect() {
 
     _20->updateBefore();
 
-    for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+    for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
         syncEffectBck(*it);
     }
 
@@ -259,7 +259,7 @@ void EffectKeeper::updateAttributeEffect() {
     }
 
     if (_2C != _28) {
-        for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+        for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
             if (!(*it)->isValid()) {
                 continue;
             }
@@ -285,15 +285,15 @@ void EffectKeeper::updateAttributeEffect() {
 }
 
 void EffectKeeper::stopEmitterOnClipped() {
-    std::for_each(_C.begin(), _C.end(), std::mem_func(&MultiEmitter::stopEmitterOnClipped));
+    std::for_each(_0C.begin(), _0C.end(), std::mem_func(&MultiEmitter::stopEmitterOnClipped));
 }
 
 void EffectKeeper::playEmitterOffClipped() {
-    std::for_each(_C.begin(), _C.end(), std::mem_func(&MultiEmitter::playEmitterOffClipped));
+    std::for_each(_0C.begin(), _0C.end(), std::mem_func(&MultiEmitter::playEmitterOffClipped));
 }
 
 void EffectKeeper::clear() {
-    std::for_each(_C.begin(), _C.end(), std::mem_func(&MultiEmitter::playCalcAndDeleteForeverEmitter));
+    std::for_each(_0C.begin(), _0C.end(), std::mem_func(&MultiEmitter::playCalcAndDeleteForeverEmitter));
 }
 
 void EffectKeeper::changeBck() {
@@ -303,17 +303,17 @@ void EffectKeeper::changeBck() {
 }
 
 void EffectKeeper::onDraw() {
-    std::for_each(_C.begin(), _C.end(),
+    std::for_each(_0C.begin(), _0C.end(),
                   std::bind2nd(std::mem_func(&MultiEmitter::playDrawParticle), -1));
 }
 
 void EffectKeeper::offDraw() {
-    std::for_each(_C.begin(), _C.end(),
+    std::for_each(_0C.begin(), _0C.end(),
                   std::bind2nd(std::mem_func(&MultiEmitter::stopDrawParticle), -1));
 }
 
 void EffectKeeper::enableSort() {
-    _18 = new HashSortTable(_C.capacity());
+    _18 = new HashSortTable(_0C.capacity());
 }
 
 void EffectKeeper::finalizeSort() {
@@ -323,7 +323,7 @@ void EffectKeeper::finalizeSort() {
 bool EffectKeeper::isRegisteredEmitter(const char* pParam1) const {
     u16 name = MR::getHashCode(pParam1);
 
-    for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+    for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
         if ((*it)->isEqualName(name)) {
             return true;
         }
@@ -333,7 +333,7 @@ bool EffectKeeper::isRegisteredEmitter(const char* pParam1) const {
 }
 
 void EffectKeeper::checkExistenceAttributeEffect() {
-    for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+    for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
         if (MR::isEqualSubString(::getMultiEmitterName(*it), ::cAttributeEffectTag)) {
             _30 = true;
             break;
@@ -354,7 +354,7 @@ void EffectKeeper::registMultiEmitter(MultiEmitter* pEmitter, const char* pParam
         }
     }
 
-    _C.push_back(pEmitter);
+    _0C.push_back(pEmitter);
 }
 
 namespace {
@@ -391,7 +391,7 @@ bool EffectKeeper::isTypeAttributeEffect(const char* pParam1) const {
     char buf[256];
     snprintf(buf, sizeof(buf), "%s%s", pParam1, ::cAttributeEffectTag);
 
-    for (MultiEmitter* const* it = _C.begin(); it != _C.end(); it++) {
+    for (MultiEmitter* const* it = _0C.begin(); it != _0C.end(); it++) {
         if ((*it)->_28 == nullptr) {
             continue;
         }

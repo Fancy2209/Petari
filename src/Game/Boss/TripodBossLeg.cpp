@@ -613,7 +613,7 @@ bool TripodBossLeg::bindEndPosition() {
     mJoint->getEndJointPosition(&endJointPos);
     HitResult hitResult;
     if (mMoveArea->collideSphere(&hitResult, v6, 0.0f, endJointPos - v6)) {
-        mForceEndPoint = hitResult._C;
+        mForceEndPoint = hitResult._0C;
         if (_234.dot(hitResult._18) < 0.0f) {
             _234.orthogonalize2(hitResult._18);
         }

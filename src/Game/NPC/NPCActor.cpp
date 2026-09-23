@@ -204,7 +204,7 @@ NPCActor::NPCActor(const char* pName) : LiveActor(pName) {
     mParam._1 = 1;
     mParam._4 = 2000.0f;
     mParam._8 = 4.0f;
-    mParam._C = 0.0f;
+    mParam._0C = 0.0f;
     mParam._10 = 0.0f;
     mParam._14 = nullptr;
     mParam._18 = nullptr;
@@ -573,7 +573,7 @@ bool NPCActor::initTalkCtrlDirect(const JMapInfoIter& rIter, const char* pChar, 
 }
 
 bool NPCActor::calcJointScale(TPos3f* pPos, const JointControllerInfo&) {
-    MR::preScaleMtx(pPos->toMtxPtr(), mScaleController->_C);
+    MR::preScaleMtx(pPos->toMtxPtr(), mScaleController->_0C);
     return true;
 }
 
@@ -747,8 +747,8 @@ bool NPCActor::isScaleAnim() const {
         return false;
     }
 
-    return !(MR::isNearZero(1.0f - scaleController->_C.x, 0.2f) && MR::isNearZero(1.0f - scaleController->_C.y, 0.2f) &&
-             MR::isNearZero(1.0f - scaleController->_C.z, 0.2f));
+    return !(MR::isNearZero(1.0f - scaleController->_0C.x, 0.2f) && MR::isNearZero(1.0f - scaleController->_0C.y, 0.2f) &&
+             MR::isNearZero(1.0f - scaleController->_0C.z, 0.2f));
 }
 
 bool NPCActor::isPointingSe() const {

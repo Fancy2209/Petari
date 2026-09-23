@@ -300,7 +300,7 @@ void CrystalCage::exeWait() {
         if (mRumbleCalc->_4 < mRumbleCalc->_8) {
             mRumbleCalc->calc();
             TVec3f v9;
-            v9.scale(mRumbleCalc->_C.y, _D0);
+            v9.scale(mRumbleCalc->_0C.y, _D0);
             mPosition.add(_DC, v9);
         } else {
             mPosition.set(_DC);

@@ -553,7 +553,7 @@ void Coin::noticeGetCoin() {
     } else {
         MR::incCoin(1);
         MR::startSystemSE("SE_SY_COIN");
-        mHostInfo->_C++;
+        mHostInfo->_0C++;
     }
 }
 

@@ -48,7 +48,7 @@ public:
     /* 0x00 */ NameObjHolder* mObjHolder;
     /* 0x04 */ ParticleResourceHolder* mParticleResHolder;
     /* 0x08 */ GXRenderModeObj* mRenderModeObj;
-    /* 0x0C */ void* _C;
+    /* 0x0C */ void* _0C;
     /* 0x10 */ void* _10;
     /* 0x14 */ void* _14;
     /* 0x18 */ CaptureScreenDirector* mCaptureScreenDirector;

@@ -32,7 +32,7 @@ public:
     bool isExist(const char*) const;
     bool getBitOrNone(const char*, u8) const;
 
-    /* 0x0C */ MatrixMap* _C;
+    /* 0x0C */ MatrixMap* _0C;
     /* 0x10 */ MatrixSelectList* _10;
     /* 0x14 */ HashSortTable* _14;
     /* 0x18 */ s32 _18;
@@ -48,6 +48,6 @@ public:
 
     bool getValue(const char*, f32*) const;
 
-    /* 0x0C */ MatrixValueTable* _C;
+    /* 0x0C */ MatrixValueTable* _0C;
     /* 0x10 */ HashSortTable* _10;
 };

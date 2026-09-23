@@ -13,7 +13,7 @@ namespace {
                                       {"WipeMap", 5, true, 1},     {"SystemWipe", 20, false, 1}, {"Unused", 16, false, 0}};
 };  // namespace
 
-CaptureScreenDirector::CaptureScreenDirector() : NameObj("画面キャプチャ"), _C(nullptr), mTimingType("Indirect"), mTexture(nullptr), _18(false) {
+CaptureScreenDirector::CaptureScreenDirector() : NameObj("画面キャプチャ"), _0C(nullptr), mTimingType("Indirect"), mTexture(nullptr), _18(false) {
     MR::CurrentHeapRestorer heapRestorer(MR::getStationedHeapGDDR3());
 
     mTexture = new JUTTexture(JUTVideo::getManager()->getRenderMode()->fbWidth, JUTVideo::getManager()->getRenderMode()->efbHeight, GX_TF_RGB565);
@@ -22,7 +22,7 @@ CaptureScreenDirector::CaptureScreenDirector() : NameObj("画面キャプチャ"
 void CaptureScreenDirector::captureIfAllow(const char* pName) {
     const TimingInfo* pInfo = findFromName(pName);
 
-    if (getUsingTiming() == pInfo && (getUsingTiming()->_C == 0 || _18)) {
+    if (getUsingTiming() == pInfo && (getUsingTiming()->_0C == 0 || _18)) {
         capture();
 
         _18 = false;
@@ -41,7 +41,7 @@ void CaptureScreenDirector::requestCaptureTiming(const char* pName) {
     const TimingInfo* pInfo = findFromName(pName);
 
     if (getCurrentTiming() == nullptr || getCurrentTiming()->mTiming < pInfo->mTiming) {
-        _C = pName;
+        _0C = pName;
         _18 = true;
     }
 }
@@ -51,7 +51,7 @@ void CaptureScreenDirector::invalidateCaptureTiming(const char* pName) {
 
     if (pInfo != nullptr) {
         if (strcmp(pInfo->mName, pName) == 0) {
-            _C = nullptr;
+            _0C = nullptr;
         }
     }
 }
@@ -65,16 +65,16 @@ u8* CaptureScreenDirector::getTexImage() const {
 }
 
 const TimingInfo* CaptureScreenDirector::getUsingTiming() const {
-    if (_C != nullptr) {
-        return findFromName(_C);
+    if (_0C != nullptr) {
+        return findFromName(_0C);
     }
 
     return findFromName(mTimingType);
 }
 
 const TimingInfo* CaptureScreenDirector::getCurrentTiming() const {
-    if (_C != nullptr) {
-        return findFromName(_C);
+    if (_0C != nullptr) {
+        return findFromName(_0C);
     }
 
     return nullptr;

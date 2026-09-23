@@ -113,7 +113,7 @@ MessageData* MessageSystem::getSceneMessageData() {
 }
 
 MessageData::MessageData(const char* pArchiveName)
-    : mIDTable(nullptr), mInfoBlock(nullptr), mDataBlock(nullptr), _C(0), mFlowBlock(nullptr), _14(nullptr), _18(nullptr), mFLI1Block(nullptr) {
+    : mIDTable(nullptr), mInfoBlock(nullptr), mDataBlock(nullptr), _0C(0), mFlowBlock(nullptr), _14(nullptr), _18(nullptr), mFLI1Block(nullptr) {
     JKRArchive* pArchive = nullptr;
     JKRHeap* pHeap = nullptr;
     MR::getMountedArchiveAndHeap(pArchiveName, &pArchive, &pHeap);

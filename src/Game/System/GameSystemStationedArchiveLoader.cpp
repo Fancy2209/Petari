@@ -106,7 +106,7 @@ JKRExpHeap* PlayerHeapHolder::createHeap(u32 size, JKRHeap* pParent) {
     return JKRExpHeap::create(size, pParent, true);
 }
 
-GameSystemStationedArchiveLoader::GameSystemStationedArchiveLoader() : NerveExecutor("常駐データ初期化"), mHeapHolder(nullptr), _C(false) {
+GameSystemStationedArchiveLoader::GameSystemStationedArchiveLoader() : NerveExecutor("常駐データ初期化"), mHeapHolder(nullptr), _0C(false) {
     initNerve(GET_NERVE_ANON(GameSystemStationedArchiveLoaderLoadAudio1stWaveData));
 }
 
@@ -123,7 +123,7 @@ bool GameSystemStationedArchiveLoader::isPreparedReset() const {
 }
 
 void GameSystemStationedArchiveLoader::prepareReset() {
-    if (_C) {
+    if (_0C) {
         return;
     }
 
@@ -133,7 +133,7 @@ void GameSystemStationedArchiveLoader::prepareReset() {
         return;
     }
 
-    _C = true;
+    _0C = true;
 }
 
 void GameSystemStationedArchiveLoader::requestChangeArchivePlayer(bool isDataMario) {
@@ -244,11 +244,11 @@ void GameSystemStationedArchiveLoader::exeChangeArchivePlayer() {
 }
 
 bool GameSystemStationedArchiveLoader::trySuspend() {
-    if (!_C) {
+    if (!_0C) {
         return false;
     }
 
-    _C = true;
+    _0C = true;
 
     return true;
 }

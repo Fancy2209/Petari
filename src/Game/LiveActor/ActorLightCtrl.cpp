@@ -4,7 +4,7 @@
 #include "Game/System/DrawBuffer.hpp"
 #include "Game/Util.hpp"
 
-ActorLightCtrl::ActorLightCtrl(const LiveActor* pActor) : mActor(pActor), _4(-1), _8(), _C(), mAreaLightInf(), mLightID() {
+ActorLightCtrl::ActorLightCtrl(const LiveActor* pActor) : mActor(pActor), _4(-1), _8(), _0C(), mAreaLightInf(), mLightID() {
     _1C = 0;
     mInterpolate = -1;
     _54 = -1;
@@ -13,7 +13,7 @@ ActorLightCtrl::ActorLightCtrl(const LiveActor* pActor) : mActor(pActor), _4(-1)
 void ActorLightCtrl::init(int interpolate, bool /* unused */) {
     if (interpolate >= 0) {
         _4 = interpolate;
-        _C = 1;
+        _0C = 1;
     }
 
     initActorLightInfo();
@@ -50,7 +50,7 @@ void ActorLightCtrl::reset() {
 
     mAreaLightInf = LightFunction::getAreaLightInfo(mLightID);
 
-    if (!_C) {
+    if (!_0C) {
         _8->resetLightSort(this);
     }
 }
@@ -81,7 +81,7 @@ const ActorLightInfo* ActorLightCtrl::getActorLight() const {
 }
 
 void ActorLightCtrl::initActorLightInfo() {
-    if (_C) {
+    if (_0C) {
         return;
     }
 
@@ -109,7 +109,7 @@ void ActorLightCtrl::tryFindNewAreaLight(bool a2) {
             mInterpolate = LightFunction::getDefaultStepInterpolate();
         }
 
-        if (!_C) {
+        if (!_0C) {
             _8->resetLightSort(this);
         }
     }
@@ -125,7 +125,7 @@ void ActorLightCtrl::updateLightBlend() {
             _1C = nullptr;
             _54 = -1;
 
-            if (!_C) {
+            if (!_0C) {
                 _8->resetLightSort(this);
             }
 

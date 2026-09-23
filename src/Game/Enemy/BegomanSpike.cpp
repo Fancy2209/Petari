@@ -379,7 +379,7 @@ void BegomanSpike::exeTrampleReaction() {
     }
 
     updateRotateY(::sTrampleReactionRotate, ::sCommonAddRotate);
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hStopParam._0, ::hStopParam._4, ::hStopParam._8, ::hStopParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hStopParam._0, ::hStopParam._4, ::hStopParam._8, ::hStopParam._0C);
     reboundWallAndGround(&mFaceVec, false);
     if (MR::isGreaterStep(this, ::sTrampleReactionTime)) {
         setNerve(GET_NERVE(BegomanSpike, HostTypeNrvProvoke));
@@ -414,7 +414,7 @@ void BegomanSpike::exeBlow() {
 
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_SPARK");
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_ROT_MIDDLE");
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hHitReactionParam._0, ::hHitReactionParam._4, ::hHitReactionParam._8, ::hHitReactionParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hHitReactionParam._0, ::hHitReactionParam._4, ::hHitReactionParam._8, ::hHitReactionParam._0C);
     reboundWallAndGround(&mFaceVec, false);
     if (MR::isGreaterStep(this, ::sBlowFrame) && MR::isOnGround(this)) {
         MR::startBck(this, "Turn");

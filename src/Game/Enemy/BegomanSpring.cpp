@@ -405,7 +405,7 @@ void BegomanSpring::exeShake() {
 
     updateRotateY(::sShakeRotate, ::sCommonAddRotate);
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_SHAKE");
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hWaitParam._0, ::hWaitParam._4, ::hWaitParam._8, ::hWaitParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hWaitParam._0, ::hWaitParam._4, ::hWaitParam._8, ::hWaitParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     const TVec3f& rGravity = mGravity;
@@ -429,7 +429,7 @@ void BegomanSpring::exeTrample() {
     }
 
     updateRotateY(::sTrampleRotate, ::sCommonAddRotate);
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hStopParam._0, ::hStopParam._4, ::hStopParam._8, ::hStopParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hStopParam._0, ::hStopParam._4, ::hStopParam._8, ::hStopParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     const TVec3f& rGravity = mGravity;
@@ -473,7 +473,7 @@ void BegomanSpring::exeBlow() {
 
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_SPARK");
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_ROT_MIDDLE");
-    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hHitReactionParam._0, ::hHitReactionParam._4, ::hHitReactionParam._8, ::hHitReactionParam._C);
+    MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hHitReactionParam._0, ::hHitReactionParam._4, ::hHitReactionParam._8, ::hHitReactionParam._0C);
     reboundWallAndGround(&mFaceVec, false);
     if (MR::isStep(this, ::sBlowFrame - mHead->getHopEndBckFrameMax())) {
         MR::startBck(this, "HopEnd");

@@ -172,7 +172,7 @@ void NokonokoLand::calcAndSetBaseMtx() {
     quat.slerp(mTargetQuat, ::sPoseLerpRate);
     MR::setBaseTRMtx(this, quat);
     TVec3f scale;
-    scale.mul(mAnimScaleController->_C, mScale);
+    scale.mul(mAnimScaleController->_0C, mScale);
     MR::setBaseScale(this, scale);
 }
 

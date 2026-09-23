@@ -72,7 +72,7 @@ void TeresaWater::exeMove() {
         MR::startBck(this, "Wait");
     }
 
-    MR::moveAndTurnToTarget(this, &_94, *_B8, ::sMoveParam._0, ::sMoveParam._4, ::sMoveParam._8, ::sMoveParam._C);
+    MR::moveAndTurnToTarget(this, &_94, *_B8, ::sMoveParam._0, ::sMoveParam._4, ::sMoveParam._8, ::sMoveParam._0C);
     MR::attenuateVelocityExceptDirection(this, _94, ::sSideFriction);
 
     if (MR::isNear(this, *_B8, ::sTargetRadius)) {
@@ -135,7 +135,7 @@ void TeresaWater::calcAndSetBaseMtx() {
     MR::calcMtxFromGravityAndZAxis(&mtx, this, up, _94);
     MR::setBaseTRMtx(this, mtx);
 
-    MR::setBaseScale(this, _8C->_C * mScale);
+    MR::setBaseScale(this, _8C->_0C * mScale);
 }
 
 void TeresaWater::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

@@ -13,7 +13,7 @@ public:
     void setAudioEffectParam(s32);
     void playEffectSound(s32) NO_INLINE;
 
-    s32 _C;
+    s32 _0C;
     s32 _10;
     s32 _14;
 };

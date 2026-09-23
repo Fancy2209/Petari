@@ -9,7 +9,7 @@ WPadRumble** WPadRumble::sInstanceForCallback;
 void RumbleChannel::clear() {
     _0 = nullptr;
     _8 = 0;
-    _C = 0;
+    _0C = 0;
     _E = false;
     _4 = false;
     _10 = nullptr;
@@ -20,28 +20,28 @@ void RumbleChannel::update() {
         return;
     }
 
-    if (_C >= _0->mFrame) {
+    if (_0C >= _0->mFrame) {
         if (_4 == true) {
             _E = _0->mPattern[0];
-            _C = 1;
+            _0C = 1;
         } else {
             clear();
         }
     } else {
-        _E = _0->mPattern[_C];
-        _C++;
+        _E = _0->mPattern[_0C];
+        _0C++;
     }
 }
 
 void RumbleChannel::setPattern(const void* pParam1, const RumblePattern& rParam2, u32 param3, bool param4) {
     _8 = param3;
-    _C = 0;
+    _0C = 0;
     _0 = &rParam2;
     _10 = pParam1;
     _4 = param4;
 }
 
-WPadRumble::WPadRumble(WPad* pPad) : mPad(pPad), _8(), _C(1), _B0(), _B4(), _B8(), _BC() {
+WPadRumble::WPadRumble(WPad* pPad) : mPad(pPad), _8(), _0C(1), _B0(), _B4(), _B8(), _BC() {
     if (sInstanceForCallback == nullptr) {
         sInstanceForCallback = new WPadRumble*[MR::getWPadMaxCount()];
 
@@ -179,16 +179,16 @@ bool WPadRumble::setRumblePatternIfNotExist(const void* pParam1, const RumblePat
     }
 
     if (v2 != -1) {
-        _C = (_C + 1) & 0x7FFFFFFF;
+        _0C = (_0C + 1) & 0x7FFFFFFF;
 
-        mChannel[v2].setPattern(pParam1, rParam2, _C, param3);
+        mChannel[v2].setPattern(pParam1, rParam2, _0C, param3);
 
         return true;
     }
 
-    _C = (_C + 1) & 0x7FFFFFFF;
+    _0C = (_0C + 1) & 0x7FFFFFFF;
 
-    mChannel[v3].setPattern(pParam1, rParam2, _C, param3);
+    mChannel[v3].setPattern(pParam1, rParam2, _0C, param3);
 
     return true;
 }

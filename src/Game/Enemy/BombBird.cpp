@@ -344,7 +344,7 @@ void BombBird::exeDamage() {
     }
 
     const BombBirdParam* param = &::hFallParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
 
     if (MR::isActionEnd(this)) {
         setNerve(GET_NERVE(BombBird, HostTypeNrvFall));
@@ -358,7 +358,7 @@ void BombBird::exeFall() {
     }
 
     const BombBirdParam* param = &::hFallParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
 
     if (MR::isOnGround(this)) {
         MR::startAction(this, "SwoonStart");
@@ -377,7 +377,7 @@ void BombBird::exeSwoonStart() {
     }
 
     const BombBirdParam* param = &::hOnGroundParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
     TVec3f area(0, 0, 0);
     if (MR::calcVelocityAreaOrRailMoveOnGround(&area, this)) {
         mVelocity.set(area * ::hShiftingSandVel);
@@ -400,7 +400,7 @@ void BombBird::exeSwoon() {
         MR::vecKillElement(mVelocity, mGravity, &mVelocity);
     }
 
-    MR::moveAndTurnToPlayer(this, &mFront, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._C);
+    MR::moveAndTurnToPlayer(this, &mFront, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._0C);
     TVec3f area(0, 0, 0);
     if (MR::calcVelocityAreaOrRailMoveOnGround(&area, this)) {
         mVelocity.set(area * ::hShiftingSandVel);
@@ -423,7 +423,7 @@ void BombBird::exeSwoonEnd() {
     }
 
     const BombBirdParam* param = &::hOnGroundParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
 
     TVec3f area(0, 0, 0);
     if (MR::calcVelocityAreaOrRailMoveOnGround(&area, this)) {
@@ -456,7 +456,7 @@ void BombBird::exeTrample() {
     }
 
     const BombBirdParam* param = &::hOnGroundParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
 
     if (MR::isStep(this, 36)) {
         TVec3f pos(mPosition - mGravity * getSensor("body")->getRadius());
@@ -477,7 +477,7 @@ void BombBird::exeSinkDown() {
     MR::startLevelSound(this, "SE_EM_LV_SINK");
     MR::startLevelSound(this, "SE_EV_LV_BOMBBIRD_SINK");
     const BombBirdParam* param = &::hOnGroundParam;
-    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, param->_0, param->_4, param->_8, param->_0C);
 
     if (MR::isActionEnd(this)) {
         MR::emitEffect(this, "SinkDeath");
@@ -564,7 +564,7 @@ void BombBird::calcAndSetBaseMtx() {
     TPos3f mtx;
     MR::calcMtxFromGravityAndZAxis(&mtx, this, mGravity, mFront);
     MR::setBaseTRMtx(this, mtx);
-    TVec3f scale(mScaleController->_C * mScale);
+    TVec3f scale(mScaleController->_0C * mScale);
     MR::setBaseScale(this, scale);
     if (mHoldBomb && mHeldBomb) {
         mFixedPos->calc();

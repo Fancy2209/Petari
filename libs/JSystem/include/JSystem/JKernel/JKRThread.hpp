@@ -21,7 +21,7 @@ public:
         u8 _0;
         u32 _4;
         u32 _8;
-        u32 _C;
+        u32 _0C;
         u32 _10;
     };
 
@@ -114,7 +114,7 @@ inline JKRThread::TLoad::TLoad() {
 inline void JKRThread::TLoad::clear() {
     _8 = 0;
     _4 = 0;
-    _C = 0;
+    _0C = 0;
 }
 
 class JKRThreadSwitch {

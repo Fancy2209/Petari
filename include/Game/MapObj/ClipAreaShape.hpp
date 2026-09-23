@@ -35,7 +35,7 @@ public:
     virtual void calcVolumeMatrix(TPos3f*, const TPos3f&, const TVec3f&) const;
 
     /* 0x08 */ f32 mRadius;
-    /* 0x0C */ s32 _C;
+    /* 0x0C */ s32 _0C;
 };
 
 class ClipAreaShapeCone : public ClipAreaShape {
@@ -45,6 +45,6 @@ public:
     virtual bool isInArea(const TVec3f&) const;
 
     /* 0x08 */ f32 _8;
-    /* 0x0C */ f32 _C;
+    /* 0x0C */ f32 _0C;
     /* 0x10 */ s32 _10;
 };

@@ -109,7 +109,7 @@ bool KoopaFunction::isKoopaSightPlayer(const Koopa* pKoopa, const MR::ActorSight
 }
 
 bool KoopaFunction::escapeKoopaFromPlayer(Koopa* pKoopa, const MR::ActorMoveParam& rMoveParam) {
-    MR::escapeFromPlayer(pKoopa, &pKoopa->mFront, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::escapeFromPlayer(pKoopa, &pKoopa->mFront, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     return MR::sendMsgEnemyAttackToBindedSensor(pKoopa, getKoopaMessageSensor(pKoopa));
 }
 
@@ -500,7 +500,7 @@ void KoopaFunction::tryRestartKoopa() {
 }
 
 bool KoopaFunction::moveAndTurnKoopaToPlayer(Koopa* pKoopa, const MR::ActorMoveParam& rMoveParam) {
-    MR::moveAndTurnToPlayer(pKoopa, &pKoopa->mFront, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._C);
+    MR::moveAndTurnToPlayer(pKoopa, &pKoopa->mFront, rMoveParam._0, rMoveParam._4, rMoveParam._8, rMoveParam._0C);
     return MR::sendMsgEnemyAttackToBindedSensor(pKoopa, getKoopaMessageSensor(pKoopa));
 }
 

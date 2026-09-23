@@ -168,7 +168,7 @@ void PlayerPoseSetterInWater::update() {
     f32 pitching = MR::cos((_1C / 90.0f) * TWO_PI);
 
     TPos3f syatiMtx;
-    syatiMtx.setQuat(_C);
+    syatiMtx.setQuat(_0C);
     syatiMtx.setTrans(_0);
 
     TVec3f offsetPos;
@@ -463,7 +463,7 @@ void Syati::initRings(const JMapInfoIter& rIter) {
 }
 
 PlayerPoseSetterInWater::PlayerPoseSetterInWater(const TVec3f& rVec, Syati* pSyati)
-    : _0(rVec), _C(pSyati->_8C), _1C(), _20(&pSyati->mMarioMoveLocalOffsetVec) {
+    : _0(rVec), _0C(pSyati->_8C), _1C(), _20(&pSyati->mMarioMoveLocalOffsetVec) {
 }
 
 void Syati::initPose() {
