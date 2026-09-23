@@ -23,7 +23,7 @@ FootPrint::FootPrint(const char* pName, s32 amount) : NameObj(pName) {
 }
 
 void FootPrint::initMember(s32 amount, s32 drawType) {
-    _C = nullptr;
+    _0C = nullptr;
     mPrints = nullptr;
     mPrintMaxNum = 0;
     mPrintNum = 0;
@@ -51,7 +51,7 @@ FootPrintInfo::FootPrintInfo() {
 
 void FootPrint::setTexture(ResTIMG* img) {
     MR::CurrentHeapRestorer heapRestorer = MR::CurrentHeapRestorer(reinterpret_cast< JKRHeap* >(MR::getSceneHeapGDDR3()));
-    _C = new JUTTexture(img, 0);
+    _0C = new JUTTexture(img, 0);
 }
 
 void FootPrint::movement() {
@@ -98,7 +98,7 @@ bool FootPrint::addPrint(const TVec3f& rPos, const TVec3f& rArg2, const TVec3f& 
 
     mLastPrintPos = rPos;
     mPrints[mRotatingPrintIndex].mPos = rPos;
-    mPrints[mRotatingPrintIndex]._C = rArg2;
+    mPrints[mRotatingPrintIndex]._0C = rArg2;
     mPrints[mRotatingPrintIndex]._18 = rArg3;
     mPrints[mRotatingPrintIndex].mTimeLeft = ::sFadeOutTime;
     mPrints[mRotatingPrintIndex].mIsValid = true;
@@ -125,7 +125,7 @@ void FootPrint::draw() const {
 
     TDDraw::setup(2, 1, 0);
     GXSetZMode(GX_TRUE, GX_LEQUAL, GX_FALSE);
-    _C->load(GX_TEXMAP0);
+    _0C->load(GX_TEXMAP0);
 
     Color8 color(0, 0, 0, 255);
 
@@ -137,7 +137,7 @@ void FootPrint::draw() const {
         color.a = 255.0f * MR::normalize(mPrints[i].mTimeLeft, 0.0f, ::sFadeOutTime);
         GXSetTevColor(GX_TEVREG0, color);
 
-        TVec3f cross = mPrints[i]._C.cross(mPrints[i]._18);
+        TVec3f cross = mPrints[i]._0C.cross(mPrints[i]._18);
         TVec3f v1;
         if ((i & 1) != 0) {
             v1 = mPrints[i].mPos + cross * _2C;
@@ -147,7 +147,7 @@ void FootPrint::draw() const {
 
         v1 += mPrints[i]._18 * 5.0f;
 
-        TDDraw::drawTexture3D(v1, mPrints[i]._18, mPrints[i]._C, _34, _30, nullptr, mPrints[i]._29 != false, false);
+        TDDraw::drawTexture3D(v1, mPrints[i]._18, mPrints[i]._0C, _34, _30, nullptr, mPrints[i]._29 != false, false);
     }
 
     TDDraw::close();

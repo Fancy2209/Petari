@@ -33,11 +33,11 @@ void DemoCameraKeeper::initCast(LiveActor* pActor, const JMapInfoIter& rIter) {
 }
 
 void DemoCameraKeeper::start() {
-    _C = 0;
+    _0C = 0;
 }
 
 void DemoCameraKeeper::update() {
-    if (_C < 0 || _4 <= _C) {
+    if (_0C < 0 || _4 <= _0C) {
         return;
     }
 
@@ -49,7 +49,7 @@ void DemoCameraKeeper::update() {
 
 void DemoCameraKeeper::end() {
     endCurrentCamera();
-    _C = -1;
+    _0C = -1;
 }
 
 void DemoCameraKeeper::initActorCamera(DemoCameraInfo* pInfo, const JMapInfoIter& rIter) {
@@ -79,7 +79,7 @@ void DemoCameraKeeper::executeType(const DemoCameraInfo* pInfo) {
     }
 
     executeLast(_10);
-    _C++;
+    _0C++;
 }
 
 void DemoCameraKeeper::executeFirst(const DemoCameraInfo* pInfo) {
@@ -117,7 +117,7 @@ void DemoCameraKeeper::endCurrentCamera() {
     _10 = nullptr;
 }
 
-DemoCameraKeeper::DemoCameraKeeper(DemoExecutor* pExecutor, const JMapInfoIter& rIter) : mExecutor(pExecutor), _4(), _8(), _C(-1), _10() {
+DemoCameraKeeper::DemoCameraKeeper(DemoExecutor* pExecutor, const JMapInfoIter& rIter) : mExecutor(pExecutor), _4(), _8(), _0C(-1), _10() {
     JMapInfo* map = nullptr;
     _4 = DemoFunction::createSheetParser(mExecutor, sSheetName, &map);
 

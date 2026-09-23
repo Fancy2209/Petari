@@ -14,7 +14,7 @@ public:
 
     bool hitCheck(const TVec3f& rPos, f32 radius, TVec3f* pPoint, TVec3f* pNormal);
 
-    /* 0x0C */ u32 _C;
+    /* 0x0C */ u32 _0C;
     /* 0x10 */ f32 _10;
     /* 0x14 */ TVec3f _14;
     /* 0x20 */ s32 _20;

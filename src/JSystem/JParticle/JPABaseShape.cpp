@@ -608,7 +608,7 @@ static void basePlaneTypeX(MtxPtr param_0, f32 param_1, f32 param_2) {
 }
 
 typedef void (*dirTypeFunc)(JPAEmitterWorkData const*, JPABaseParticle const*, JGeometry::TVec3< f32 >*);
-#ifndef PLATFORM_PS3
+#ifdef __MWERKS__
 __declspec(force_export) 
 #endif
 static dirTypeFunc p_direction[5] = {

@@ -5,14 +5,14 @@
 #include "Game/Util/LiveActorUtil.hpp"
 
 ClippingInfoGroup::ClippingInfoGroup(const char* pGroupName, int count) : NameObj(pGroupName) {
-    _C = count;
+    _0C = count;
     _10 = 0;
     _14 = 0;
     _18 = 0;
     _1C = 0;
     _14 = new ClippingActorInfo*[count];
 
-    for (s32 i = 0; i < _C; i++) {
+    for (s32 i = 0; i < _0C; i++) {
         _14[i] = 0;
     }
 }

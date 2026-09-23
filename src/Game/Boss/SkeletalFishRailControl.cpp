@@ -44,15 +44,15 @@ void SkeletalFishRailControl::update() {
         if (v3 >= 0.0f) {
             f32 coord = MR::calcNearestRailCoord(_8, MR::getRailPointPosEnd(_4));
             _10 = coord;
-            _C = (_10 - v3);
-            MR::setRailCoord(_8, _C);
+            _0C = (_10 - v3);
+            MR::setRailCoord(_8, _0C);
             _0 = 1;
         }
         break;
     }
 
     case 1:
-        if (_C - _10 >= MR::getRailTotalLength(_8)) {
+        if (_0C - _10 >= MR::getRailTotalLength(_8)) {
             _0 = 2;
         }
         break;
@@ -67,9 +67,9 @@ void SkeletalFishRailControl::update() {
         MR::moveRailRider(_4);
         break;
     case 1:
-        _C += _14;
+        _0C += _14;
         MR::getRailTotalLength(_8);
-        MR::setRailCoord(_8, _C);
+        MR::setRailCoord(_8, _0C);
         break;
     case 2:
         if (MR::getRailCoord(_8) + MR::getRailCoordSpeed(_8) > MR::getRailTotalLength(_8)) {
@@ -90,7 +90,7 @@ void SkeletalFishRailControl::getRailInfo(SkeletalFishRailInfo* pOutInfo, f32 a2
         break;
     }
     case 1: {
-        f32 dist = _C - a2;
+        f32 dist = _0C - a2;
         if (dist < _10) {
             f32 railLength = MR::getRailTotalLength(_4);
             f32 diff = _10 - dist;

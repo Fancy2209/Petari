@@ -359,7 +359,7 @@ void StarPiece::exeHop() {
 
     if (MR::isGreaterStep(this, 30)) {
         if (mHostInfo != nullptr) {
-            mHostInfo->_C++;
+            mHostInfo->_0C++;
         }
         kill();
     }
@@ -609,7 +609,7 @@ void StarPiece::exeToPlayerEnd() {
 
         MR::deleteEffect(this, "StarPieceGetBlur");
         if (mHostInfo != nullptr) {
-            mHostInfo->_C++;
+            mHostInfo->_0C++;
             mHostInfo->_8--;
             mHostInfo = nullptr;
         }

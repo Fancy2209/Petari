@@ -47,11 +47,11 @@ u32 Fifo::getLoopIdx(u32 idx) {
 }
 
 u32 Fifo::getCount() {
-    if (mLoopIdx <= _C) {
-        return _C - mLoopIdx;
+    if (mLoopIdx <= _0C) {
+        return _0C - mLoopIdx;
     }
 
-    return _C + mCount + 1 - mLoopIdx;
+    return _0C + mCount + 1 - mLoopIdx;
 }
 
 void DrawSyncManager::end() {

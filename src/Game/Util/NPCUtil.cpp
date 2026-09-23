@@ -349,7 +349,7 @@ namespace MR {
     bool tryStartTalkAction(NPCActor* pActor) {
         const char* pAction;
         if (isTalkTalking(pActor->mMsgCtrl)) {
-            if (pActor->mParam._1 && !pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._C, pActor->mParam._10)) {
+            if (pActor->mParam._1 && !pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._0C, pActor->mParam._10)) {
                 pAction = pActor->mParam._20;
             } else {
                 pAction = pActor->mParam._1C;
@@ -374,7 +374,7 @@ namespace MR {
         bool movingTalk = false;
         const char* pAction;
         if (isTalkTalking(pTalk) && !isShortTalk(pTalk)) {
-            if (pActor->mParam._1 && !pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._C, pActor->mParam._10)) {
+            if (pActor->mParam._1 && !pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._0C, pActor->mParam._10)) {
                 pAction = pActor->mParam._20;
             } else {
                 pAction = pActor->mParam._1C;
@@ -411,7 +411,7 @@ namespace MR {
         const char* pAction;
         if (isNearPlayer(pActor, pActor->mParam._4)) {
             if (pActor->mParam._0) {
-                if (pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._C, pActor->mParam._10)) {
+                if (pActor->turnToPlayer(pActor->mParam._8, pActor->mParam._0C, pActor->mParam._10)) {
                     pAction = pActor->mParam._14;
                 } else {
                     pAction = pActor->mParam._18;
@@ -707,7 +707,7 @@ void TakeOutStar::exeDemo() {
 void TakeOutStar::exeTerm() {
 }
 
-FadeStarter::FadeStarter(NPCActor* pActor, s32 a2) : NerveExecutor("フェード開始制御"), mActor(pActor), _C(), _10(a2) {
+FadeStarter::FadeStarter(NPCActor* pActor, s32 a2) : NerveExecutor("フェード開始制御"), mActor(pActor), _0C(), _10(a2) {
     initNerve(GET_NERVE(FadeStarter, FadeStarterNrvFade));
 }
 
@@ -724,7 +724,7 @@ bool FadeStarter::update() {
 void FadeStarter::exeFade() {
     if (MR::isFirstStep(this)) {
         if (!mActor->isEmptyNerve()) {
-            _C = mActor->popNerve();
+            _0C = mActor->popNerve();
         }
 
         mActor->tryPushNullNerve();
@@ -737,9 +737,9 @@ void FadeStarter::exeFade() {
 
     mActor->popNerve();
 
-    if (_C != nullptr) {
-        mActor->pushNerve(_C);
-        _C = nullptr;
+    if (_0C != nullptr) {
+        mActor->pushNerve(_0C);
+        _0C = nullptr;
     }
 
     MR::openWipeFade(_10);

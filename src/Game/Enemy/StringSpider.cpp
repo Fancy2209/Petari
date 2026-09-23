@@ -704,7 +704,7 @@ void StringSpider::calcAndSetBaseMtx() {
     v14.concat(v13, v14);
     v14.setTrans(mPosition);
     MR::setBaseTRMtx(this, v14);
-    MR::setBaseScale(this, mScaleController->_C * mScale);
+    MR::setBaseScale(this, mScaleController->_0C * mScale);
     MR::copyJointPos(this, "Root", &mString->_9C);
     mString->calcAndSetBaseMtx();
 }

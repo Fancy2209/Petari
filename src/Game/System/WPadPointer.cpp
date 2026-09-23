@@ -21,12 +21,12 @@ WPadPointer::WPadPointer(const WPad* pPad) {
     _45 = 0;
     mPointingPosArray = new TVec2f[0x78];
     mHorizonArray = new TVec2f[0x78];
-    _C = 120;
+    _0C = 120;
     reset();
 }
 
 void WPadPointer::reset() {
-    for (s32 i = 0; i < _C; i++) {
+    for (s32 i = 0; i < _0C; i++) {
         TVec2f* cur = &mPointingPosArray[i];
         cur->x = 0.0f;
         cur->y = 0.0f;
@@ -61,8 +61,8 @@ void WPadPointer::setSensorBarLevel(f32 lvl) {
         s32 validCount = mPad->getValidStatusCount();
         mEnablePastCount = 0;
 
-        if (_C > validCount) {
-            validCount = _C;
+        if (_0C > validCount) {
+            validCount = _0C;
         }
 
         bool isAnyDPDValid = false;

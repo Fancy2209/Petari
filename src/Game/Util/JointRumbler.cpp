@@ -9,7 +9,7 @@
 #include <revolution/types.h>
 
 JointRumbler::JointRumbler(LiveActor* pActor, const char* pJointName, f32 a3, f32 a4, u32 a5, bool a6, s32 a7)
-    : mRumbleCalculator(), mJointTransform(), _8(a7), _C(), mModelScale(1.0f), mFlags() {
+    : mRumbleCalculator(), mJointTransform(), _8(a7), _0C(), mModelScale(1.0f), mFlags() {
     for (int i = 0; i < ARRAY_SIZE(_16); i++) {
         _16[i] = false;
     }
@@ -29,12 +29,12 @@ JointRumbler::JointRumbler(LiveActor* pActor, const char* pJointName, f32 a3, f3
 void JointRumbler::update() {
     f32 scale;
 
-    if (_C == 0) {
+    if (_0C == 0) {
         mRumbleCalculator->calc();
-        scale = mRumbleCalculator->_C.y;
+        scale = mRumbleCalculator->_0C.y;
     } else {
-        if (_C > 0) {
-            _C--;
+        if (_0C > 0) {
+            _0C--;
         }
 
         scale = 0.0f;
@@ -45,12 +45,12 @@ void JointRumbler::update() {
 
 void JointRumbler::start() {
     mRumbleCalculator->start(0);
-    _C = _8;
+    _0C = _8;
 }
 
 void JointRumbler::reset() {
     mRumbleCalculator->reset();
-    _C = -1;
+    _0C = -1;
     updateModelScale(1.0f);
 }
 

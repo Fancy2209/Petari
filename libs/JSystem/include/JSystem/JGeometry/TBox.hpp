@@ -175,7 +175,7 @@ namespace JGeometry {
     class TDirBox3 {
     public:
         JGeometry::TVec3< T > _0;
-        JGeometry::TVec3< T > _C;
+        JGeometry::TVec3< T > _0C;
         JGeometry::TVec3< T > _18;
         JGeometry::TVec3< T > _24;
         JGeometry::TVec3< T > _30;

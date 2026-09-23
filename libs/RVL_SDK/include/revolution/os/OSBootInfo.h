@@ -4,7 +4,7 @@
 #include "revolution/dvd.h"
 
 typedef struct OSBootInfo_s {
-    DVDDiskID DVDDiskID;
+    DVDDiskID dvdDiskID;
     u32 magic;
     u32 version;
     u32 memorySize;

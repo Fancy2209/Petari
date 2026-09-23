@@ -17,7 +17,7 @@ public:
     void startClippedAll();
     void endClippedAll();
 
-    /* 0x0C */ int _C;
+    /* 0x0C */ int _0C;
     /* 0x10 */ s32 _10;
     /* 0x14 */ ClippingActorInfo** _14;
     /* 0x18 */ JMapIdInfo* _18;

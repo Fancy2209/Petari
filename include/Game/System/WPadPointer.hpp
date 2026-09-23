@@ -19,7 +19,7 @@ public:
     const WPad* mPad;           // 0x0
     TVec2f* mPointingPosArray;  // 0x4
     TVec2f* mHorizonArray;      // 0x8
-    s32 _C;
+    s32 _0C;
     u32 _10;
     f32 mPosPlayRadius;    // 0x14
     f32 mPosSensitivity;   // 0x18

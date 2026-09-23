@@ -9,7 +9,7 @@ public:
 
     virtual void movement();
 
-    /* 0x0C */ f32 _C;
+    /* 0x0C */ f32 _0C;
     /* 0x10 */ f32 _10;
     /* 0x14 */ f32 _14;
     /* 0x18 */ TMtx34f mRotateYMtx;

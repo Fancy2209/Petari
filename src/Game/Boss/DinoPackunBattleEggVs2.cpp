@@ -116,7 +116,7 @@ void DinoPackunBattleEggVs2::exeTurn() {
 void DinoPackunBattleEggVs2::exeWalk() {
     if (MR::isFirstStep(this)) {
         MR::startBck(getHost(), "EggWalk");
-        getHost()->mTail->_C = 1.5f;
+        getHost()->mTail->_0C = 1.5f;
     }
 
     getHost()->adjustTailRootPosition(::sEggOutPosition, 1.0f);
@@ -150,7 +150,7 @@ void DinoPackunBattleEggVs2::exeWalk() {
 
 void DinoPackunBattleEggVs2::exeDamage() {
     if (MR::isFirstStep(this)) {
-        getHost()->mTail->_C = 1.0f;
+        getHost()->mTail->_0C = 1.0f;
     }
 
     if (MR::updateActorState(this, mStateDamage)) {

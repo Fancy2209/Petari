@@ -197,7 +197,7 @@ void OtaKing::control() {
 
 void OtaKing::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

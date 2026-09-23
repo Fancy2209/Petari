@@ -17,7 +17,7 @@ struct Param {
     const char* mObjName;  // 0x0
     f32 mClippingRadius;   // 0x4
     f32 mSensorRange;      // 0x8
-    f32 _C;
+    f32 _0C;
     f32 _10;
     f32 _14;
     bool mCanUseSwitch;  // 0x18
@@ -74,7 +74,7 @@ void Candlestand::init(const JMapInfoIter& rIter) {
     MapObjActorUtil::setupInitInfoSimpleMapObj(&info);
     info.setupHitSensor();
     TVec3f offs;
-    offs.y = ::getParam(mObjectName)->_C;
+    offs.y = ::getParam(mObjectName)->_0C;
     offs.x = 0.0f;
     offs.z = 0.0f;
     f32 sensorRange = ::getParam(mObjectName)->mSensorRange;

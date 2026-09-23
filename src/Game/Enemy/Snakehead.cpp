@@ -21,7 +21,7 @@ namespace {
         s32* _0;
         s32* _4;
         f32* _8;
-        const char* _C;
+        const char* _0C;
         const char* _10;
         const char* _14;
         const char* _18;
@@ -155,7 +155,7 @@ void Snakehead::calcAndSetBaseMtx() {
     TPos3f frontUp;
     MR::makeMtxFrontUpPos(&frontUp, endPntDir, -mGravity, mPosition);
     MR::setBaseTRMtx(this, frontUp);
-    TVec3f scale = mController->_C * mScale;
+    TVec3f scale = mController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 
@@ -280,7 +280,7 @@ void Snakehead::choiceAndStartBck(const char* pBck) {
     } else if (MR::isEqualString(pBck, "Back")) {
         v1 = ::sSnakeheadDataTable[_E8]._1C;
     } else if (MR::isEqualString(pBck, "Waylay")) {
-        v1 = ::sSnakeheadDataTable[_E8]._C;
+        v1 = ::sSnakeheadDataTable[_E8]._0C;
     } else if (MR::isEqualString(pBck, "Wait")) {
         v1 = ::sSnakeheadDataTable[_E8]._10;
     }

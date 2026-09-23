@@ -98,20 +98,20 @@ void BallRail::initRailPoints() {
 
     if (mNumPoints >= 2) {
         BallRailPoint* pnt = mRailPoints;
-        pnt->_C.cross(pnt->_24, v17);
-        MR::normalizeOrZero(&pnt->_C);
+        pnt->_0C.cross(pnt->_24, v17);
+        MR::normalizeOrZero(&pnt->_0C);
     }
 
     for (u32 i = 0; i < mNumPoints; i++) {
         BallRailPoint* pnt = &mRailPoints[i];
-        pnt->_C.cross(pnt->_24, v17);
-        MR::normalizeOrZero(&pnt->_C);
+        pnt->_0C.cross(pnt->_24, v17);
+        MR::normalizeOrZero(&pnt->_0C);
     }
 
     if (mNumPoints >= 2) {
         BallRailPoint* lastPnt = &mRailPoints[mNumPoints - 1];
-        lastPnt->_C.cross(lastPnt->_24, v17);
-        MR::normalizeOrZero(&lastPnt->_C);
+        lastPnt->_0C.cross(lastPnt->_24, v17);
+        MR::normalizeOrZero(&lastPnt->_0C);
     }
 }
 
@@ -196,7 +196,7 @@ void BallRail::exeNoBind() {
     }
 }
 
-BallRailPoint::BallRailPoint() : _0(0, 0, 0), _C(1, 0, 0), _18(0, 1, 0), _24(0, 0, 1) {
+BallRailPoint::BallRailPoint() : _0(0, 0, 0), _0C(1, 0, 0), _18(0, 1, 0), _24(0, 0, 1) {
 }
 
 BallRail::~BallRail() {

@@ -36,7 +36,7 @@ public:
     void createAndAddOtherArchives();
 
     /* 0x8 */ PlayerHeapHolder* mHeapHolder;
-    /* 0xc */ bool _C;
+    /* 0xc */ bool _0C;
 };
 
 class ConditionUsePlayerHeap : public StationedArchiveLoader::Condition {

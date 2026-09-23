@@ -19,7 +19,7 @@ public:
     Fifo** mArray;  // 0x0
     u32 mCount;     // 0x4
     u32 mLoopIdx;   // 0x8
-    u32 _C;
+    u32 _0C;
 };
 
 class DrawSyncManager {

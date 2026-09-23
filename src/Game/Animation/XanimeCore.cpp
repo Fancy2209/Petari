@@ -17,15 +17,15 @@ TVec3f (TVec3f::* XanimeCore_FORCE_EMIT())(const TVec3f&) const {
 void XanimeTrack::init() {
     _0 = nullptr;
     mWeight = 0.0f;
-    _C = 0;
+    _0C = 0;
     _8 = 0.0f;
 }
 
 XjointInfo::XjointInfo() {
     _0._0.set< f32 >(1.0f, 1.0f, 1.0f);
-    _0._C.x = 0.0f;
-    _0._C.y = 0.0f;
-    _0._C.z = 0.0f;
+    _0._0C.x = 0.0f;
+    _0._0C.y = 0.0f;
+    _0._0C.z = 0.0f;
     _0.mRotation.z = 0.0f;
     _0.mRotation.y = 0.0f;
     _0.mRotation.x = 0.0f;
@@ -110,7 +110,7 @@ void XanimeCore::initMember(u32 trackCount) {
     _28 = 0;
     _29 = 0;
     _6 = 0;
-    _C = 0;
+    _0C = 0;
     mTrackList = new XanimeTrack[trackCount];
 
     s32 curTrack = 0;
@@ -149,7 +149,7 @@ void XanimeCore::doFreeze() {
 void XanimeCore::setBck(u32 index, J3DAnmTransform* pAnm) {
     mTrackList[index]._0 = pAnm;
     mTrackList[index].setFrame(0.0f);
-    mTrackList[index]._C = 0;
+    mTrackList[index]._0C = 0;
 }
 
 void XanimeCore::setWeight(u8 idx, f32 weight) {
@@ -185,7 +185,7 @@ void XanimeCore::calcBlend(TVec3f* pScale, TVec3f* pTranslate) {
 
     if (totalWeight == 0.0f) {
         *pScale = mJointList[joint]._28._0;
-        *pTranslate = mJointList[joint]._28._C;
+        *pTranslate = mJointList[joint]._28._0C;
         PSMTXQuat(pMtx, &mJointList[joint]._28.mRotation);
         return;
     }
@@ -217,7 +217,7 @@ void XanimeCore::calcBlend(TVec3f* pScale, TVec3f* pTranslate) {
 
     if (blend < 1.0f) {
         const TVec3f* pFrozenScale = &mJointList[joint]._0._0;
-        const TVec3f* pFrozenTranslate = &mJointList[joint]._0._C;
+        const TVec3f* pFrozenTranslate = &mJointList[joint]._0._0C;
         XjointInfo& rJoint = mJointList[joint];
         *pScale = *pFrozenScale * (1.0f - blend) + *pScale * blend;
         *pTranslate = *pFrozenTranslate * (1.0f - blend) + *pTranslate * blend;
@@ -226,7 +226,7 @@ void XanimeCore::calcBlend(TVec3f* pScale, TVec3f* pTranslate) {
 
     if (_20 != 1.0f) {
         TVec3f* pPreviousScale = &mJointList[joint]._28._0;
-        TVec3f* pPreviousTranslate = &mJointList[joint]._28._C;
+        TVec3f* pPreviousTranslate = &mJointList[joint]._28._0C;
         XjointInfo& rJoint = mJointList[joint];
         *pScale = *pPreviousScale * (1.0f - _20) + *pScale * _20;
         *pTranslate = *pPreviousTranslate * (1.0f - _20) + *pTranslate * _20;
@@ -234,7 +234,7 @@ void XanimeCore::calcBlend(TVec3f* pScale, TVec3f* pTranslate) {
     }
 
     mJointList[joint]._28._0 = *pScale;
-    mJointList[joint]._28._C = *pTranslate;
+    mJointList[joint]._28._0C = *pTranslate;
     mJointList[joint]._28.mRotation = rotation;
     PSMTXQuat(pMtx, &rotation);
 }
@@ -247,7 +247,7 @@ void XanimeCore::calcSingle(TVec3f* pScale, TVec3f* pTranslate) {
 
     if (mTrackList[0]._0 == nullptr) {
         *pScale = mJointList[joint]._28._0;
-        *pTranslate = mJointList[joint]._28._C;
+        *pTranslate = mJointList[joint]._28._0C;
         PSMTXQuat(pMtx, &mJointList[joint]._28.mRotation);
         return;
     }
@@ -267,12 +267,12 @@ void XanimeCore::calcSingle(TVec3f* pScale, TVec3f* pTranslate) {
     if (blend < 1.0f) {
         XjointInfo* pJoints = mJointList;
         MR::vecBlend(pJoints[joint]._0._0, *pScale, pScale, blend);
-        MR::vecBlend(pJoints[joint]._0._C, *pTranslate, pTranslate, blend);
+        MR::vecBlend(pJoints[joint]._0._0C, *pTranslate, pTranslate, blend);
         JMAQuatLerp(&pJoints[joint]._0.mRotation, &rotation, blend, &rotation);
     }
 
     mJointList[joint]._28._0 = *pScale;
-    mJointList[joint]._28._C = *pTranslate;
+    mJointList[joint]._28._0C = *pTranslate;
     mJointList[joint]._28.mRotation = rotation;
     PSMTXQuat(pMtx, &rotation);
 }
@@ -336,7 +336,7 @@ void XanimeCore::calcBlendSpecial() {
 
     if (blend < 1.0f) {
         const TVec3f* pFrozenScale = &mJointList[joint]._0._0;
-        const TVec3f* pFrozenTranslate = &mJointList[joint]._0._C;
+        const TVec3f* pFrozenTranslate = &mJointList[joint]._0._0C;
         XjointInfo& rJoint = mJointList[joint];
         scale = *pFrozenScale * (1.0f - blend) + scale * blend;
         translate = *pFrozenTranslate * (1.0f - blend) + translate * blend;
@@ -345,7 +345,7 @@ void XanimeCore::calcBlendSpecial() {
 
     if (_20 != 1.0f) {
         TVec3f* pPreviousScale = &mJointList[joint]._28._0;
-        TVec3f* pPreviousTranslate = &mJointList[joint]._28._C;
+        TVec3f* pPreviousTranslate = &mJointList[joint]._28._0C;
         XjointInfo& rJoint = mJointList[joint];
         scale = *pPreviousScale * (1.0f - _20) + scale * _20;
         translate = *pPreviousTranslate * (1.0f - _20) + translate * _20;
@@ -353,14 +353,14 @@ void XanimeCore::calcBlendSpecial() {
     }
 
     mJointList[joint]._28._0 = scale;
-    mJointList[joint]._28._C = translate;
+    mJointList[joint]._28._0C = translate;
     mJointList[joint]._28.mRotation = rotation;
 }
 
 void XanimeCore::updateFrame() {
     for (u32 i = 0; i < mTrackCount; i++) {
         if (mTrackList[i]._0 != nullptr) {
-            if (mTrackList[i]._C != 0) {
+            if (mTrackList[i]._0C != 0) {
                 f32 frame = mTrackList[i]._8;
                 mTrackList[i]._0->setFrame(frame * mTrackList[i]._0->getFrameMax());
             } else {
@@ -693,7 +693,7 @@ void XanimeCore::calcScaleBlendSpecial() {
     TVec3f scale;
     TVec3f translate;
     scale = mJointList[joint]._28._0;
-    translate = mJointList[joint]._28._C;
+    translate = mJointList[joint]._28._0C;
     PSMTXQuat(pMtx, &mJointList[joint]._28.mRotation);
     calcScaleBlendMaya(scale, translate);
 }
@@ -731,10 +731,10 @@ void XanimeCore::initT(J3DModelData* pModelData) {
         Quaternion rotation;
         JMAEulerToQuat(rTransform.mRotation.x, rTransform.mRotation.y, rTransform.mRotation.z, &rotation);
         mJointList[i]._0._0 = reinterpret_cast< const TVec3f& >(rTransform.mScale);
-        mJointList[i]._0._C = reinterpret_cast< const TVec3f& >(rTransform.mTranslate);
+        mJointList[i]._0._0C = reinterpret_cast< const TVec3f& >(rTransform.mTranslate);
         mJointList[i]._0.mRotation = rotation;
         mJointList[i]._28._0 = mJointList[i]._0._0;
-        mJointList[i]._28._C = mJointList[i]._0._C;
+        mJointList[i]._28._0C = mJointList[i]._0._0C;
         mJointList[i]._28.mRotation = mJointList[i]._0.mRotation;
     }
 }
@@ -743,7 +743,7 @@ void XanimeCore::fixT(TVec3f* pTranslate) {
     u16 joint = getJoint()->getJntNo();
     J3DModelData* pModelData = j3dSys.getModel()->getModelData();
 
-    if (joint != 0 && joint != _C) {
+    if (joint != 0 && joint != _0C) {
         *pTranslate = reinterpret_cast< const TVec3f& >(pModelData->getJointNodePointer(joint)->getTransformInfo().mTranslate);
     }
 }
@@ -753,7 +753,7 @@ XanimeCore::~XanimeCore() {
 
 XtransformInfo::XtransformInfo() {
     _0.zero();
-    _C.zero();
+    _0C.zero();
     mRotation.z = 0.0f;
     mRotation.y = 0.0f;
     mRotation.x = 0.0f;

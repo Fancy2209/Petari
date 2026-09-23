@@ -947,7 +947,7 @@ bool DodoryuStateLv2::isReflectSpinAttack() const {
 }
 
 void DodoryuStateLv2::shiftChaseUnderground() {
-    mHost->shiftMoveStateChase(mChaseParam->_8, mChaseParam->_10, mChaseParam->_4, mChaseParam->_C);
+    mHost->shiftMoveStateChase(mChaseParam->_8, mChaseParam->_10, mChaseParam->_4, mChaseParam->_0C);
 }
 
 void DodoryuStateLv2::shiftChaseExposingHead() {

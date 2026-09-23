@@ -21,7 +21,7 @@ public:
     u32 _0;
     LiveActor* _4;
     LiveActor* _8;
-    f32 _C;
+    f32 _0C;
     f32 _10;
     f32 _14;
     bool _18;

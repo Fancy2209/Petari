@@ -36,7 +36,7 @@ AnimScaleParam::AnimScaleParam() {
     _0 = 0.2f;
     _4 = 0.91f;
     _8 = 0.2f;
-    _C = 1.8f;
+    _0C = 1.8f;
     _10 = 12.0f;
     _14 = 0.55f;
     _18 = 0.12f;
@@ -50,7 +50,7 @@ AnimScaleParam::AnimScaleParam() {
 
 AnimScaleController::AnimScaleController(AnimScaleParam* pScaleParam) : NerveExecutor("スケールアニメコントロール\00") {
     _8 = pScaleParam;
-    _C.set(1.0f);
+    _0C.set(1.0f);
     _18 = 0.0f;
 
     if (pScaleParam == nullptr) {
@@ -93,7 +93,7 @@ void AnimScaleController::stopAndReset() {
 
 void AnimScaleController::resetScale() {
     _18 = 0.0f;
-    _C.set(1.0f);
+    _0C.set(1.0f);
 }
 
 void AnimScaleController::exeAnim() {
@@ -122,9 +122,9 @@ void AnimScaleController::exeDpdVibration() {
     f32 nerveStep = getNerveStep();
     f32 dpdVibrationValue = MR::getReduceVibrationValue(nerveStep, _8->_10, _8->_14, _8->_18, _8->_1C);
 
-    _C.y = dpdVibrationValue;
-    _C.x = MR::sqrt(1.0f / _C.y);
-    _C.z = _C.x;
+    _0C.y = dpdVibrationValue;
+    _0C.x = MR::sqrt(1.0f / _0C.y);
+    _0C.z = _0C.x;
 }
 
 void AnimScaleController::exeCrush() {
@@ -133,9 +133,9 @@ void AnimScaleController::exeCrush() {
     f32 nerveRate = MR::calcNerveRate(this, _8->_2C);
     f32 crushValue = MR::getConvergeVibrationValue(nerveRate, 1.0f, _8->_30, 0.3f, 4.0f);
 
-    _C.y = crushValue;
-    _C.x = MR::sqrt(1.0f / _C.y);
-    _C.z = _C.x;
+    _0C.y = crushValue;
+    _0C.x = MR::sqrt(1.0f / _0C.y);
+    _0C.z = _0C.x;
 
     if (MR::isGreaterStep(this, _8->_2C)) {
         setNerve(GET_NERVE(AnimScaleController, AnimScaleControllerNrvStop));
@@ -154,7 +154,7 @@ bool AnimScaleController::isHitReaction(s32 a1) const {
 }
 
 bool AnimScaleController::tryStop() {
-    if (MR::abs(1.0f - _C.y) < 0.001f && MR::abs(_18) < 0.001f) {
+    if (MR::abs(1.0f - _0C.y) < 0.001f && MR::abs(_18) < 0.001f) {
         resetScale();
         setNerve(GET_NERVE(AnimScaleController, AnimScaleControllerNrvStop));
         return true;
@@ -167,26 +167,26 @@ void AnimScaleController::update() {
 }
 
 void AnimScaleController::updateScale(f32 f1, f32 f2) {
-    f32 updateValue = ((1.0f - _C.y) * f1 + _18);
+    f32 updateValue = ((1.0f - _0C.y) * f1 + _18);
     updateValue = updateValue * f2;
     _18 = updateValue;
-    _C.y += updateValue;
+    _0C.y += updateValue;
 
-    f32 updateValue2 = _C.y;
+    f32 updateValue2 = _0C.y;
 
     f32 clampMin = _8->_8;
-    f32 clampMax = _8->_C;
-    if (_C.y < clampMin) {
+    f32 clampMax = _8->_0C;
+    if (_0C.y < clampMin) {
         updateValue2 = clampMin;
-    } else if (_C.y > clampMax) {
+    } else if (_0C.y > clampMax) {
         updateValue2 = clampMax;
     } else {
-        updateValue2 = _C.y;
+        updateValue2 = _0C.y;
     }
 
-    _C.y = updateValue2;
-    _C.x = MR::sqrt(1.0f / _C.y);
-    _C.z = _C.x;
+    _0C.y = updateValue2;
+    _0C.x = MR::sqrt(1.0f / _0C.y);
+    _0C.z = _0C.x;
 }
 
 AnimScaleController::~AnimScaleController(){};

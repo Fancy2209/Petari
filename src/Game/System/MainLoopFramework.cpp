@@ -37,7 +37,7 @@ void MainLoopFramework::ctor_subroutine(bool useAlpha) {
     mClearZ = 0xffffff;
     mDispCopyGamma = GX_GM_1_0;
     mCopyClamp = GX_CLAMP_TOP | GX_CLAMP_BOTTOM;
-    _C = 1;
+    _0C = 1;
     mRetraceCount = 1;
     mTickDuration = 0;
     mUseAlpha = useAlpha;
@@ -122,14 +122,14 @@ void MainLoopFramework::exchangeXfb_double() {
             }
             prepareCopyDisp();
             GXCopyDisp(pXfbMgr->getDrawingXfb(), GX_TRUE);
-            if (!_C) {
+            if (!_0C) {
                 pXfbMgr->mDrawnXfbIndex = pXfbMgr->mDrawingXfbIndex;
                 GXDrawDone();
                 JUTVideo::dummyNoDrawWait();
             } else {
                 JUTVideo::drawDoneStart();
             }
-            if (!_C) {
+            if (!_0C) {
                 callDirectDraw();
             }
         }
@@ -199,7 +199,7 @@ void MainLoopFramework::endGX() {
         ortho.setPort();
         JUTConsoleManager::sManager->draw();
     }
-    if (_C || JUTXfb::sManager->mBufferNum == 1) {
+    if (_0C || JUTXfb::sManager->mBufferNum == 1) {
         JUTAssertion::flushMessage_dbPrint();
     }
     GXFlush();
@@ -386,8 +386,8 @@ void MainLoopFramework::calcCombinationRatio() {
     }
 
     mCombinationRatio = (f32)var2 / (u32)mLastFrameTime;
-    if (mCombinationRatio > 1f) {
-        mCombinationRatio = 1f;
+    if (mCombinationRatio > 1.0f) {
+        mCombinationRatio = 1.0f;
     }
 }
 

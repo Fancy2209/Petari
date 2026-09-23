@@ -58,7 +58,7 @@ namespace MR {
         u8 _3;
         f32 _4;
         f32 _8;
-        f32 _C;
+        f32 _0C;
         f32 _10;
         const char* _14;
         const char* _18;

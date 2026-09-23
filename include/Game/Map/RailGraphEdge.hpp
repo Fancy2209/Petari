@@ -18,7 +18,7 @@ public:
         mDistance = rEdge.mDistance;
         _4 = rEdge._4;
         _8 = rEdge._8;
-        _C = rEdge._C;
+        _0C = rEdge._0C;
         _10 = rEdge._10;
         mPointArg0 = rEdge.mPointArg0;
         mPointArg1 = rEdge.mPointArg1;
@@ -33,7 +33,7 @@ public:
     f32 mDistance;  // 0x0
     s32 _4;
     s32 _8;
-    s32 _C;
+    s32 _0C;
     s32 _10;
     s32 mPointArg0;  // 0x14
     s32 mPointArg1;  // 0x18

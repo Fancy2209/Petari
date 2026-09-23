@@ -26,7 +26,7 @@ public:
     void setupStartDemoPart(const char*);
 
     LiveActor* mActor;  // 0x8
-    const char* _C;
+    const char* _0C;
     const char* _10;
     const char* _14;
     const char* _18;

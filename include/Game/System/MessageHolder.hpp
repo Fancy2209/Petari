@@ -11,7 +11,7 @@ struct MessageInfoBlock {
     u32 mBlockSize;
     u16 mItemCount;
     u16 mItemSize;
-    u32 _C;
+    u32 _0C;
 };
 
 struct MessageDataBlock {
@@ -24,7 +24,7 @@ struct MessageFlowBlock {
     u32 mBlockSize;
     u16 mNodeCount;
     u16 _A;
-    u32 _C;
+    u32 _0C;
 };
 
 struct MessageFLI1Block {
@@ -48,7 +48,7 @@ public:
     JMapInfo* mIDTable;            // 0x0
     MessageInfoBlock* mInfoBlock;  // 0x4
     MessageDataBlock* mDataBlock;  // 0x8
-    u32 _C;
+    u32 _0C;
     MessageFlowBlock* mFlowBlock;  // 0x10
     u16* _14;
     u8* _18;

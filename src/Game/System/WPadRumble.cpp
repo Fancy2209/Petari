@@ -8,7 +8,7 @@ WPadRumble** WPadRumble::sInstanceForCallback;
 void RumbleChannel::clear() {
     _0 = nullptr;
     _8 = 0;
-    _C = 0;
+    _0C = 0;
     _E = false;
     _4 = false;
     _10 = nullptr;
@@ -19,28 +19,28 @@ void RumbleChannel::update() {
         return;
     }
 
-    if (_C >= _0->mFrame) {
+    if (_0C >= _0->mFrame) {
         if (_4 == true) {
             _E = _0->mPattern[0];
-            _C = 1;
+            _0C = 1;
         } else {
             clear();
         }
     } else {
         _E = _0->mPattern[0];
-        _C++;
+        _0C++;
     }
 }
 
 void RumbleChannel::setPattern(const void* pParam1, const RumblePattern& rParam2, u32 param3, bool param4) {
     _8 = param3;
-    _C = 0;
+    _0C = 0;
     _0 = &rParam2;
     _10 = pParam1;
     _4 = param4;
 }
 
-WPadRumble::WPadRumble(WPad* pPad) : mPad(pPad), _8(false), _C(1), _B0(0), _B4(0), _B8(false), _BC(0) {
+WPadRumble::WPadRumble(WPad* pPad) : mPad(pPad), _8(false), _0C(1), _B0(0), _B4(0), _B8(false), _BC(0) {
     if (sInstanceForCallback == nullptr) {
         sInstanceForCallback = new WPadRumble*[MR::getWPadMaxCount()];
 
@@ -189,17 +189,17 @@ bool WPadRumble::setRumblePatternIfNotExist(const void* pParam1, const RumblePat
 
     if (v2 != -1) {
         // FIXME: Missing clrlwi instruction.
-        _C++;
+        _0C++;
 
-        mChannel[v2].setPattern(pParam1, rParam2, _C, param3);
+        mChannel[v2].setPattern(pParam1, rParam2, _0C, param3);
 
         return true;
     }
 
     // FIXME: Missing clrlwi instruction.
-    _C++;
+    _0C++;
 
-    mChannel[v3].setPattern(pParam1, rParam2, _C, param3);
+    mChannel[v3].setPattern(pParam1, rParam2, _0C, param3);
 
     return true;
 }

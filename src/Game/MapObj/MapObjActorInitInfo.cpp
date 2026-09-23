@@ -6,7 +6,7 @@
 
 MapObjActorInitInfo::MapObjActorInitInfo()
     : mSetDefaultPosition(), mConnectToScene(), mInitBinder(), mHasEffect(), mHasSensors(), mHasShadows(), mCalcGravity(), mUseProjectMapMtx(),
-      mInitFur(), mHasRailMover(), mHasRotator(), mHasRailRotator(), _C(), _D(), mUseRailPosture(), mUseBaseMtxFollowTarget(), mIsAffectedByScale(),
+      mInitFur(), mHasRailMover(), mHasRotator(), mHasRailRotator(), _0C(), _D(), mUseRailPosture(), mUseBaseMtxFollowTarget(), mIsAffectedByScale(),
       mUseMirrorReflection(), mModelName(), mHioNode(), _1C(), mSensorRadius(), mSensorPosition(gZeroVec), mHasHitSensorCB(), mBinderRadius(),
       mBinderCenterY(), mEffectName(), mSound(), mSoundPos(), _48(), mNerve(), mGroupClipping(), mClippingRadius(), mFarClipping(), _5C(-1),
       mColorChangeArg(-1), mTextureChangeArg(-1), mIsAppearRiddleSE(), mSeesaw1AxisRotatorName(), mSeesaw1AxisRotatorRadius(), _74(), mShadowName(),
@@ -106,7 +106,7 @@ void MapObjActorInitInfo::setupRailRotator() {
 }
 
 void MapObjActorInitInfo::setupSeesaw1AxisRotator(const char* pName, f32 radius) {
-    _C = true;
+    _0C = true;
     mSeesaw1AxisRotatorName = pName;
     mSeesaw1AxisRotatorRadius = radius;
 }

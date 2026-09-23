@@ -18,5 +18,5 @@ public:
     u32 _0;
     u8* mDataPtr;  // 0x04
     u32 mCurOffs;  // 0x08
-    u32 _C;
+    u32 _0C;
 };

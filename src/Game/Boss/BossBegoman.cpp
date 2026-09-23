@@ -448,10 +448,10 @@ void BossBegoman::exeOnWeak() {
     updateRotateY(0.4f);
 
     if (MR::calcDistanceToPlayer(mPosition) < 600.0f) {
-        MR::moveAndTurnToPlayer(this, &mFaceVec, ::hOnWeakParam._0, ::hOnWeakParam._4, ::hOnWeakParam._8, ::hOnWeakParam._C);
+        MR::moveAndTurnToPlayer(this, &mFaceVec, ::hOnWeakParam._0, ::hOnWeakParam._4, ::hOnWeakParam._8, ::hOnWeakParam._0C);
         addVelocityEscapeToSide(::hOnWeakSideVel);
     } else {
-        MR::moveAndTurnToPlayer(this, &mFaceVec, ::hOnWeakNoMoveParam._0, ::hOnWeakNoMoveParam._4, ::hOnWeakNoMoveParam._8, ::hOnWeakNoMoveParam._C);
+        MR::moveAndTurnToPlayer(this, &mFaceVec, ::hOnWeakNoMoveParam._0, ::hOnWeakNoMoveParam._4, ::hOnWeakNoMoveParam._8, ::hOnWeakNoMoveParam._0C);
     }
 
     if (isNerve(GET_NERVE(BossBegoman, HostTypeNrvOnWeakTurn))) {
@@ -570,7 +570,7 @@ void BossBegoman::exeBlow() {
     MR::startLevelSound(this, "SE_EM_LV_BEGOMAN_SPARK");
 
     MR::moveAndTurnToDirection(this, &mFaceVec, mTargetVec, ::hHitReactionParam._0, ::hHitReactionParam._4, ::hHitReactionParam._8,
-                               ::hHitReactionParam._C);
+                               ::hHitReactionParam._0C);
     reboundWallAndGround(&mFaceVec, false);
 
     if (MR::isGreaterStep(this, ::sBlowFrame) && MR::isOnGround(this)) {

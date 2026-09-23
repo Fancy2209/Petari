@@ -246,7 +246,7 @@ bool CameraAnim::loadBin(u8* pFile) {
     }
 
     u8* pEntry = reinterpret_cast< u8* >(pFile + sizeof(CanmFileHeader));
-    _4C = pHeader->_C;
+    _4C = pHeader->_0C;
     _50 = pHeader->_10;
     mNrFrames = pHeader->mNrFrames;
 

@@ -1,10 +1,10 @@
 #include "Game/Screen/ImageEffectBase.hpp"
 
-ImageEffectBase::ImageEffectBase(const char* pName) : NameObj(pName), _C(), _D(), _10() {
+ImageEffectBase::ImageEffectBase(const char* pName) : NameObj(pName), _0C(), _D(), _10() {
 }
 
 void ImageEffectBase::calcAnim() {
-    if (_C) {
+    if (_0C) {
         _D = true;
         _10 += 1.0f / 15.0f;
 

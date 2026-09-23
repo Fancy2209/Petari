@@ -402,7 +402,7 @@ void Mario::mainMove() {
         }
 
         if (MR::isNearZero(mStickPos.z)) {
-            _10._C = false;
+            _10._0C = false;
             mMovementStates.turning = false;
         } else if (MR::isNearZero(_244) && a4) {
             if (_250 != stick) {
@@ -413,7 +413,7 @@ void Mario::mainMove() {
             mMovementStates.turning = true;
         } else {
             if (_3D0 != 0) {
-                _10._C = false;
+                _10._0C = false;
                 mMovementStates.turning = false;
             }
 
@@ -422,10 +422,10 @@ void Mario::mainMove() {
 
                 if (_274 != 0) {
                     if (cross2.dot(mHeadVec) > 0.0f) {
-                        _10._C = false;
+                        _10._0C = false;
                     }
                 } else if (cross2.dot(mHeadVec) < 0.0f) {
-                    _10._C = false;
+                    _10._0C = false;
                 }
             }
         }
@@ -470,7 +470,7 @@ void Mario::mainMove() {
 
         bool a5 = true;
 
-        if (mDrawStates._C) {
+        if (mDrawStates._0C) {
             if (MR::diffAngleAbsHorizontal(_8F8, -mFrontVec, *getGravityVec()) < MR::pi() * 45.0f / 180.0f) {
                 turnAngleSpeed *= 0.1f;
             } else {
@@ -484,9 +484,9 @@ void Mario::mainMove() {
             if (mMovementStates._37) {
                 _40E = 0;
                 mDrawStates._D = false;
-                _10._C = false;
+                _10._0C = false;
                 vec2 = _22C;
-            } else if (_10._C) {
+            } else if (_10._0C) {
                 f32 angle = 0.12f;
                 if (_274 == 0) {
                     angle = -angle;
@@ -537,7 +537,7 @@ void Mario::mainMove() {
                     if (diffAngleAbs > 2.5f && _3D4 == mActor->getConst().getTable()->mWeakTurnTime && !mDrawStates._D) {
                         TVec3f cross3(_214.cross(vec2));
                         _274 = cross3.dot(mHeadVec) > 0.0f;
-                        _10._C = true;
+                        _10._0C = true;
                     }
                 }
             }
@@ -569,7 +569,7 @@ void Mario::mainMove() {
             }
         }
 
-        _10._C = false;
+        _10._0C = false;
         mMovementStates.turning = false;
     }
 
@@ -785,7 +785,7 @@ f32 Mario::decideInertia(f32 speed) {
         inertia = mActor->getConst().getTable()->mInertiaReflectSlip;
     }
 
-    if (mWalkSpeed < 0.08f && _3CE > 10 && speed > 0.5f && (mMovementStates._A || mMovementStates._C)) {
+    if (mWalkSpeed < 0.08f && _3CE > 10 && speed > 0.5f && (mMovementStates._A || mMovementStates._0C)) {
         _3FA = mActor->getConst().getTable()->mStartSpinTime;
         mWalkSpeed = 0.08f;
     }

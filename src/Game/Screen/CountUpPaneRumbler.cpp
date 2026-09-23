@@ -18,7 +18,7 @@ CountUpPaneRumbler::CountUpPaneRumbler(LayoutActor* pHost, const char* pPaneName
 void CountUpPaneRumbler::update() {
     mRumbleCalculator->calc();
 
-    f32 y = mRumbleCalculator->_C.y;
+    f32 y = mRumbleCalculator->_0C.y;
     mPosition.x = 0.0f;
     mPosition.y = y;
 }

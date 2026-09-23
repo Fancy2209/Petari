@@ -127,12 +127,12 @@ int JASDsp::setFXLine(u8 param_0, s16* buffer, JASDsp::FxlineConfig_* param_2) {
         puVar3->_A = param_2->_4;
         puVar3->_8 = SEND_TABLE[param_2->_2];
         puVar3->_E = param_2->_8;
-        puVar3->_C = SEND_TABLE[param_2->_6];
-        puVar3->_2 = param_2->_C;
+        puVar3->_0C = SEND_TABLE[param_2->_6];
+        puVar3->_2 = param_2->_0C;
         setFilterTable((s16*)puVar3->_10, param_2->_10, 8);
     }
     if (buffer != NULL && param_2 != NULL) {
-        u32 bufsize = param_2->_C * 0xa0;
+        u32 bufsize = param_2->_0C * 0xa0;
         puVar3->_4 = buffer;
         JASCalc::bzero(buffer, bufsize);
         DCFlushRange(buffer, bufsize);

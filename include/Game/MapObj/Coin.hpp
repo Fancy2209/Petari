@@ -12,13 +12,13 @@ public:
         mHostActor = nullptr;
         _4 = 0;
         _8 = 0;
-        _C = 0;
+        _0C = 0;
     }
 
     const NameObj* mHostActor;  // 0x0
     s32 _4;
     s32 _8;
-    u32 _C;
+    u32 _0C;
 };
 
 class Coin : public LiveActor {

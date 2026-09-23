@@ -404,7 +404,7 @@ void CocoSambo::calcAndSetBaseMtx() {
     TPos3f mtx;
     MR::makeMtxUpFrontPos(&mtx, mUpVec, mFrontVec, mPosition);
     MR::setBaseTRMtx(this, mtx);
-    MR::setBaseScale(this, mAnimScaleController->_C * mScale);
+    MR::setBaseScale(this, mAnimScaleController->_0C * mScale);
 }
 
 void CocoSambo::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

@@ -214,7 +214,7 @@ void TrickRabbitFreeRun::exeRunawayStart() {
         MR::startEventBGM(MR::EventBgmID_Chase);
     }
 
-    MR::escapeFromPlayer(this, &mFrontVec, ::sStartAwayParam._0, ::sStartAwayParam._4, ::sStartAwayParam._8, ::sStartAwayParam._C);
+    MR::escapeFromPlayer(this, &mFrontVec, ::sStartAwayParam._0, ::sStartAwayParam._4, ::sStartAwayParam._8, ::sStartAwayParam._0C);
 
     if (MR::checkPassBckFrame(this, 3.0f)) {
         startJumpSound();

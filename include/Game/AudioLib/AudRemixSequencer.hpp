@@ -18,7 +18,7 @@ public:
     f32 _0;
     f32 _4;
     const RemixNoteData* _8;
-    const RemixNoteTrackData* _C;
+    const RemixNoteTrackData* _0C;
 };
 
 class AudRemixSequencer {

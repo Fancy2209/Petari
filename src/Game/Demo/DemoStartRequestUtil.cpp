@@ -254,7 +254,7 @@ namespace DemoStartRequestUtil {
         DemoStartRequestHolder* requestHolder = DemoFunction::getDemoDirector()->mStartRequestHolder;
 
         DemoStartInfo startInfo;
-        startInfo._C = pObj;
+        startInfo._0C = pObj;
         ::setDemoStartInfoCommon(&startInfo, pDemoName, pChar, a5, demoType, frameType, pointerType, deleteEffectType);
 
         requestHolder->registerStartDemoInfo(startInfo);
@@ -371,8 +371,8 @@ namespace DemoStartRequestUtil {
             return rStartInfo._4;
         }
 
-        if (rStartInfo._C != nullptr) {
-            return rStartInfo._C;
+        if (rStartInfo._0C != nullptr) {
+            return rStartInfo._0C;
         }
 
         if (rStartInfo._8 != nullptr) {
@@ -407,8 +407,8 @@ namespace DemoStartRequestUtil {
             MR::requestMovementOn(pStartInfo->_4);
         }
 
-        if (pStartInfo->_C != nullptr) {
-            MR::requestMovementOn(pStartInfo->_C);
+        if (pStartInfo->_0C != nullptr) {
+            MR::requestMovementOn(pStartInfo->_0C);
         }
 
         if (pStartInfo->_10 != nullptr) {
@@ -429,7 +429,7 @@ namespace DemoStartRequestUtil {
             return false;
         }
 
-        if (pStartInfo->_C != nullptr) {
+        if (pStartInfo->_0C != nullptr) {
             return false;
         }
 

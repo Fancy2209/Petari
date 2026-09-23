@@ -48,7 +48,7 @@ public:
     /* 0x000 */ TriangleFilterBase* mTriangleFilter;
     /* 0x004 */ CollisionPartsFilterBase* mCollisionPartsFilter;
     /* 0x008 */ CollisionParts* mExCollisionParts;
-    /* 0x00C */ MtxPtr _C;
+    /* 0x00C */ MtxPtr _0C;
     /* 0x010 */ const TVec3f* _10;
     /* 0x014 */ const TVec3f* _14;
     /* 0x018 */ f32 mRadius;

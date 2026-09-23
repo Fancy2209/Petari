@@ -8,6 +8,6 @@ public:
     RailGraphNode();
 
     TVec3f _0;
-    s32 _C;
+    s32 _0C;
     u32 _10;
 };

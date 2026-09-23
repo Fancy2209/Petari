@@ -173,7 +173,7 @@ void Kameck::startClipped() {
 
 void Kameck::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, mRotateQuat);
-    MR::setBaseScale(this, mAnimScaleController->_C * mScale);
+    MR::setBaseScale(this, mAnimScaleController->_0C * mScale);
 }
 
 void Kameck::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

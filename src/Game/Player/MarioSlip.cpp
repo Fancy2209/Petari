@@ -43,7 +43,7 @@ bool Mario::isEnableSlopeMove() const {
 
 void Mario::moveSlopeSlide() {
     if (calcAngleD(_368) < 5.8f) {
-        if (mDrawStates._C) {
+        if (mDrawStates._0C) {
             const TVec3f* pWorldPadDir = &getWorldPadDir();
             f32 speed = _16C.length();
             if (_910.length() < speed) {
@@ -139,7 +139,7 @@ void Mario::slopeMove() {
         _8F8 += -_2C4 * 0.5f;
     }
 
-    if (!mDrawStates._C || !isSlipPolygon(_45C)) {
+    if (!mDrawStates._0C || !isSlipPolygon(_45C)) {
         blendRate = 1.0f;
         if (mMovementStates._23) {
             if (slopeAngle >= 15.0f) {
@@ -250,7 +250,7 @@ void Mario::slopeMove() {
         _71E = 0;
 
         const f32 moveAngle = calcAngleD(_368);
-        if (mDrawStates._C) {
+        if (mDrawStates._0C) {
             MR::vecKillElement(mVelocity, stack_17C, &mVelocity);
             mVelocity += _8F8;
 
@@ -266,7 +266,7 @@ void Mario::slopeMove() {
         }
 
         if (MR::isNearZero(_8F8)) {
-            if (!mDrawStates._C) {
+            if (!mDrawStates._0C) {
                 mMovementStates._23 = false;
                 return;
             }
@@ -277,7 +277,7 @@ void Mario::slopeMove() {
             TVec3f stack_134;
             MR::vecKillElement(-stack_17C, airGravityVec, &stack_134);
 
-            if (MR::isNearZero(stack_17C) || (MR::isNearZero(stack_134) && !mDrawStates._C)) {
+            if (MR::isNearZero(stack_17C) || (MR::isNearZero(stack_134) && !mDrawStates._0C)) {
                 mMovementStates._23 = false;
                 return;
             }
@@ -353,7 +353,7 @@ void Mario::slopeMove() {
                         }
                     }
                 }
-            } else if (mDrawStates._C) {
+            } else if (mDrawStates._0C) {
                 if (!isAnimationRun("スケーティング")) {
                     _910 = _8F8;
                     _8F8.zero();

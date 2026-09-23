@@ -84,7 +84,7 @@ public:
     void update();
 
     TVec3f _0;
-    TQuat4f _C;
+    TQuat4f _0C;
     s32 _1C;
     Vec* _20;
 };

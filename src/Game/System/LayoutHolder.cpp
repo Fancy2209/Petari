@@ -155,7 +155,7 @@ void LayoutHolder::mount(char* pRoot) {
             ResFileInfo* pInfo = createAndRegisterObject(pFinder->mName, mArchive->getResource(pFinder->mFileID));
             pInfo->_8 = mArchive->getResource(pFinder->mFileID);
             pInfo->_4 = mArchive->getResSize(pInfo->_8);
-            pInfo->_C = pFinder->mFileID;
+            pInfo->_0C = pFinder->mFileID;
         }
         pFinder->findNextFile();
     }

@@ -8,7 +8,7 @@ public:
     HitResult();
 
     TVec3f _0;
-    TVec3f _C;
+    TVec3f _0C;
     TVec3f _18;
 };
 

@@ -598,7 +598,7 @@ void BombHei::calcAndSetBaseMtx() {
     TPos3f mtx;
     MR::calcMtxFromGravityAndZAxis(&mtx, this, mGravity, mFront);
     MR::setBaseTRMtx(this, mtx);
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
     mtx.getYDir(mBinderOffset);
     mBinderOffset.mult(::hTranslateHeight);

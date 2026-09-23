@@ -41,6 +41,6 @@ public:
     /* 0x00 */ DemoExecutor* mExecutor;
     /* 0x04 */ s32 _4;
     /* 0x08 */ DemoCameraInfo* _8;
-    /* 0x0C */ s32 _C;
+    /* 0x0C */ s32 _0C;
     /* 0x10 */ const DemoCameraInfo* _10;
 };

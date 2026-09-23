@@ -24,16 +24,16 @@ public:
 
 struct StarPieceHostInfo {
 public:
-    inline StarPieceHostInfo(NameObj* pNameObj, s32 a2, s32 a3, s32 a4) : mObj(pNameObj), _4(a2), _8(a3), _C(a4) {
+    inline StarPieceHostInfo(NameObj* pNameObj, s32 a2, s32 a3, s32 a4) : mObj(pNameObj), _4(a2), _8(a3), _0C(a4) {
     }
     bool isAppearable() NO_INLINE {
-        return _C < _4 && _8 < _4 - _C;
+        return _0C < _4 && _8 < _4 - _0C;
     }
 
     NameObj* mObj;
     s32 _4;
     s32 _8;
-    s32 _C;
+    s32 _0C;
 };
 
 class StarPiece : public LiveActor {

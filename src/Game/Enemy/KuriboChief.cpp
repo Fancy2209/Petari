@@ -236,7 +236,7 @@ void KuriboChief::control() {
 
 void KuriboChief::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _AC);
-    MR::setBaseScale(this, mScaleController->_C * mScale);
+    MR::setBaseScale(this, mScaleController->_0C * mScale);
 }
 
 void KuriboChief::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

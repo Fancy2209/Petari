@@ -401,7 +401,7 @@ void Petari::control() {
 }
 
 void Petari::calcAndSetBaseMtx() {
-    TVec3f scale = mAnimScaleCtrl->_C * mScale;
+    TVec3f scale = mAnimScaleCtrl->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

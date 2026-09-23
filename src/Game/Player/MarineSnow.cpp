@@ -18,27 +18,27 @@ MarineSnow::MarineSnow() {
         _4[idx] = randVec;
     }
 
-    _C = 0;
+    _0C = 0;
 
     mTexture = new JUTTexture(MR::loadTexFromArc("MarineSnow"), 0);
 }
 
 void MarineSnow::view() {
-    if (_C < 60) {
-        _C++;
+    if (_0C < 60) {
+        _0C++;
     }
 }
 
 void MarineSnow::clear() {
-    if (_C != 0) {
-        _C--;
+    if (_0C != 0) {
+        _0C--;
     }
 }
 
 void MarineSnow::draw(const TVec3f& rVec1, const TVec3f& rVec2, f32 myFloat) const {
     // FIXME: biiiig mess, but general structure should be correct
     // https://decomp.me/scratch/QeXwZ
-    if (_C == 0) {
+    if (_0C == 0) {
         return;
     }
 
@@ -46,7 +46,7 @@ void MarineSnow::draw(const TVec3f& rVec1, const TVec3f& rVec2, f32 myFloat) con
     GXSetZMode(GX_TRUE, GX_LEQUAL, GX_FALSE);
     GXSetPointSize(27, GX_TO_ZERO);
 
-    f32 C_60 = static_cast< f32 >(_C) / 60.0f;
+    f32 C_60 = static_cast< f32 >(_0C) / 60.0f;
 
     TVec3f camZDir = MR::getCamZdir();
     TVec3f camYDir = MR::getCamYdir();

@@ -174,7 +174,7 @@ void GameSequenceProgress::requestGalaxyMove(const GalaxyMoveArgument& rMoveArg)
     pController->mNextSceneControlInfo.setScene("Game");
     pController->mNextSceneControlInfo.setStage(moveArg.mStageName);
     pController->mNextSceneControlInfo.mScenarioNo = moveArg.mScenarioNo;
-    pController->mNextSceneControlInfo.mSelectedScenarioNo = moveArg._C;
+    pController->mNextSceneControlInfo.mSelectedScenarioNo = moveArg._0C;
     pController->mNextSceneControlInfo.setStartIdInfo(moveArg.mIDInfo);
     pController->requestChangeScene();
 

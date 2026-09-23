@@ -52,7 +52,7 @@ void KoopaFigureBall::makeActorDead() {
 
 // 89% and a big mess
 void KoopaFigureBall::control() {
-    MR::moveAndTurnToPlayer(this, &mFront, mMoveParam->_0, mMoveParam->_4, mMoveParam->_8, mMoveParam->_C);
+    MR::moveAndTurnToPlayer(this, &mFront, mMoveParam->_0, mMoveParam->_4, mMoveParam->_8, mMoveParam->_0C);
 
     if (MR::isBindedWall(this)) {
         MR::addVelocityJump(this, ::sWallJumpSpeed);

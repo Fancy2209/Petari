@@ -52,7 +52,7 @@ public:
     /* 0x4 */ u32 mClearZ;
     /* 0x8 */ u16 mDispCopyGamma;
     /* 0xA */ u16 mCopyClamp;
-    u32 _C;
+    u32 _0C;
     /* 0x10 */ u16 mRetraceCount;
     /* 0x14 */ u32 mTickDuration;
     /* 0x18 */ bool mUseAlpha;

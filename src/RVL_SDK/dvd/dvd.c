@@ -179,7 +179,7 @@ void DVDInit(void) {
 
     MotorState = 0;
     bootInfo = (OSBootInfo*)OSPhysicalToCached(0);
-    IDShouldBe = &bootInfo->DVDDiskID;
+    IDShouldBe = &bootInfo->dvdDiskID;
     OSInitThreadQueue(&__DVDThreadQueue);
 
     DVDLowUnmaskStatusInterrupts();

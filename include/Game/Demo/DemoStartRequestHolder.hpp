@@ -22,7 +22,7 @@ public:
     /* 0x00 */ LiveActor* _0;
     /* 0x04 */ LayoutActor* _4;
     /* 0x08 */ NerveExecutor* _8;
-    /* 0x0C */ NameObj* _C;
+    /* 0x0C */ NameObj* _0C;
     /* 0x10 */ NameObj* _10;
     /* 0x14 */ DemoExecutor* mDemoExecutor;
     /* 0x18 */ const char* mDemoName;

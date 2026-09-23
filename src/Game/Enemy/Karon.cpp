@@ -175,7 +175,7 @@ void Karon::exeFixWait() {
     }
 
     mBinder->_1EC._5 = true;
-    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
 
     if (MR::isOnSwitchA(this)) {
         setNerve(GET_NERVE(Karon, HostTypeNrvWait));
@@ -190,10 +190,10 @@ void Karon::exeWait() {
     mBinder->_1EC._5 = true;
 
     if (MR::isOnGround(this)) {
-        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
     } else {
         MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnOnAirParam._0, ::hNoMoveNoTurnOnAirParam._4, ::hNoMoveNoTurnOnAirParam._8,
-                                ::hNoMoveNoTurnOnAirParam._C);
+                                ::hNoMoveNoTurnOnAirParam._0C);
     }
 
     s32 step;
@@ -220,7 +220,7 @@ void Karon::exeWalk() {
         MR::startAction(this, "Walk");
     }
 
-    MR::moveAndTurnToTarget(this, mTerritoryMover->mTarget, ::hWalkParam._0, ::hWalkParam._4, ::hWalkParam._8, ::hWalkParam._C);
+    MR::moveAndTurnToTarget(this, mTerritoryMover->mTarget, ::hWalkParam._0, ::hWalkParam._4, ::hWalkParam._8, ::hWalkParam._0C);
 
     if (MR::isGreaterStep(this, 180) || mTerritoryMover->isReachedTarget(this, 40.0f)) {
         setNerve(GET_NERVE(Karon, HostTypeNrvWait));
@@ -237,14 +237,14 @@ void Karon::exeTurn() {
         mTerritoryMover->decideNextTargetPos(this);
     }
 
-    MR::moveAndTurnToTarget(this, mTerritoryMover->mTarget, ::hSearchParam._0, ::hSearchParam._4, ::hSearchParam._8, ::hSearchParam._C);
+    MR::moveAndTurnToTarget(this, mTerritoryMover->mTarget, ::hSearchParam._0, ::hSearchParam._4, ::hSearchParam._8, ::hSearchParam._0C);
 
     if (MR::calcDistanceToPlayer(this) < 700.0f && MR::isFaceToPlayerDegree(this, 80.0f)) {
         setNerve(GET_NERVE(Karon, HostTypeNrvPursue));
     } else {
         TVec3f frontVec;
         MR::calcFrontVec(&frontVec, this);
-        if (MR::isGreaterStep(this, 10) && MR::isFaceToTargetHorizontalDegree(this, mTerritoryMover->mTarget, frontVec, ::hSearchParam._C * 2.0f)) {
+        if (MR::isGreaterStep(this, 10) && MR::isFaceToTargetHorizontalDegree(this, mTerritoryMover->mTarget, frontVec, ::hSearchParam._0C * 2.0f)) {
             if (isFallNextMove(false)) {
                 setNerve(GET_NERVE(Karon, HostTypeNrvTurn));
             } else {
@@ -259,7 +259,7 @@ void Karon::exeWalkOnRail() {
         MR::startAction(this, "Walk");
     }
 
-    MR::moveAndTurnAlongRail(this, 600.0f, ::hWalkParam._0, ::hWalkParam._4, ::hWalkParam._8, ::hWalkParam._C, nullptr);
+    MR::moveAndTurnAlongRail(this, 600.0f, ::hWalkParam._0, ::hWalkParam._4, ::hWalkParam._8, ::hWalkParam._0C, nullptr);
     MR::calcDistanceToPlayer(this);
 
     if (MR::calcDistanceToPlayer(this) < 700.0f && MR::isFaceToPlayerDegree(this, 80.0f)) {
@@ -273,7 +273,7 @@ void Karon::exeSearch() {
         MR::startSound(this, "SE_EV_KARON_FIND");
     }
 
-    MR::moveAndTurnToPlayer(this, ::hSearchParam._0, ::hSearchParam._4, ::hSearchParam._8, ::hSearchParam._C);
+    MR::moveAndTurnToPlayer(this, ::hSearchParam._0, ::hSearchParam._4, ::hSearchParam._8, ::hSearchParam._0C);
 
     if (MR::isActionEnd(this)) {
         setNerve(GET_NERVE(Karon, HostTypeNrvPursue));
@@ -287,7 +287,7 @@ void Karon::exePursue() {
         mVelocity += mGravity * -10.0f;
     }
 
-    MR::moveAndTurnToPlayer(this, ::hPursueParam._0, ::hPursueParam._4, ::hPursueParam._8, ::hPursueParam._C);
+    MR::moveAndTurnToPlayer(this, ::hPursueParam._0, ::hPursueParam._4, ::hPursueParam._8, ::hPursueParam._0C);
 
     if (1200.0f < MR::calcDistanceToPlayer(this) || !MR::isFaceToPlayerDegree(this, 80.0f)) {
         setNerve(GET_NERVE(Karon, HostTypeNrvWait));
@@ -310,7 +310,7 @@ void Karon::exeBroken() {
     TVec3f velVec(0, 0, 0);
     if (MR::calcVelocityAreaOrRailMoveOnGround(&velVec, this)) {
         MR::addVelocityLimit(this, velVec * 1.0f);
-        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
         MR::calcGravity(this);
     } else if (MR::isBinded(this)) {
         const TVec3f* bindedVec = MR::getBindedNormal(this);
@@ -340,7 +340,7 @@ void Karon::exeStepBroken() {
     TVec3f velVec(0, 0, 0);
     if (MR::calcVelocityAreaOrRailMoveOnGround(&velVec, this)) {
         MR::addVelocityLimit(this, velVec * 1.0f);
-        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+        MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
         MR::calcGravity(this);
     } else if (MR::isBinded(this)) {
         const TVec3f* bindedVec = MR::getBindedNormal(this);
@@ -369,7 +369,7 @@ void Karon::exeRecover() {
         mVelocity.scale(gravity->dot(mVelocity), *gravity);
     }
 
-    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
     mBinder->_1EC._5 = true;
 
     if (MR::isActionEnd(this)) {
@@ -391,16 +391,16 @@ void Karon::exeHitReaction() {
 
     if (isNerve(GET_NERVE(Karon, HostTypeNrvStarPieceHit))) {
         if (MR::isOnGround(this)) {
-            MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+            MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
         } else {
             MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnOnAirParam._0, ::hNoMoveNoTurnOnAirParam._4, ::hNoMoveNoTurnOnAirParam._8,
-                                    ::hNoMoveNoTurnOnAirParam._C);
+                                    ::hNoMoveNoTurnOnAirParam._0C);
         }
     } else if (MR::isOnGround(this)) {
         MR::moveAndTurnToPlayer(this, ::hHitReactionOnGroundParam._0, ::hHitReactionOnGroundParam._4, ::hHitReactionOnGroundParam._8,
-                                ::hHitReactionOnGroundParam._C);
+                                ::hHitReactionOnGroundParam._0C);
     } else {
-        MR::moveAndTurnToPlayer(this, ::hHitReactionAirParam._0, ::hHitReactionAirParam._4, ::hHitReactionAirParam._8, ::hHitReactionAirParam._C);
+        MR::moveAndTurnToPlayer(this, ::hHitReactionAirParam._0, ::hHitReactionAirParam._4, ::hHitReactionAirParam._8, ::hHitReactionAirParam._0C);
     }
 
     if (MR::isOnGround(this) && MR::isActionEnd(this)) {
@@ -419,7 +419,7 @@ void Karon::exeDeath() {
         MR::startSound(this, "SE_EV_KARON_DAMAGE");
     }
 
-    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
 
     if (MR::isActionEnd(this)) {
         kill();
@@ -439,7 +439,7 @@ void Karon::exeSinkDown() {
 
     MR::startLevelSound(this, "SE_EV_LV_KARON_SINK");
     MR::startLevelSound(this, "SE_EM_LV_KARON_SINK");
-    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._C);
+    MR::moveAndTurnToPlayer(this, ::hNoMoveNoTurnParam._0, ::hNoMoveNoTurnParam._4, ::hNoMoveNoTurnParam._8, ::hNoMoveNoTurnParam._0C);
 
     if (MR::isActionEnd(this)) {
         kill();
@@ -620,7 +620,7 @@ bool Karon::receiveOtherMsg(u32 msg, HitSensor* pSender, HitSensor* pReceiver) {
 
 void Karon::calcAndSetBaseMtx() {
     LiveActor::calcAndSetBaseMtx();
-    MR::setBaseScale(this, mScaleController->_C * mScale);
+    MR::setBaseScale(this, mScaleController->_0C * mScale);
 }
 
 Karon::~Karon() {

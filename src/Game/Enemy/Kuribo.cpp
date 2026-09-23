@@ -225,7 +225,7 @@ void Kuribo::control() {
 
 void Kuribo::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _A8);
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

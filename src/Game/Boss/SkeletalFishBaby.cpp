@@ -283,7 +283,7 @@ void SkeletalFishBaby::calcAndSetBaseMtx() {
         MR::setBaseTRMtx(this, railMtx);
         _AC.set(railMtx);
         _AC.invert(_AC);
-        TVec3f scale = mScaleController->_C * mScale;
+        TVec3f scale = mScaleController->_0C * mScale;
         MR::setBaseScale(this, scale);
     }
 }

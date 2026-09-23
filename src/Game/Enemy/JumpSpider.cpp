@@ -475,5 +475,5 @@ void JumpSpider::calcAndSetBaseMtx() {
     TPos3f pos;
     MR::calcMtxFromGravityAndZAxis(&pos, this, mGravity, _94);
     MR::setBaseTRMtx(this, pos);
-    MR::setBaseScale(this, mScaleController->_C * mScale);
+    MR::setBaseScale(this, mScaleController->_0C * mScale);
 }

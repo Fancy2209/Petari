@@ -58,14 +58,14 @@ StopSceneStateControl::StopSceneStateControl() : NerveExecutor("StopSceneStateCo
     initNerve(GET_NERVE_ANON(StopSceneStateControlNone));
 
     _8 = MR::MovementControlType_0;
-    _C = nullptr;
+    _0C = nullptr;
 }
 
 void StopSceneStateControl::requestStopSceneFor(MR::MovementControlType param1, const NameObj* pParam2) {
     if (MR::isNewNerve(this)) {
         if (isNerve(GET_NERVE_ANON(StopSceneStateControlNone))) {
             _8 = param1;
-            _C = pParam2;
+            _0C = pParam2;
 
             setNerve(GET_NERVE_ANON(StopSceneStateControlStopped));
             executeStopCategories(param1);
@@ -74,7 +74,7 @@ void StopSceneStateControl::requestStopSceneFor(MR::MovementControlType param1, 
         }
     } else if (isNerve(GET_NERVE_ANON(StopSceneStateControlNone))) {
         _8 = param1;
-        _C = pParam2;
+        _0C = pParam2;
 
         setNerve(GET_NERVE_ANON(StopSceneStateControlStopped));
         executeStopCategories(param1);
@@ -93,7 +93,7 @@ void StopSceneStateControl::requestStopSceneOverwrite(const NameObj* pParam1) {
             return;
         }
 
-        _C = pParam1;
+        _0C = pParam1;
         _8 = MR::MovementControlType_5;
 
         setNerve(GET_NERVE_ANON(StopSceneStateControlStopped));
@@ -107,7 +107,7 @@ void StopSceneStateControl::requestStopSceneOverwrite(const NameObj* pParam1) {
             return;
         }
 
-        _C = pParam1;
+        _0C = pParam1;
         _8 = MR::MovementControlType_5;
 
         setNerve(GET_NERVE_ANON(StopSceneStateControlStopped));
@@ -134,7 +134,7 @@ void StopSceneStateControl::requestPlaySceneFor(MR::MovementControlType param1, 
         }
 
         _8 = param1;
-        _C = pParam2;
+        _0C = pParam2;
 
         setNerve(GET_NERVE_ANON(StopSceneStateControlNone));
         executeStopCategories(MR::MovementControlType_0);
@@ -182,7 +182,7 @@ void StopSceneStateControl::exeStopped() {
 }
 
 SceneNameObjMovementController::SceneNameObjMovementController()
-    : NameObj("SceneNameObjMovementController"), _C(false), mStopSceneStateControl(nullptr) {
+    : NameObj("SceneNameObjMovementController"), _0C(false), mStopSceneStateControl(nullptr) {
     mStopSceneStateControl = new StopSceneStateControl();
 }
 
@@ -199,17 +199,17 @@ void SceneNameObjMovementController::requestPlaySceneFor(MR::MovementControlType
 }
 
 void SceneNameObjMovementController::movement() {
-    if (_C) {
+    if (_0C) {
         MR::syncWithFlagsAllSceneNameObj();
 
-        _C = false;
+        _0C = false;
     }
 
     mStopSceneStateControl->updateNerve();
 }
 
 void SceneNameObjMovementController::notifyRequestNameObjMovementOnOff(bool param1) {
-    _C = param1;
+    _0C = param1;
 }
 
 namespace MR {

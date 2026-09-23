@@ -318,7 +318,7 @@ void PackunPetit::calcAndSetBaseMtx() {
     mtx.identity();
     MR::makeMtxUpFrontPos(&mtx, up, _94, mPosition);
     MR::setBaseTRMtx(this, mtx);
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 

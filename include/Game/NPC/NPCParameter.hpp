@@ -27,7 +27,7 @@ public:
     virtual void read(JMapInfo*, s32);
 
     const char** _8;
-    bool _C;
+    bool _0C;
 };
 
 class NPCParameterBool : public NPCParameterBase {
@@ -46,7 +46,7 @@ public:
     virtual void read(JMapInfo*, s32);
 
     TVec3f* _8;
-    f32 _C;
+    f32 _0C;
     f32 _10;
 };
 
@@ -57,7 +57,7 @@ public:
     virtual void read(JMapInfo*, s32);
 
     const char** _8;
-    const char* _C;
+    const char* _0C;
     s32 _10;
 };
 
@@ -95,6 +95,6 @@ public:
     virtual void read(JMapInfo*, s32);
 
     T* _8;
-    T _C;
+    T _0C;
     T _10;
 };

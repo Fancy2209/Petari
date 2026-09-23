@@ -10,7 +10,7 @@ inline int tolower(int c) {
 HashSortTable::HashSortTable(u32 cnt) {
     mHashCodes = new u32[cnt];
     _8 = new u32[cnt];
-    _C = new u16[0x100];
+    _0C = new u16[0x100];
     _10 = new u16[0x100];
     mCurrentLength = 0;
     mMaxLength = cnt;
@@ -73,10 +73,10 @@ void HashSortTable::sort() {
         u32 upperByte = mHashCodes[counter2] >> 24;
 
         if (upperByte > counter) {
-            _C[counter] = 0xFFFF;
+            _0C[counter] = 0xFFFF;
             _10[counter] = 0;
         } else if (upperByte == counter) {
-            _C[counter] = counter2;
+            _0C[counter] = counter2;
             counter2++;
             u32 counter3 = 1;
 
@@ -101,7 +101,7 @@ void HashSortTable::sort() {
     }
 
     for (u32 i = counter; i < 0x100; i++) {
-        _C[i] = 0xFFFF;
+        _0C[i] = 0xFFFF;
         _10[i] = 0;
     }
 
@@ -121,12 +121,12 @@ bool HashSortTable::search(u32 a1, u32* a2) {
         return false;
     }
 
-    u32* thing = &mHashCodes[_C[upperByte]];
+    u32* thing = &mHashCodes[_0C[upperByte]];
 
     for (int i = 0; i < count; i++) {
         if (*thing == a1) {
             if (a2 != nullptr) {
-                *a2 = _8[_C[upperByte] + i];
+                *a2 = _8[_0C[upperByte] + i];
             }
 
             return true;

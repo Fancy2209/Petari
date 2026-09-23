@@ -11,9 +11,9 @@ namespace {
 
 HitResult::HitResult() {
     _0.set< int >(0, 0, 0);
-    _C.x = 0.0f;
-    _C.y = 0.0f;
-    _C.z = 0.0f;
+    _0C.x = 0.0f;
+    _0C.y = 0.0f;
+    _0C.z = 0.0f;
     _18.x = 0.0f;
     _18.y = 1.0f;
     _18.z = 0.0f;
@@ -53,7 +53,7 @@ void TripodBossMovableArea::setRadius(f32 radius) {
 }
 
 bool TripodBossMovableArea::collideSphere(HitResult* pResult, const TVec3f& a2, f32 a3, const TVec3f& a4) const {
-    pResult->_C = a2 + a4;
+    pResult->_0C = a2 + a4;
     f32 v10 = mRadius + a3;
     TVec3f v29(a2);
     v29 -= mCenter;
@@ -97,11 +97,11 @@ bool TripodBossMovableArea::collideSphere(HitResult* pResult, const TVec3f& a2, 
     }
 
     pResult->_18 = v27;
-    TVec3f v26(pResult->_C);
+    TVec3f v26(pResult->_0C);
     v26 -= pResult->_0;
     f32 v16 = v26.dot(pResult->_18);
     v26 -= pResult->_18 * v16;
-    pResult->_C = pResult->_0 + v26;
+    pResult->_0C = pResult->_0 + v26;
     return true;
 }
 

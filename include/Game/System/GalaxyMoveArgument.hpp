@@ -13,6 +13,6 @@ public:
     /* 0x0 */ u32 mMoveType;
     /* 0x4 */ const char* mStageName;
     /* 0x8 */ s32 mScenarioNo;
-    s32 _C;
+    s32 _0C;
     /* 0x10 */ JMapIdInfo mIDInfo;
 };

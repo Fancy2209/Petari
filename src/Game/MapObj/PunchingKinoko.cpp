@@ -98,7 +98,7 @@ bool PunchingKinoko::ballMtxCallBack(TPos3f* pMtx, const JointControllerInfo& jo
     TPos3f stack_14;
     stack_14.identity();
 
-    MR::scaleMtxToDir(&stack_14, _A8, mScaleController->_C);
+    MR::scaleMtxToDir(&stack_14, _A8, mScaleController->_0C);
     pMtx->concat(stack_14, *pMtx);
     pMtx->setTrans(mGroundChecker->mPosition);
 

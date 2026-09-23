@@ -50,7 +50,7 @@ public:
     /* 0x09 */ bool mHasRailMover;
     /* 0x0A */ bool mHasRotator;
     /* 0x0B */ bool mHasRailRotator;
-    /* 0x0C */ bool _C;
+    /* 0x0C */ bool _0C;
     /* 0x0D */ bool _D;
     /* 0x0E */ bool mUseRailPosture;
     /* 0x0F */ bool mUseBaseMtxFollowTarget;

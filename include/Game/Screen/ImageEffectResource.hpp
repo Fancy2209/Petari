@@ -17,7 +17,7 @@ public:
     /* 0x00 */ JUTTexture* _0;
     /* 0x04 */ JUTTexture* _4;
     /* 0x08 */ JUTTexture* _8;
-    /* 0x0C */ JUTTexture* _C;
+    /* 0x0C */ JUTTexture* _0C;
     /* 0x10 */ JUTTexture* _10;
     /* 0x14 */ JUTTexture* _14;
     /* 0x18 */ JUTTexture* _18;

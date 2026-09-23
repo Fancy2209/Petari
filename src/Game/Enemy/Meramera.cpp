@@ -416,7 +416,7 @@ void Meramera::control() {
 
 void Meramera::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _128);
-    MR::setBaseScale(this, mAnimScaleController->_C * mScale);
+    MR::setBaseScale(this, mAnimScaleController->_0C * mScale);
 }
 
 void Meramera::attackSensor(HitSensor* pSender, HitSensor* pReceiver) {

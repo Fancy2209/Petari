@@ -145,7 +145,7 @@ void BombTeresa::control() {
 
 void BombTeresa::calcAndSetBaseMtx() {
     MR::setBaseTRMtx(this, _9C);
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
     mJointDelegator->registerCallBack();
     mJointDelegator2->registerCallBack();

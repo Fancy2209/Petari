@@ -303,7 +303,7 @@ OceanRingDrawer::OceanRingDrawer(const OceanRing* pOceanRing) {
     mRing = pOceanRing;
     mDrawerCount = 0;
     mPartDrawers = nullptr;
-    _C = 0.0f;
+    _0C = 0.0f;
     _10 = 0.0f;
     _14 = 0.0f;
     _18 = 0.0f;
@@ -321,7 +321,7 @@ OceanRingDrawer::OceanRingDrawer(const OceanRing* pOceanRing) {
 }
 
 void OceanRingDrawer::update() {
-    _C = MR::repeat(_C + ::sTexSpeed0U, 0.0f, 1.0f);
+    _0C = MR::repeat(_0C + ::sTexSpeed0U, 0.0f, 1.0f);
     _10 = MR::repeat(_10 + ::sTexSpeed0V, 0.0f, 1.0f);
     _14 = MR::repeat(_14 + ::sTexSpeed1U, 0.0f, 1.0f);
     _18 = MR::repeat(_18 + ::sTexSpeed1V, 0.0f, 1.0f);
@@ -491,13 +491,13 @@ void OceanRingDrawer::loadMaterial() const {
 
     TMtx34f mtx;
     mtx.identity();
-    mtx.mMtx[0][2] = _C;
+    mtx.mMtx[0][2] = _0C;
     mtx.mMtx[1][2] = _10;
     GXLoadTexMtxImm(mtx.toMtxPtr(), 0x1E, GX_MTX2x4);
     mtx.mMtx[0][2] = _14;
     mtx.mMtx[1][2] = _18;
     GXLoadTexMtxImm(mtx.toMtxPtr(), 0x21, GX_MTX2x4);
-    mtx.mMtx[0][2] = _C;
+    mtx.mMtx[0][2] = _0C;
     mtx.mMtx[1][2] = _10;
     GXLoadTexMtxImm(mtx.toMtxPtr(), 0x24, GX_MTX2x4);
     MR::loadTexProjectionMtx(39);
@@ -577,7 +577,7 @@ void OceanRingDrawer::loadMaterialBloom() const {
 
     TMtx34f mtx;
     mtx.identity();
-    mtx.mMtx[0][2] = _C;
+    mtx.mMtx[0][2] = _0C;
     mtx.mMtx[1][2] = _10;
     GXLoadTexMtxImm(mtx.toMtxPtr(), 0x1E, GX_MTX2x4);
     mtx.mMtx[0][2] = _14;

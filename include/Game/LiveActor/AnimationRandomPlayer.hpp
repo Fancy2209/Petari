@@ -14,7 +14,7 @@ public:
     void exePlay();
 
     const LiveActor* mActor;  // 0x8
-    const char* _C;
+    const char* _0C;
     const char* _10;
     s32 _14;
     s32 _18;

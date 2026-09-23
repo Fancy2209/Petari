@@ -25,7 +25,7 @@ namespace {
 }  // namespace
 
 ParticleDrawExecutor::ParticleDrawExecutor(const EffectSystem* pSystem, bool createAdaptors)
-    : mHost(pSystem), _4(), _8(), _C(), _10(), _14(), _18(), _1C(), _20(true), _21() {
+    : mHost(pSystem), _4(), _8(), _0C(), _10(), _14(), _18(), _1C(), _20(true), _21() {
     if (createAdaptors) {
         initDrawAdaptor();
     }
@@ -133,8 +133,8 @@ void ParticleDrawExecutor::initDrawAdaptor() {
     _8 = new NameObjAdaptor("2Dパーティクル");
     connectToSceneDrawAdaptor(_8, MR::Functor(this, &ParticleDrawExecutor::draw2D), MR::DrawType_EffectDraw2D);
 
-    _C = new NameObjAdaptor("インダイレクトパーティクル");
-    connectToSceneDrawAdaptor(_C, MR::Functor(this, &ParticleDrawExecutor::drawIndirect), MR::DrawType_EffectDrawIndirect);
+    _0C = new NameObjAdaptor("インダイレクトパーティクル");
+    connectToSceneDrawAdaptor(_0C, MR::Functor(this, &ParticleDrawExecutor::drawIndirect), MR::DrawType_EffectDrawIndirect);
 
     _10 = new NameObjAdaptor("インダイレクト後パーティクル");
     connectToSceneDrawAdaptor(_10, MR::Functor(this, &ParticleDrawExecutor::drawAfterIndirect), MR::DrawType_EffectDrawAfterIndirect);

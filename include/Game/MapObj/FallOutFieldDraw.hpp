@@ -16,7 +16,7 @@ public:
     void activate();
     void deactivate();
 
-    /* 0x0C */ bool _C;
+    /* 0x0C */ bool _0C;
 };
 
 namespace MR {

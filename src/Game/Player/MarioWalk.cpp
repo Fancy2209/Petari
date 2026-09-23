@@ -480,7 +480,7 @@ void Mario::checkWallPush() {
         sideStep = false;
     }
 
-    if (mDrawStates._C) {
+    if (mDrawStates._0C) {
         sideStep = false;
     }
 

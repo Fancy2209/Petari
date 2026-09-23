@@ -11,7 +11,7 @@ public:
     XtransformInfo();
 
     /* 0x00 */ TVec3f _0;
-    /* 0x0C */ TVec3f _C;
+    /* 0x0C */ TVec3f _0C;
     /* 0x18 */ Quaternion mRotation;
 };
 
@@ -55,7 +55,7 @@ public:
     void init();
     void setFrame(f32 frame) {
         _8 = frame;
-        _C = 1;
+        _0C = 1;
     }
 
     f32 getWeight() const {
@@ -65,7 +65,7 @@ public:
     /* 0x0 */ J3DAnmTransform* _0;
     /* 0x4 */ f32 mWeight;
     /* 0x8 */ f32 _8;
-    /* 0xC */ u8 _C;
+    /* 0xC */ u8 _0C;
 };
 
 class XanimeCore : public J3DMtxCalc {
@@ -111,7 +111,7 @@ public:
     /* 0x5 */ u8 mTrackCount;
     /* 0x6 */ u8 _6;
     /* 0x8 */ u32 mJointCount;
-    /* 0xC */ u16 _C;
+    /* 0xC */ u16 _0C;
     /* 0x10 */ XjointInfo* mJointList;
     /* 0x14 */ XjointTransform* mTransformList;
     /* 0x18 */ XanimeTrack* mTrackList;

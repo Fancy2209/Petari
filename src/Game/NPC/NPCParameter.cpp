@@ -6,7 +6,7 @@
 #include <JSystem/JGeometry/TVec.hpp>
 #include <revolution/types.h>
 
-NPCParameterEdit::NPCParameterEdit(const char* pName, const char** ppChar, bool a3) : NPCParameterBase(pName), _8(ppChar), _C(a3) {
+NPCParameterEdit::NPCParameterEdit(const char* pName, const char** ppChar, bool a3) : NPCParameterBase(pName), _8(ppChar), _0C(a3) {
 }
 
 void NPCParameterEdit::read(JMapInfo* pInfo, s32 a2) {
@@ -20,7 +20,7 @@ void NPCParameterBool::read(JMapInfo* pInfo, s32 a2) {
     pInfo->getValue(a2, mName, _8);
 }
 
-NPCParameterV3f::NPCParameterV3f(const char* pName, TVec3f* pVec, f32 f1, f32 f2) : NPCParameterBase(pName), _8(pVec), _C(f1), _10(f2) {
+NPCParameterV3f::NPCParameterV3f(const char* pName, TVec3f* pVec, f32 f1, f32 f2) : NPCParameterBase(pName), _8(pVec), _0C(f1), _10(f2) {
 }
 
 void NPCParameterV3f::read(JMapInfo* pInfo, s32 a2) {
@@ -36,7 +36,7 @@ void NPCParameterV3f::read(JMapInfo* pInfo, s32 a2) {
 }
 
 NPCParameterJoint::NPCParameterJoint(const char* pName, const char* pChar, const char** ppChar)
-    : NPCParameterBase(pName), _8(ppChar), _C(pChar), _10(-1) {
+    : NPCParameterBase(pName), _8(ppChar), _0C(pChar), _10(-1) {
 }
 
 NPCParameterReader::NPCParameterReader(const char* pName) : NPCParameterBase(pName), mVector() {
@@ -68,7 +68,7 @@ void NPCItemParameterReader::copy(const NPCActorItem* pItem) {
 }
 
 template <>
-NPCParameterRange< s32 >::NPCParameterRange(const char* pName, s32* pLong, s32 a3, s32 a4) : NPCParameterBase(pName), _8(pLong), _C(a3), _10(a4) {
+NPCParameterRange< s32 >::NPCParameterRange(const char* pName, s32* pLong, s32 a3, s32 a4) : NPCParameterBase(pName), _8(pLong), _0C(a3), _10(a4) {
 }
 
 template <>
@@ -77,7 +77,7 @@ void NPCParameterRange< s32 >::read(JMapInfo* pInfo, s32 a2) {
 }
 
 template <>
-NPCParameterRange< f32 >::NPCParameterRange(const char* pName, f32* pLong, f32 a3, f32 a4) : NPCParameterBase(pName), _8(pLong), _C(a3), _10(a4) {
+NPCParameterRange< f32 >::NPCParameterRange(const char* pName, f32* pLong, f32 a3, f32 a4) : NPCParameterBase(pName), _8(pLong), _0C(a3), _10(a4) {
 }
 
 template <>

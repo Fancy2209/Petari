@@ -84,7 +84,7 @@ public:
     bool checkBrightObj(bool);
     void controlFlare(s32, bool);
 
-    /* 0x0C */ void* _C;
+    /* 0x0C */ void* _0C;
     /* 0x10 */ LensFlareRing* mRing;
     /* 0x14 */ LensFlareGlow* mGlow;
     /* 0x18 */ LensFlareLine* mLine;

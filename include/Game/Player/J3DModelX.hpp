@@ -50,7 +50,7 @@ public:
         unsigned _9 : 1;
         unsigned _A : 1;
         unsigned _B : 1;
-        unsigned _C : 1;
+        unsigned _0C : 1;
         unsigned _D : 1;
         unsigned _E : 1;
         unsigned _F : 1;

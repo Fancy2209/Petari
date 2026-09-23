@@ -31,7 +31,7 @@ public:
     /* 0x00 */ RumbleCalculatorCosMultLinear* mRumbleCalculator;
     /* 0x04 */ XjointTransform* mJointTransform;
     /* 0x08 */ s32 _8;
-    /* 0x0C */ s32 _C;
+    /* 0x0C */ s32 _0C;
     /* 0x10 */ f32 mModelScale;
     /* 0x14 */ u16 mFlags;
     /* 0x16 */ bool _16[2];

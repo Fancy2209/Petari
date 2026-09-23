@@ -332,7 +332,7 @@ void Metbo::exeSwoonStart() {
         MR::startBck(this, "SwoonStart");
         MR::startSoundSeVer(this, "SE_EM_CRASH_S");
     } else {
-        MR::moveAndTurnToPlayer(this, &_A4, ::sFallParam._0, ::sFallParam._4, ::sFallParam._8, ::sFallParam._C);
+        MR::moveAndTurnToPlayer(this, &_A4, ::sFallParam._0, ::sFallParam._4, ::sFallParam._8, ::sFallParam._0C);
         if (MR::isBindedGround(this)) {
             setNerve(GET_NERVE(Metbo, MetboNrvSwoonLand));
         }
@@ -414,7 +414,7 @@ void Metbo::calcAndSetBaseMtx() {
     MR::calcMtxFromGravityAndZAxis(&mtx, this, mGravity, _A4);
     MR::blendMtx(getBaseMtx(), mtx, 0.3f, mtx);
     MR::setBaseTRMtx(this, mtx);
-    TVec3f scale = mAnimScaleController->_C * mScale;
+    TVec3f scale = mAnimScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
 }
 
@@ -556,9 +556,9 @@ void Metbo::moveOrFall(const MR::ActorMoveParam& a1, const TVec3f* a2) {
     TVec3f v;
     v = a2 ? *a2 : *MR::getPlayerPos();
     if (MR::isBindedGround(this)) {
-        MR::moveAndTurnToTarget(this, &_A4, v, a1._0, a1._4, a1._8, a1._C);
+        MR::moveAndTurnToTarget(this, &_A4, v, a1._0, a1._4, a1._8, a1._0C);
     } else {
-        MR::moveAndTurnToTarget(this, &_A4, v, ::sFallParam._0, ::sFallParam._4, ::sFallParam._8, ::sFallParam._C);
+        MR::moveAndTurnToTarget(this, &_A4, v, ::sFallParam._0, ::sFallParam._4, ::sFallParam._8, ::sFallParam._0C);
     }
 }
 

@@ -20,7 +20,7 @@ public:
         return _3C;
     }
 
-    TMtx34f _C;
+    TMtx34f _0C;
     volatile s32 _3C;
     u8 _40;
     bool _41;

@@ -65,7 +65,7 @@ namespace ImageEffectStateImpl {
 
     private:
         /* 0x08 */ bool _8;
-        /* 0x0C */ u32 _C;
+        /* 0x0C */ u32 _0C;
         /* 0x10 */ f32 _10;
         /* 0x14 */ u8 mBloomIntensity;
         /* 0x18 */ f32 _18;

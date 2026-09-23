@@ -19,7 +19,7 @@ void JASProbe::stop() {
     if (_10 < _8 && 100 < _1A8) {
         _10 = _8;
     }
-    _C = _C * 0.96f + _8 * 0.04f;
+    _0C = _0C * 0.96f + _8 * 0.04f;
     u32 resultIndex = _1A8 % 100;
     _14 -= _18[resultIndex];
     _18[resultIndex] = _8;

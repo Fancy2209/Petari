@@ -83,7 +83,7 @@ void SideSpikeMoveStep::endDPDStopSync() {
 void SideSpikeMoveStep::calcAndSetBaseMtx() {
     MapObjActor::calcAndSetBaseMtx();
     if (MR::isInitializeStateEnd()) {
-        TVec3f scale = mScaleController->_C * mScale;
+        TVec3f scale = mScaleController->_0C * mScale;
         MR::setBaseScale(this, scale);
     }
 }

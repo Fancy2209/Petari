@@ -21,7 +21,7 @@ public:
     void endEventCamera();
     void notifyWarpEnd(WarpPod*);
 
-    /* 0x0C */ const LiveActor* _C;
+    /* 0x0C */ const LiveActor* _0C;
     /* 0x10 */ LiveActorGroup* _10;
     /* 0x14 */ s32 _14;
 };

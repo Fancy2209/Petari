@@ -27,7 +27,7 @@ s32 RailGraph::addNode(const TVec3f& rVec) {
 
     RailGraphNode* nodes = &mNodes[cnt];
     nodes->_0 = node._0;
-    nodes->_C = node._C;
+    nodes->_0C = node._0C;
     nodes->_10 = node._10;
     return _8 - 1;
 }
@@ -71,10 +71,10 @@ bool RailGraph::isValidEdge(s32 edgeIdx) const {
 
 void RailGraph::connectEdgeToNode(s32 a1, s32 a2) {
     RailGraphNode* node = &mNodes[a1];
-    s32 val = node->_C;
+    s32 val = node->_0C;
 
     if (val == -1) {
-        node->_C = a2;
+        node->_0C = a2;
     } else {
         s32 next_edge = mEdges[val].getNextEdge(a1);
 

@@ -11,7 +11,7 @@ public:
     SkeletalFishBabyRail* _0;
     SkeletalFishBabyRail* _4;
     u8 _8;
-    SkeletalFishBabyRailSetLinkNode* _C;
+    SkeletalFishBabyRailSetLinkNode* _0C;
     SkeletalFishBabyRailSetLinkNode* _10;
 };
 
@@ -27,7 +27,7 @@ public:
     s32 _0;
     u32 mNumNodes;  // 0x4
     u32 _8;
-    u32 _C;
+    u32 _0C;
     SkeletalFishBabyRailGroupNode* _10;
     SkeletalFishBabyRailGroupNode* _14;
     SkeletalFishBabyRailSetLinkNode* _18;

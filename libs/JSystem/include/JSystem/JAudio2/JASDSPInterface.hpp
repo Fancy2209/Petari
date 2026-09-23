@@ -15,7 +15,7 @@ namespace JASDsp {
         u16 _6;
         s16 _8;
         u16 _A;
-        u32 _C;
+        u32 _0C;
         s16 _10[8];
     };
 
@@ -25,7 +25,7 @@ namespace JASDsp {
         s16* _4;
         u16 _8;
         s16 _A;
-        u16 _C;
+        u16 _0C;
         s16 _E;
         u16 _10[8];
     } FxBuf;

@@ -26,7 +26,7 @@ public:
     /* 0x00 */ const EffectSystem* mHost;
     /* 0x04 */ NameObjAdaptor* _4;
     /* 0x08 */ NameObjAdaptor* _8;
-    /* 0x0C */ NameObjAdaptor* _C;
+    /* 0x0C */ NameObjAdaptor* _0C;
     /* 0x10 */ NameObjAdaptor* _10;
     /* 0x14 */ NameObjAdaptor* _14;
     /* 0x18 */ NameObjAdaptor* _18;

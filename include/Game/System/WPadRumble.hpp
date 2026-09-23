@@ -14,7 +14,7 @@ public:
     /* 0x00 */ const RumblePattern* _0;
     /* 0x04 */ bool _4;
     /* 0x08 */ u32 _8;
-    /* 0x0C */ s16 _C;
+    /* 0x0C */ s16 _0C;
     /* 0x0E */ bool _E;
     /* 0x10 */ const void* _10;
 };
@@ -37,7 +37,7 @@ public:
 
     /* 0x04 */ WPad* mPad;
     /* 0x08 */ bool _8;
-    /* 0x0C */ u32 _C;
+    /* 0x0C */ u32 _0C;
     /* 0x10 */ RumbleChannel mChannel[8];
     /* 0xB0 */ s32 _B0;
     /* 0xB4 */ s32 _B4;

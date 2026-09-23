@@ -44,7 +44,7 @@ typedef struct {
     const char* _0;
     const char* _4;
     const char* _8;
-    s32 _C;
+    s32 _0C;
     const char* _10;
     s32 _14;
 } s_effectDataTable;

@@ -8,7 +8,7 @@ DinoPackunTail::DinoPackunTail(u32 nodeCount) {
     mNodes = nullptr;
     mMaxNodes = 0;
     mNumNodes = 0;
-    _C = 1.0f;
+    _0C = 1.0f;
     _10 = 1.0f;
     _14 = 0.0f;
     _18 = 0.0f;
@@ -127,7 +127,7 @@ void DinoPackunTail::addAccelKeepBend() {
             TVec3f v16;
             if (MR::makeAxisAndCosignVecToVec(&v16, &v11, v19, v17) && v11 < 1.1f) {
                 f32 bendPower = mNodes[i]->getKeepBendPower();
-                f32 v8 = (_C * ((1.0f - MR::normalize(v11, -1.0f, 1.1f)) * bendPower));
+                f32 v8 = (_0C * ((1.0f - MR::normalize(v11, -1.0f, 1.1f)) * bendPower));
                 TVec3f v15 = v17.cross(v16);
                 MR::normalize(&v15);
                 mNodes[i]->addNodeVelocityHost(v15 * v8);

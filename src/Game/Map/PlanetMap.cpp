@@ -96,7 +96,7 @@ void PlanetMap::initClipping(const JMapInfoIter& rIter) {
     }
 
     if (info != nullptr) {
-        TVec3f _4 = TVec3f(info->_4, info->_8, info->_C);
+        TVec3f _4 = TVec3f(info->_4, info->_8, info->_0C);
         TVec3f _8;
         _8.add(_4);
         _90.set(_8);

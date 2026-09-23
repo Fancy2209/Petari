@@ -29,7 +29,7 @@ public:
 
 private:
     /* 0x08 */ MR::MovementControlType _8;
-    /* 0x0C */ const NameObj* _C;
+    /* 0x0C */ const NameObj* _0C;
 };
 
 class SceneNameObjMovementController : public NameObj {
@@ -45,7 +45,7 @@ public:
     void notifyRequestNameObjMovementOnOff(bool);
 
 private:
-    /* 0x0C */ bool _C;
+    /* 0x0C */ bool _0C;
     /* 0x10 */ StopSceneStateControl* mStopSceneStateControl;
 };
 

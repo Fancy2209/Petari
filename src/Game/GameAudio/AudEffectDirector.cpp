@@ -10,7 +10,7 @@ struct AudEffectData {
     /* 0x00 */ f32 mFxSend;
     /* 0x04 */ s32 mCutoff;
     /* 0x08 */ f32 mVolume;
-    /* 0x0C */ u32 _C;
+    /* 0x0C */ u32 _0C;
 };
 
 namespace {
@@ -19,7 +19,7 @@ namespace {
     };
 };  // namespace
 
-AudEffectDirector::AudEffectDirector() : NameObj("オーディオエフェクトディレクター"), _C(0), _10(0), _14(0) {
+AudEffectDirector::AudEffectDirector() : NameObj("オーディオエフェクトディレクター"), _0C(0), _10(0), _14(0) {
 }
 
 void AudEffectDirector::init(const JMapInfoIter& rIter) {
@@ -27,12 +27,12 @@ void AudEffectDirector::init(const JMapInfoIter& rIter) {
 }
 
 void AudEffectDirector::movement() {
-    if (_10 != _C) {
-        setAudioEffectParam(_C);
-        _10 = _C;
+    if (_10 != _0C) {
+        setAudioEffectParam(_0C);
+        _10 = _0C;
     }
 
-    playEffectSound(_C);
+    playEffectSound(_0C);
     _14 = 0;
 }
 
@@ -46,7 +46,7 @@ void AudEffectDirector::setEffectType(s32 a1, s32 a2) {
     }
 
     if (a2 >= _14) {
-        _C = a1;
+        _0C = a1;
         _14 = a2;
     }
 }
@@ -58,7 +58,7 @@ void AudEffectDirector::setAudioEffectParam(s32 a1) {
     pAudEffector->setCutoff(::cAudEffectDataList[a1].mCutoff);
 
     if (!MR::isStageStateScenarioOpeningCamera()) {
-        MR::moveVolumeStageBGM(::cAudEffectDataList[a1].mVolume, ::cAudEffectDataList[a1]._C);
+        MR::moveVolumeStageBGM(::cAudEffectDataList[a1].mVolume, ::cAudEffectDataList[a1]._0C);
     }
 
     switch (a1) {

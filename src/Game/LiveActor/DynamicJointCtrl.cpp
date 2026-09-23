@@ -18,7 +18,7 @@ namespace {
     }
 }  // namespace
 
-JointCtrlRate::JointCtrlRate() : _0(1.0f), _4(), _8(-1), _C(-1) {
+JointCtrlRate::JointCtrlRate() : _0(1.0f), _4(), _8(-1), _0C(-1) {
 }
 
 void JointCtrlRate::update() {
@@ -30,13 +30,13 @@ void JointCtrlRate::update() {
         } else {
             _0 = static_cast< f32 >(_8 - _4) / static_cast< f32 >(_8);
         }
-    } else if (_C >= 0) {
+    } else if (_0C >= 0) {
         _4--;
         if (_4 < 0) {
-            _C = -1;
+            _0C = -1;
             _0 = 0.0f;
         } else {
-            _0 = static_cast< f32 >(_4) / static_cast< f32 >(_C);
+            _0 = static_cast< f32 >(_4) / static_cast< f32 >(_0C);
         }
     }
 }
@@ -47,7 +47,7 @@ void JointCtrlRate::startCtrl(s32 time) {
     }
 
     _8 = time;
-    _C = -1;
+    _0C = -1;
     _4 = time;
     _0 = 0.0f;
 }
@@ -57,7 +57,7 @@ void JointCtrlRate::endCtrl(s32 time) {
         time = sDefaultCtrlTime;
     }
 
-    _C = time;
+    _0C = time;
     _8 = -1;
     _4 = time;
     _0 = 1.0f;

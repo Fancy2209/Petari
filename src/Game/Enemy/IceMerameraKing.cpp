@@ -238,7 +238,7 @@ void IceMerameraKing::exeSearch() {
         MR::startAction(this, "Wait");
     }
     addVelocityToInitPos();
-    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     MR::addVelocityKeepHeightUseShadow(this, 400.0f, 1.5f, 300.0f, nullptr);
     f32 shadow = MR::calcDistanceToPlayer(this);
 
@@ -268,7 +268,7 @@ void IceMerameraKing::exeThrow() {
             MR::calcFrontVec(&_B0, mCameraTarget);
         }
     }
-    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     MR::addVelocityKeepHeightUseShadow(this, 400.0f, 1.5f, 300.0f, nullptr);
     addVelocityToInitPos();
 
@@ -341,15 +341,15 @@ void IceMerameraKing::exeExtinguish() {
     if (MR::isLessStep(this, 40)) {
         MR::addVelocityKeepHeightUseShadow(this, _11C, 1.3f, 700.0f, nullptr);
         MR::moveAndTurnToPlayer(this, &_B0, ::hExtinguishOnAirParam._0, ::hExtinguishOnAirParam._4, ::hExtinguishOnAirParam._8,
-                                ::hExtinguishOnAirParam._C);
+                                ::hExtinguishOnAirParam._0C);
     } else if (MR::isOnGround(this) && MR::isActionEnd(this)) {
-        MR::moveAndTurnToPlayer(this, &_B0, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._0C);
         MR::startSound(this, "SE_BM_ICEMERAKING_LAND");
         _E8 = 0;
         setNerve(GET_NERVE(IceMerameraKing, HostTypeNrvEscape));
     } else {
         MR::moveAndTurnToPlayer(this, &_B0, ::hExtinguishFallOnAirParam._0, ::hExtinguishFallOnAirParam._4, ::hExtinguishFallOnAirParam._8,
-                                ::hExtinguishFallOnAirParam._C);
+                                ::hExtinguishFallOnAirParam._0C);
     }
 }
 
@@ -372,14 +372,14 @@ void IceMerameraKing::exeEscape() {
             f32 radius = getSensor("body")->mRadius;
             MR::rotateQuatRollBall(&_100, mVelocity, *MR::getGroundNormal(this), (0.5f * radius));
             MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnGroundParam._0, ::hEscapeOnGroundParam._4, ::hEscapeOnGroundParam._8,
-                                    ::hEscapeOnGroundParam._C);
+                                    ::hEscapeOnGroundParam._0C);
             if (MR::isBindedWallFront(this, -_B0, 0.25f)) {
                 setNerve(GET_NERVE(IceMerameraKing, HostTypeNrvEscapeJump));
             }
         } else {
             f32 sensor = getSensor("body")->mRadius;
             MR::rotateQuatRollBall(&_100, mVelocity, -mGravity, 0.5f * sensor);
-            MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnAirParam._0, ::hEscapeOnAirParam._4, ::hEscapeOnAirParam._8, ::hEscapeOnAirParam._C);
+            MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnAirParam._0, ::hEscapeOnAirParam._4, ::hEscapeOnAirParam._8, ::hEscapeOnAirParam._0C);
         }
     }
 }
@@ -399,7 +399,7 @@ void IceMerameraKing::exeEscapeJump() {
         f32 radius = getSensor("body")->mRadius;
         MR::rotateQuatRollBall(&_100, mVelocity, *MR::getGroundNormal(this), (0.5f * radius));
         MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnGroundParam._0, ::hEscapeOnGroundParam._4, ::hEscapeOnGroundParam._8,
-                                ::hEscapeOnGroundParam._C);
+                                ::hEscapeOnGroundParam._0C);
 
         if (MR::isGreaterStep(this, 20)) {
             MR::emitEffect(this, "Land");
@@ -409,7 +409,7 @@ void IceMerameraKing::exeEscapeJump() {
     } else {
         f32 radius = getSensor("body")->mRadius;
         MR::rotateQuatRollBall(&_100, mVelocity, -mGravity, (0.5f * radius));
-        MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnAirParam._0, ::hEscapeOnAirParam._4, ::hEscapeOnAirParam._8, ::hEscapeOnAirParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hEscapeOnAirParam._0, ::hEscapeOnAirParam._4, ::hEscapeOnAirParam._8, ::hEscapeOnAirParam._0C);
     }
 }
 
@@ -428,9 +428,9 @@ void IceMerameraKing::exeDamage() {
     }
 
     if (MR::isOnGround(this)) {
-        MR::moveAndTurnToPlayer(this, &_B0, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hOnGroundParam._0, ::hOnGroundParam._4, ::hOnGroundParam._8, ::hOnGroundParam._0C);
     } else {
-        MR::moveAndTurnToPlayer(this, &_B0, ::hDamageJumpParam._0, ::hDamageJumpParam._4, ::hDamageJumpParam._8, ::hDamageJumpParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hDamageJumpParam._0, ::hDamageJumpParam._4, ::hDamageJumpParam._8, ::hDamageJumpParam._0C);
     }
 
     if (MR::isGreaterStep(this, 60)) {
@@ -453,17 +453,17 @@ void IceMerameraKing::exePreRecover() {
 
     if (MR::isLessStep(this, 50)) {
         MR::moveAndTurnToPlayer(this, &_B0, ::hPreRecoverJumpParam._0, ::hPreRecoverJumpParam._4, ::hPreRecoverJumpParam._8,
-                                ::hPreRecoverJumpParam._C);
+                                ::hPreRecoverJumpParam._0C);
     } else if (MR::isStep(this, 50)) {
         MR::startAction(this, "PreRecover");
         MR::setBinderRadius(this, 130.0f);
         HitSensor* sensor = getSensor("body");
         sensor->mRadius = 130.0f;
         MR::setShadowVolumeSphereRadius(this, nullptr, 130.0f);
-        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     } else if (MR::isLessStep(this, 120)) {
         MR::addVelocityKeepHeightUseShadow(this, 750.0f, 1.5f, 300.0f, nullptr);
-        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     } else {
         setNerve(GET_NERVE(IceMerameraKing, HostTypeNrvRecover));
     }
@@ -480,7 +480,7 @@ void IceMerameraKing::exeRecover() {
         MR::startSound(this, "SE_BM_ICEMERAKING_RECOVER");
     }
     addVelocityToInitPos();
-    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     MR::addVelocityKeepHeightUseShadow(this, 750.0f, 1.5f, 300.0f, nullptr);
 
     if (MR::isGreaterStep(this, 160)) {
@@ -499,7 +499,7 @@ void IceMerameraKing::exePreAttack() {
         return;
     }
     addVelocityToInitPos();
-    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
 }
 
 void IceMerameraKing::exeAttack() {
@@ -510,9 +510,9 @@ void IceMerameraKing::exeAttack() {
 
     if (!MR::isActionEnd(this)) {
         MR::addVelocityKeepHeightUseShadow(this, 800.0f, 1.5f, 300.0f, nullptr);
-        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hFlyParam._0, ::hFlyParam._4, ::hFlyParam._8, ::hFlyParam._0C);
     } else {
-        MR::moveAndTurnToPlayer(this, &_B0, ::hAttackParam._0, ::hAttackParam._4, ::hAttackParam._8, ::hAttackParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hAttackParam._0, ::hAttackParam._4, ::hAttackParam._8, ::hAttackParam._0C);
     }
 
     if (MR::isOnGround(this)) {
@@ -530,7 +530,7 @@ void IceMerameraKing::exeAttackAfter() {
         MR::startSound(this, "SE_BM_ICEMERAKING_HIP_DROP");
         MR::tryRumblePadAndCameraDistanceStrong(this, 800.0f, 1200.0f, 2000.0f);
     }
-    MR::moveAndTurnToPlayer(this, &_B0, ::hOnAirParam._0, ::hOnAirParam._4, ::hOnAirParam._8, ::hOnAirParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hOnAirParam._0, ::hOnAirParam._4, ::hOnAirParam._8, ::hOnAirParam._0C);
 
     if (MR::isGreaterStep(this, 90)) {
         setNerve(GET_NERVE(IceMerameraKing, HostTypeNrvSearch));
@@ -552,7 +552,7 @@ void IceMerameraKing::exeAngryDemo() {
     if (MR::isStep(this, 1)) {
         MR::resetPosition(this, _C8);
     }
-    MR::moveAndTurnToPlayer(this, &_B0, ::hAngryDemoParam._0, ::hAngryDemoParam._4, ::hAngryDemoParam._8, ::hAngryDemoParam._C);
+    MR::moveAndTurnToPlayer(this, &_B0, ::hAngryDemoParam._0, ::hAngryDemoParam._4, ::hAngryDemoParam._8, ::hAngryDemoParam._0C);
     MR::addVelocityKeepHeightUseShadow(this, 400.0f, 1.5f, 300.0f, nullptr);
 
     if (isNerve(GET_NERVE(IceMerameraKing, HostTypeNrvAngryDemo2nd)) && MR::isStep(this, 90)) {
@@ -610,7 +610,7 @@ void IceMerameraKing::exeDeathDemo() {
     if (MR::isOnGround(this)) {
         mVelocity.zero();
     } else {
-        MR::moveAndTurnToPlayer(this, &_B0, ::hOnAirParam._0, ::hOnAirParam._4, ::hOnAirParam._8, ::hOnAirParam._C);
+        MR::moveAndTurnToPlayer(this, &_B0, ::hOnAirParam._0, ::hOnAirParam._4, ::hOnAirParam._8, ::hOnAirParam._0C);
     }
 
     if (!MR::isHiddenModel(this) && MR::isGreaterStep(this, frame - 37)) {

@@ -4,7 +4,7 @@
 #include "Game/Util/MtxUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 
-CoinRotater::CoinRotater(const char* pName) : NameObj(pName), _C(), _10(), _14() {
+CoinRotater::CoinRotater(const char* pName) : NameObj(pName), _0C(), _10(), _14() {
     mRotateYMtx.identity();
     mHiSpeedRotateYMtx.identity();
     mWaterRotateMtx.identity();
@@ -13,8 +13,8 @@ CoinRotater::CoinRotater(const char* pName) : NameObj(pName), _C(), _10(), _14()
 }
 
 void CoinRotater::movement() {
-    _C += 8.0f;
-    _C = MR::repeat(_C, 0.0f, 360.0f);
+    _0C += 8.0f;
+    _0C = MR::repeat(_0C, 0.0f, 360.0f);
 
     _10 += 4.0f;
     _10 = MR::repeat(_10, 0.0f, 360.0f);
@@ -22,7 +22,7 @@ void CoinRotater::movement() {
     _14 += 16.0f;
     _14 = MR::repeat(_14, 0.0f, 360.0f);
 
-    MR::makeMtxRotateY(mRotateYMtx, _C);
+    MR::makeMtxRotateY(mRotateYMtx, _0C);
     MR::makeMtxRotateY(mHiSpeedRotateYMtx, _14);
     MR::makeMtxRotateY(mWaterRotateMtx, _10);
 }

@@ -5,7 +5,7 @@
 GhostPacket::GhostPacket(void* pData, u32 len) {
     mDataPtr = (u8*)pData;
     mCurOffs = 0;
-    _C = len;
+    _0C = len;
 }
 
 void GhostPacket::read(u8* pOut, u32 len) {

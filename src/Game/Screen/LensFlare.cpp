@@ -173,7 +173,7 @@ void LensFlareLine::controlAnim() {
 LensFlareDirector::LensFlareDirector()
     : NameObj("レンズフレア管理"), mRing(nullptr), mGlow(nullptr), mLine(nullptr), mBrightObjArray(), _60(0.0f, 0.0f), _68(0.0f), _6C(0.0f, 0.0f),
       _74(0.0f), _78(0.0f), _7C(0), mDrawSyncTokenIndex(0), mBrightCamInfo(nullptr) {
-    // _7C = DrawSyncManager::sInstance->setCallback(3, 2, &_C);
+    // _7C = DrawSyncManager::sInstance->setCallback(3, 2, &_0C);
 }
 
 void LensFlareDirector::init(const JMapInfoIter& rIter) {

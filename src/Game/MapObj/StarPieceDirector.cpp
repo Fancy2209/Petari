@@ -108,12 +108,12 @@ void StarPieceDirector::declareReceiveNum(const NameObj* pNameObj, s32 num) {
 
 s32 StarPieceDirector::getDeclareRemnantStarPieceCount(const NameObj* pNameObj) {
     StarPieceHostInfo* hostInfo = findHostInfo(pNameObj);
-    return hostInfo->_4 - hostInfo->_C;
+    return hostInfo->_4 - hostInfo->_0C;
 }
 
 s32 StarPieceDirector::getDeclareRemnantStarPieceCountNotExist(const NameObj* pNameObj) {
     StarPieceHostInfo* hostInfo = findHostInfo(pNameObj);
-    return hostInfo->_4 - hostInfo->_C - hostInfo->_8;
+    return hostInfo->_4 - hostInfo->_0C - hostInfo->_8;
 }
 
 bool StarPieceDirector::hopPiece(const NameObj* pNameObj, const TVec3f& rVec1, const TVec3f& rVec2) {

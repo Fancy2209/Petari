@@ -644,7 +644,7 @@ void KoteBug::calcAndSetBaseMtx() {
     mtx.setTrans(mPosition);
     MR::setBaseTRMtx(this, mtx);
 
-    TVec3f scale = mScaleController->_C * mScale;
+    TVec3f scale = mScaleController->_0C * mScale;
     MR::setBaseScale(this, scale);
     mJointController->registerCallBack();
 }

@@ -22,7 +22,7 @@ public:
     /* 0x0 */ XanimeBckTable mParent;
     f32 _4;
     f32 _8;
-    f32 _C;
+    f32 _0C;
     u32 _10;
 };
 
@@ -99,7 +99,7 @@ public:
     XanimeOfsInfo* _8;
 
     // Unreferenced members
-    u8 _C[12];
+    u8 _0C[12];
 };
 
 class XanimeResourceTable {

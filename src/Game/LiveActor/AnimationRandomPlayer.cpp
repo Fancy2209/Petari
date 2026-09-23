@@ -11,7 +11,7 @@ namespace NrvAnimationRandomPlayer {
 
 AnimationRandomPlayer::AnimationRandomPlayer(const LiveActor* pActor, const char* a2, const char* a3, s32 a4, f32 a5) : NerveExecutor(a2) {
     mActor = pActor;
-    _C = a2;
+    _0C = a2;
     _10 = a3;
     _18 = a4;
     _1C = a5;
@@ -40,12 +40,12 @@ void AnimationRandomPlayer::exeWait() {
 
 void AnimationRandomPlayer::exePlay() {
     if (MR::isFirstStep(this)) {
-        MR::startAllAnim(mActor, _C);
+        MR::startAllAnim(mActor, _0C);
     }
 
-    if (MR::isAnyAnimOneTimeAndStopped(mActor, _C)) {
+    if (MR::isAnyAnimOneTimeAndStopped(mActor, _0C)) {
         updateStartStep();
-        MR::setAllAnimFrame(mActor, _C, 0.0f);
+        MR::setAllAnimFrame(mActor, _0C, 0.0f);
         setNerve(GET_NERVE(AnimationRandomPlayer, HostTypeWait));
     }
 }
