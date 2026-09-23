@@ -168,7 +168,7 @@ bool MarioRabbit::update() {
 
             _28 = 0;
             _27 = 0;
-            if (!getPlayer()->mMovementStates._B) {
+            if (!getPlayer()->mMovementStates._0B) {
                 getPlayer()->mMovementStates.jumping = false;
             }
 

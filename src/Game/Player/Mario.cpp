@@ -1341,7 +1341,7 @@ bool Mario::isEnableRush() const {
         return false;
     }
 
-    if (mMovementStates._B && mMovementStates.jumping) {
+    if (mMovementStates._0B && mMovementStates.jumping) {
         return false;
     }
 
@@ -1706,9 +1706,9 @@ void Mario::update() {
     updateAndClearStrideParameter();
     checkKeyLock();
 
-    if (!(mMovementStates.jumping && mMovementStates._B) && _728 != nullptr && isAnimationRun(_728)) {
+    if (!(mMovementStates.jumping && mMovementStates._0B) && _728 != nullptr && isAnimationRun(_728)) {
         mMovementStates.jumping = true;
-        mMovementStates._B = true;
+        mMovementStates._0B = true;
     }
 
     updateCubeCode();
@@ -1754,7 +1754,7 @@ void Mario::update() {
     updateGroundInfo();
     OSGetTime();
 
-    if (getMovementStates()._1 && !(mMovementStates.jumping && !mMovementStates._B)) {
+    if (getMovementStates()._1 && !(mMovementStates.jumping && !mMovementStates._0B)) {
         if (damageFloorCheck()) {
             writeBackPhyisicalVector();
             return;
@@ -2240,7 +2240,7 @@ const TVec3f* Mario::getGravityVec() const {
                 return &mAirGravityVec;
             }
 
-            if (_3CE < 0x10 && _3BC > 3 && !mMovementStates._B) {
+            if (_3CE < 0x10 && _3BC > 3 && !mMovementStates._0B) {
                 return &mAirGravityVec;
             }
 

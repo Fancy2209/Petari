@@ -311,7 +311,7 @@ bool Mario::isEnableHang() {
         return false;
     }
 
-    if (mMovementStates._B) {
+    if (mMovementStates._0B) {
         return false;
     }
 
@@ -388,7 +388,7 @@ bool Mario::isEnableBackHang() {
         return false;
     }
 
-    if (mMovementStates._B) {
+    if (mMovementStates._0B) {
         return false;
     }
 

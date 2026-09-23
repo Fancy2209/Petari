@@ -418,8 +418,8 @@ void MarioActor::updateBeeStickMode(TVec3f& rGravity) {
                 detach = true;
             }
         } else {
-            if (mMario->mMovementStates._B) {
-                mMario->mMovementStates._B = false;
+            if (mMario->mMovementStates._0B) {
+                mMario->mMovementStates._0B = false;
             }
 
             detach = true;

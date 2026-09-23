@@ -63,7 +63,7 @@ bool Mario::isDisableStayHere() const {
         return true;
     }
 
-    if (getDrawStates()._B) {
+    if (getDrawStates()._0B) {
         return true;
     }
 

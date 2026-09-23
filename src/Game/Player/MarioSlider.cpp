@@ -86,7 +86,7 @@ void MarioSlider::calcWallHit() {
 
 void Mario::startSlider() {
     if (!isStatusActive(mSlider->mStatusId)) {
-        if (getPlayer()->mMovementStates._B) {
+        if (getPlayer()->mMovementStates._0B) {
             if (getPlayer()->mMovementStates.jumping) {
                 mDrawStates._14 = true;
                 playSound("尻ドロップ着地");

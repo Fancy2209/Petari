@@ -49,7 +49,7 @@ bool MessageData::getMessage(TalkMessageInfo* pMessageInfo, u16, u16 infoToolInd
     pMessageInfo->mCameraType = *(pInfoTool + 7);
     pMessageInfo->mTalkType = *(pInfoTool + 8);
     pMessageInfo->_A = *(pInfoTool + 0xa);
-    pMessageInfo->_B = *(pInfoTool + 0xb);
+    pMessageInfo->_0B = *(pInfoTool + 0xb);
     pMessageInfo->mBalloonType = *(pInfoTool + 9);
 
     return true;

@@ -59,7 +59,7 @@ namespace MarioAccess {
     }
 
     bool isHipDropFalling() {
-        if (getPlayerActor()->getMovementStates().jumping && getPlayerActor()->getMovementStates()._B && !getPlayerActor()->getMovementStates()._1 &&
+        if (getPlayerActor()->getMovementStates().jumping && getPlayerActor()->getMovementStates()._0B && !getPlayerActor()->getMovementStates()._1 &&
             !getPlayerActor()->isJumpRising()) {
             return true;
         }

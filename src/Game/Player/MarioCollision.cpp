@@ -1646,7 +1646,7 @@ bool Mario::updateBinderInfo() {
                 }
             }
 
-            if (mMovementStates.jumping && mMovementStates._B) {
+            if (mMovementStates.jumping && mMovementStates._0B) {
                 TVec3f lastMove;
                 mActor->getLastMove(&lastMove);
 

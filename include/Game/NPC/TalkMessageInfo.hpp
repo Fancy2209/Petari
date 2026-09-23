@@ -27,5 +27,5 @@ public:
     u8 mTalkType;
     u8 mBalloonType;
     s8 _A;
-    s8 _B;
+    s8 _0B;
 };

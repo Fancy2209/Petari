@@ -196,7 +196,7 @@ bool MarioActor::sendBodyAttack(HitSensor* pSensor) {
         isStatus = false;
     }
 
-    if (isStatus && !getMovementStates()._8 && !isDamaging() && !getMovementStates()._B) {
+    if (isStatus && !getMovementStates()._8 && !isDamaging() && !getMovementStates()._0B) {
         TVec3f newPos(pSensor->mPosition - getSensor("body")->mPosition);
         TVec3f* frontVec = &mMario->mFrontVec;
         if (MR::diffAngleAbsHorizontal(newPos, *frontVec, getGravityVector()) >= HALF_PI) {

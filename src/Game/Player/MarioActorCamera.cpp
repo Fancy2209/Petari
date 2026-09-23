@@ -39,7 +39,7 @@ bool MarioActor::isLongDrop() const {
 }
 
 bool MarioActor::isFastDrop() const {
-    return mMario->getMovementStates()._B;
+    return mMario->getMovementStates()._0B;
 }
 
 u32 MarioActor::getSpecialMode() const {

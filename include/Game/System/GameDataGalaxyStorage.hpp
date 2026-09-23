@@ -37,7 +37,7 @@ public:
     /* 0x08 */ u8 mPowerStarOwnedFlags;
     /* 0x09 */ u8 mAlreadyVisitedFlags;
     /* 0x0A */ u8 _A;
-    /* 0x0B */ u8 _B;
+    /* 0x0B */ u8 _0B;
     /* 0x0C */ u16 mMaxCoinNum[8];
 };
 

@@ -49,7 +49,7 @@ void Mario::checkEnforceMoveInner() {
             }
         }
 
-        mDrawStates._B = 1;
+        mDrawStates._0B = 1;
 
         if (!mActor->_F44) {
             addTrans(mVelocity, nullptr);

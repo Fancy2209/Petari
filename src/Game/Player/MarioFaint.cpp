@@ -107,7 +107,7 @@ bool MarioFaint::update() {
 bool MarioFaint::start() {
     mTimer = 0;
     _16 = 0;
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
     getPlayer()->mMovementStates.jumping = false;
 
     if (_18.dot(getPlayer()->mFrontVec) > 0.0f) {

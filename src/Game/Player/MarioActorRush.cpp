@@ -294,7 +294,7 @@ void MarioActor::endRush(const RushEndInfo* pInfo) {
         case 0:
             mMario->stopWalk();
         case 4:
-            mMario->mMovementStates._B = false;
+            mMario->mMovementStates._0B = false;
             mMario->mMovementStates.jumping = false;
             mMario->_3C0 = 0;
             break;

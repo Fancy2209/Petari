@@ -51,7 +51,7 @@ bool MarioBlown::start() {
 
     getPlayer()->mMovementStates._1 = false;
     getPlayer()->mMovementStates.jumping = true;
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
 
     _18 += -mActor->_240 * mActor->getConst().getTable()->mJumpHeightBlown;
     getPlayer()->setJumpVec(_18);

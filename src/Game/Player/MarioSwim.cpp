@@ -499,7 +499,7 @@ bool MarioSwim::start() {
             f32 ftmp2 = (0.2f + 0.1f * fr1f);
             mJumpDiveTimer = 0x3C;
             mForwardSpeed = ftmp2 * ftmp;
-        } else if (getPlayer()->getMovementStates()._B || r1e) {
+        } else if (getPlayer()->getMovementStates()._0B || r1e) {
             mForwardSpeed = 10.0f;
 
             if (mJetTimer != 0) {

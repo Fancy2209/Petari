@@ -227,7 +227,7 @@ void TalkNodeCtrl::updateMessage() {
             mMessageInfo.mTalkType = 0;
         }
 
-        s8 msgId = mMessageInfo._B;
+        s8 msgId = mMessageInfo._0B;
 
         if (msgId != -1) {
             if (MR::isOnMessageAlreadyRead(msgId)) {
@@ -246,8 +246,8 @@ void TalkNodeCtrl::readMessage() {
         mMessageInfo.mTalkType = 0;
     }
 
-    if (mMessageInfo._B != -1) {
-        MR::onMessageAlreadyRead(mMessageInfo._B);
+    if (mMessageInfo._0B != -1) {
+        MR::onMessageAlreadyRead(mMessageInfo._0B);
     }
 }
 
