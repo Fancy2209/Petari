@@ -292,7 +292,9 @@ namespace JGeometry {
             z = _z;
         }
 
+        #ifdef __MWERKS__
         TVec3< T >(int x, int y, int Z);
+        #endif
 
         inline TVec3(T val) {
             x = val;

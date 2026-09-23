@@ -142,6 +142,7 @@ void* __memcpy(void*, const void*, int);
 #define __cntlzw __builtin_ctz
 #define __abs __builtin_abs
 #define __fabsf __builtin_fabsf
+#define __fabs __builtin_fabs
 #define __memcpy __builtin_memcpy
 #endif
 

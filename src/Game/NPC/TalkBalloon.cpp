@@ -82,6 +82,7 @@ void TalkBalloon::close() {
     MR::startAnim(this, "End", 0);
 }
 
+#ifdef __MWERKS__
 inline f32 fmin(f32 a, f32 b) {
     return b >= a ? a : b;
 }
@@ -89,6 +90,7 @@ inline f32 fmin(f32 a, f32 b) {
 inline f32 fmax(f32 a, f32 b) {
     return b >= a ? b : a;
 }
+#endif
 
 void TalkBalloon::updateBalloon() {
     mMessageCtrl->updateBalloonPos();

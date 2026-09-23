@@ -7,7 +7,23 @@
 #include "Game/Util/JMapUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 #include <algorithm>
+#ifdef __MWERKS__
 #include <functional.hpp>
+#else
+#include <functional>
+#include "Game/Util.hpp"
+#ifdef PLATFORM_PS3
+namespace std {
+    template < class InputIt, class UnaryPredicate >
+    InputIt rfind_if(InputIt first, InputIt last, UnaryPredicate p) {
+        for (; first != last && !p(*first); first--) {
+        }
+
+        return first;
+    }
+}
+#endif
+#endif
 
 AreaObj::AreaObj(int formType, const char* pName)
     : NameObj(pName), mFormType(formType), mIsValid(true), _15(true), mIsAwake(true), mObjArg0(-1), mObjArg1(-1), mObjArg2(-1), mObjArg3(-1),

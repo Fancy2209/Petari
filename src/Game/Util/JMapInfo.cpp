@@ -57,10 +57,11 @@ bool JMapInfo::getValueFast(int entryIndex, int itemIndex, const char** pValueOu
     const char* valuePtr = getEntryAddress(mData, mData->mDataOffset, entryIndex) + item->mOffsData;
 
     switch (item->mType) {
-    case JMAP_VALUE_TYPE_STRING_PTR:
+    case JMAP_VALUE_TYPE_STRING_PTR: {
         const char* pStringTable = getEntryAddress(mData, mData->mDataOffset, getNumEntries());
         *pValueOut = pStringTable + *reinterpret_cast< const u32* >(valuePtr);
         break;
+    }
     default:
         *pValueOut = valuePtr;
         break;
@@ -95,10 +96,19 @@ bool JMapInfo::getValueFast(int entryIndex, int itemIndex, u32* pValueOut) const
 
 bool JMapInfo::getValueFast(int entryIndex, int itemIndex, s32* pValueOut) const {
     const JMapItem* item = &mData->mItems[itemIndex];
+    #if __MWERKS__
     if (item->mShift != 0) {
         goto FAIL;
     }
+    #endif
+    
     const char* valuePtr = getEntryAddress(mData, mData->mDataOffset, entryIndex) + item->mOffsData;
+
+    #if !__MWERKS__
+    if (item->mShift != 0) {
+        goto FAIL;
+    }
+    #endif
 
     switch (item->mType) {
     case JMAP_VALUE_TYPE_LONG:

@@ -191,7 +191,11 @@ void Mario::recordRelativePosition() {
             _8CC[0]->mIdx = -1;
         } else {
             pPosition = &mActor->mPosition;
+            #ifdef __MWERKS__
             PSMTXMultVec(*_8CC[0]->getBaseInvMtx(), pPosition, &_8B0);
+            #else
+            PSMTXMultVec(*_8CC[0]->getBaseInvMtx(), pPosition, &mRelativeWallPos[0]);
+            #endif
         }
     }
 
@@ -200,7 +204,11 @@ void Mario::recordRelativePosition() {
             _8CC[1]->mIdx = -1;
         } else {
             pPosition = &mActor->mPosition;
-            PSMTXMultVec(*_8CC[1]->getBaseInvMtx(), pPosition, &_8BC);
+            #ifdef __MWERKS__
+            PSMTXMultVec(*_8CC[0]->getBaseInvMtx(), pPosition, &_8BC);
+            #else
+            PSMTXMultVec(*_8CC[0]->getBaseInvMtx(), pPosition, &mRelativeWallPos[1]);
+            #endif        
         }
     }
 }

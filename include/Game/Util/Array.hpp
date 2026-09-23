@@ -342,7 +342,30 @@ namespace MR {
         FixedRingBuffer(T* pBuffer, T* pBuffer2) : mHead(pBuffer, pBuffer2), mEnd(pBuffer, pBuffer2), mCount(0) {
         }
 
+        #ifdef __MWERKS__
         void push_back(const T& val);
+        #else
+        void push_back(const T& val) {
+            if ((u32)mCount >= 16) {
+                return;
+            }
+
+            *mEnd.mHead = val;
+            ++mEnd;
+            mCount++;
+        }
+        #endif
+
+        #ifndef __MWERKS__
+        void operator++() {
+            const T** pEnd = mEnd;
+            mHead++;
+
+            if (pEnd <= mHead) {
+                mHead = mEnd;
+            }
+        }
+        #endif
 
         T mBuffer[S];    // 0x00
         iterator mHead;  // 0x40 for S=16

@@ -805,7 +805,11 @@ side0:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[2] > distances[3]) {
@@ -833,7 +837,11 @@ side1:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[3] > distances[1]) {
@@ -862,7 +870,11 @@ side2:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[1] > distances[2]) {
@@ -1026,7 +1038,11 @@ side0:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[2] > distances[3]) {
@@ -1054,7 +1070,11 @@ side1:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[3] > distances[1]) {
@@ -1083,7 +1103,11 @@ side2:
         }
 
         *pFlag = 1;
+        #ifdef __MWERKS__
         goto success;
+        #else
+        return true;
+        #endif
     }
 
     if (distances[1] > distances[2]) {

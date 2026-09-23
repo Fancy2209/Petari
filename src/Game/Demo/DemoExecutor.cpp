@@ -15,6 +15,7 @@
 #include "Game/Util/JMapUtil.hpp"
 #include "Game/Util/LiveActorUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 DemoExecutor::DemoExecutor(const char* pName)

@@ -10,6 +10,7 @@
 #include "Game/Util/MapUtil.hpp"
 #include "Game/Util/MathUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 #include <cstdio>
 

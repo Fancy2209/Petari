@@ -84,8 +84,8 @@ LiveActorGroup* LiveActorGroupArray::createGroup(const JMapInfoIter& rIter, cons
 }
 
 namespace {
-    std::binder2nd< HasGroupId, const JMapIdInfo& > makeGroupIdPredicate(const JMapIdInfo& rIdInfo) {
-        return std::bind2nd(HasGroupId(), rIdInfo);
+    std::binder2nd< HasGroupId > makeGroupIdPredicate(const JMapIdInfo& rIdInfo) {
+        return std::binder2nd< HasGroupId >(HasGroupId(), rIdInfo);
     }
 }  // namespace
 

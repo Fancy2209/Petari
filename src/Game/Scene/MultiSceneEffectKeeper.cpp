@@ -6,6 +6,7 @@
 #include "Game/System/ResourceHolder.hpp"
 #include "Game/Util/HashUtil.hpp"
 #include "Game/Util/SystemUtil.hpp"
+#include "Game/Util.hpp"
 #include <JSystem/JGeometry/TVec.hpp>
 #include <algorithm>
 

@@ -2,6 +2,7 @@
 #include "Game/Effect/EffectSystem.hpp"
 #include "Game/Effect/EffectSystemUtil.hpp"
 #include "Game/Effect/ParticleEmitter.hpp"
+#include "Game/Util.hpp"
 
 #include <JSystem/JParticle/JPAEmitter.hpp>
 #include <algorithm>
@@ -70,6 +71,17 @@ void ParticleEmitterHolder::requestMovementOnAllEmitters() {
     }
 }
 
+#ifndef __MWERKS__
+namespace std {
+    template < class InputIt, class UnaryPredicate >
+    InputIt* find_if_array(InputIt* pFirst, InputIt* pLast, UnaryPredicate p) {
+        for (; pFirst != pLast && !p(pFirst); pFirst++) {
+        }
+
+        return pFirst;
+    }
+}
+#endif
 ParticleEmitter* ParticleEmitterHolder::findAvailableParticleEmitter() {
     ParticleEmitter* res = std::find_if_array(mEmitters.begin(), mEmitters.end(), std::not1(std::mem_func(&ParticleEmitter::isValid)));
     if (res == mEmitters.end()) {

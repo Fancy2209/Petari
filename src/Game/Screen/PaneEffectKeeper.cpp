@@ -6,6 +6,7 @@
 #include "Game/Screen/LayoutManager.hpp"
 #include "Game/Util/HashUtil.hpp"
 #include "Game/Util/SystemUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 PaneEffectKeeper::PaneEffectKeeper(LayoutActor* pActor, const LayoutManager* pManager, int myInt, const char* pName)

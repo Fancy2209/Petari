@@ -62,8 +62,14 @@ void Mario::initMember() {
     _814.zero();
     PSMTXIdentity(_824.toMtxPtr());
 
+    #ifdef __MWERKS__
     _8B0.zero();
     _8BC.zero();
+    #else
+    mRelativeWallPos[0].zero();
+    mRelativeWallPos[1].zero();
+    #endif
+
     _8DC.zero();
 
     _8EC = 0;

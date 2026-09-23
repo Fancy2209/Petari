@@ -6,6 +6,7 @@
 #include "Game/Util/JMapUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 #include "Game/Util/SwitchEventFunctorListener.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 namespace {
