@@ -128,32 +128,38 @@ void LuigiNPC::init(const JMapInfoIter& rIter) {
     setNerve(GET_NERVE(LuigiNPC, LuigiNPCNrvWait));
 
     switch (mType) {
-    case Type_Afraid:
+    case Type_Afraid: {
         setNerve(GET_NERVE(LuigiNPC, LuigiNPCNrvAfraidWait));
         setAfraidAction();
         break;
-    case Type_Normal:
+    }
+    case Type_Normal: {
         if (!MR::isOnGameEventFlagLuigiRescued() || MR::isLuigiDisappearFromAstroGalaxyOrHiding()) {
             makeActorDead();
         }
 
         AstroDemoFunction::tryRegisterDemoForLuigiAndKinopio(this, rIter);
         break;
-    case Type_Event:
+    }
+    case Type_Event: {
         break;
-    case Type_Arrested:
+    }
+    case Type_Arrested: {
         MR::useStageSwitchReadA(this, rIter);
         MR::useStageSwitchWriteB(this, rIter);
         setNerve(GET_NERVE(LuigiNPC, LuigiNPCNrvArrestedWait));
         break;
-    case Type_OnTree:
+    }
+    case Type_OnTree: {
         MR::onCalcShadowDropPrivateGravity(this, nullptr);
         TVec3f offset(0.0f, 0.0f, ::sShadowOffset);
         MR::setShadowDropPositionAtJoint(this, nullptr, "Center", offset);
         setNerve(GET_NERVE(LuigiNPC, LuigiNPCNrvOnTreeWait));
         break;
-    default:
+    }
+    default: {
         break;
+    }
     }
 
     if (isDeclarePowerStarType()) {

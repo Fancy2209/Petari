@@ -8,6 +8,7 @@
 #include "Game/Util/HashUtil.hpp"
 #include "Game/Util/MemoryUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <JSystem/JParticle/JPAEmitter.hpp>
 #include <algorithm>
 #include <cstring>

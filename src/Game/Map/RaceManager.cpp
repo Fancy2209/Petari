@@ -15,6 +15,7 @@
 #include "Game/Util/SoundUtil.hpp"
 #include "Game/Util/StarPointerUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 // FIXME: String "Record" is out of order in .data, yet function order matches in retail and debug

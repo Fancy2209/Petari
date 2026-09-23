@@ -32,9 +32,8 @@ TVec3f* EffectObjGravityDust::getClippingCenterOffset() const {
     return &(TVec3f(0.0f, 500.0f * mScale.y, 0.0f));
 }
 #else
-TVec3f clippingCenterOffset = TVec3f(0.0f, 500.0f * mScale.y, 0.0f);
 TVec3f* EffectObjGravityDust::getClippingCenterOffset() const {
-    return (TVec3f *)&clippingCenterOffset;
+    return new TVec3f(0.0f, 500.0f * mScale.y, 0.0f);
 }
 #endif
 

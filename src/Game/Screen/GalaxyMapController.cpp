@@ -96,7 +96,11 @@ void GalaxyMapController::init(const JMapInfoIter& rIter) {
         _38 = new JUTTexture(MR::getScreenWidth() / 2, MR::getScreenHeight() / 2, GX_TF_RGB565);
     }
 
+#if __MWERKS__
     if (MR::startFunctionAsyncExecuteOnMainThread(MR::Functor(this, GalaxyMapController::capture), "GalaxyMapController::capture")) {
+#else
+    if (MR::startFunctionAsyncExecuteOnMainThread(MR::Functor(this, &GalaxyMapController::capture), "GalaxyMapController::capture")) {
+#endif
         MR::waitForEndFunctionAsyncExecute("GalaxyMapController::capture");
     }
 

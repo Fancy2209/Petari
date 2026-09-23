@@ -9,6 +9,7 @@
 #include <wstring.h>
 #else
 #include <wchar.h>
+#include <cstring>
 #endif
 
 #define CENTISEC_PER_SEC 100

@@ -1,6 +1,7 @@
 #include "Game/Player/GhostPacket.hpp"
 #include <JSystem/JGeometry/TVec.hpp>
 #include <cstdio>
+#include <cstring>
 
 GhostPacket::GhostPacket(void* pData, u32 len) {
     mDataPtr = (u8*)pData;

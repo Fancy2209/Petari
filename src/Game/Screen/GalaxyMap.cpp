@@ -19,6 +19,7 @@
 #include "Game/Util/SoundUtil.hpp"
 #include "Game/Util/StarPointerUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 #include <cstdio>
 
@@ -41,6 +42,7 @@ GalaxyMap::GalaxyMap()
       mIconAButton(), _70(), _71(true) {
 }
 
+#ifdef __MWERKS__
 template <>
 inline MR::Vector< MR::AssignableArray< GalaxyMapIcon* > >::~Vector() {
 }
@@ -56,6 +58,7 @@ inline MR::Vector< MR::AssignableArray< GalaxyMapDomeIcon* > >::~Vector() {
 template <>
 inline MR::Vector< MR::AssignableArray< GalaxyMapTicoIcon* > >::~Vector() {
 }
+#endif
 
 void GalaxyMap::init(const JMapInfoIter& rIter) {
     initLayoutManager("MapGrandGalaxy", 1);

@@ -948,6 +948,7 @@ public:
     /* 0x89C */ MarioFpView* mFpView;
     /* 0x8A0 */ MarioMove* mMove;
     /* 0x8A4 */ TVec3f _8A4;
+    #ifdef __MWERKS__
     union {
         struct {
             /* 0x8B0 */ TVec3f _8B0;
@@ -955,6 +956,9 @@ public:
         };
         /* 0x8B0 */ TVec3f mRelativeWallPos[2];
     };
+    #else
+    /* 0x8B0 */ TVec3f mRelativeWallPos[2];
+    #endif
     /* 0x8C8 */ Triangle* _8C8;
     /* 0x8CC */ Triangle* _8CC[2];
     /* 0x8D4 */ HitSensor* _8D4;
