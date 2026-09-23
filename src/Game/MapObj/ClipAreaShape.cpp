@@ -45,8 +45,8 @@ bool ClipAreaShapeSphere::isInArea(register const TVec3f &rVec) const {
 
     #ifdef __MWERKS__
     __asm volatile {
-        psq_l f1, 0(rVec), 0, 0
-        lfs f0, sphere->mRadius
+        psq_l f1, 0(rVec), 0, 0 // load rVec to f1
+        lfs f0, sphere->mRadius // load sphere->mRadius to f0
         ps_mul f1, f1, f1
         lfs f2, 8(rVec)
         ps_madd f2, f2, f2, f1
@@ -56,7 +56,9 @@ bool ClipAreaShapeSphere::isInArea(register const TVec3f &rVec) const {
         srwi r3, r3, 31
     };
     #else
-    #warning "TODO: ClipAreaShapeSphere::isInArea"
+    // thanks brenm17 for the help
+    f32 lenSq = rVec.x*rVec.x + rVec.y*rVec.y + rVec.z*rVec.z;
+    return lenSq < sphere->mRadius;
     #endif
 }
 // clang-format on

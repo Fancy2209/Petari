@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.0...3.10)
 project(petari-ps3
    VERSION 0.1.0
-   LANGUAGES C CXX
+   LANGUAGES C CXX ASM
 )
 set(CMAKE_CXX_STANDARD 11)
 
-add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-changes-meaning -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing)
+add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include/
     ${CMAKE_SOURCE_DIR}/libs/JSystem/include
@@ -216,7 +216,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/nw4r/lyt/lyt_pane.cpp
 
     ${CMAKE_SOURCE_DIR}/src/Game/Screen/THPDraw.c
-        ${CMAKE_SOURCE_DIR}/src/Game/Gravity/PlanetGravity.cpp
+    ${CMAKE_SOURCE_DIR}/src/Game/Gravity/PlanetGravity.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Gravity/PlanetGravityManager.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Gravity/GraviryFollower.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Gravity/DiskTorusGravity.cpp
@@ -547,6 +547,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/DriftWood.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/SpiderThread.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/EarthenPipe.cpp
+    ${CMAKE_SOURCE_DIR}/src/Game/System/BCSVInclude.gcc.s
     ${CMAKE_SOURCE_DIR}/src/Game/System/GameDataFunction.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/System/FileRipper.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/System/NANDManager.cpp
