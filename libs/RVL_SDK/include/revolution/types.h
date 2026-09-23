@@ -46,7 +46,7 @@ typedef int BOOL;
 #endif
 #endif
 
-#ifdef __MWERKS__
+#if defined(__MWERKS__) || defined(__powerpc__)
 #define __REGISTER register
 #else
 #define __REGISTER
@@ -129,13 +129,20 @@ typedef int BOOL;
 
 /* just some common intrinsics */
 
-#ifndef __MWERKS__
+#ifdef __MWERKS__
 f32 __frsqrte(f32);
 u32 __cntlzw(u32);
 s32 __abs(s32);
 f32 __fabsf(f32);
 f64 __fabs(f64);
 void* __memcpy(void*, const void*, int);
+#else
+#include <math.h>
+#define __frsqrte(x) (1.0f/sqrt(x));
+#define __cntlzw __builtin_ctz
+#define __abs __builtin_abs
+#define __fabsf __builtin_fabsf
+#define __memcpy __builtin_memcpy
 #endif
 
 #endif  // TYPES_H

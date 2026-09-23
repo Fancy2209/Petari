@@ -7,6 +7,15 @@
 extern "C" {
 #endif
 
+#if PLATFORM_PS3
+static inline void OSf32tou16(register f32* in, volatile register u16* out) { 
+    *out = *in;
+}
+
+static inline void OSu16tof32(register u16* in, volatile register f32* out) { 
+    *out = *in;
+}
+#else
 #ifdef __MWERKS__
 static inline u16 __OSf32tou16(register f32 in) {
     f32 a;
@@ -26,6 +35,7 @@ static inline void OSf32tou16(register f32* in, volatile register u16* out) {
 #define OSf32tou16(in, out) asm volatile("psq_st   %1, 0(%0), 1, 3 " : : "b"(out), "f"(*(in)) : "memory")
 #endif
 #define OSu16tof32(in, out) asm volatile("psq_l   %0, 0(%1), 1, 3  " : "=f"(*(out)) : "b"(in))
+#endif
 
 static inline void OSInitFastCast(void) {
 #ifdef __MWERKS__

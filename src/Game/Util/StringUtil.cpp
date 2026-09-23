@@ -5,7 +5,11 @@
 #include <cctype>
 #include <cstdarg>
 #include <cstdio>
+#if __MWERKS__
 #include <wstring.h>
+#else
+#include <wchar.h>
+#endif
 
 #define CENTISEC_PER_SEC 100
 #define SEC_PER_MIN 60

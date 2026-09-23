@@ -304,12 +304,12 @@ void EffectKeeper::changeBck() {
 
 void EffectKeeper::onDraw() {
     std::for_each(_C.begin(), _C.end(),
-                  std::binder2nd< std::mem_fun1_t< void, MultiEmitter, s32 >, s32 >(std::mem_func(&MultiEmitter::playDrawParticle), -1));
+                  std::bind2nd(std::mem_func(&MultiEmitter::playDrawParticle), -1));
 }
 
 void EffectKeeper::offDraw() {
     std::for_each(_C.begin(), _C.end(),
-                  std::binder2nd< std::mem_fun1_t< void, MultiEmitter, s32 >, s32 >(std::mem_func(&MultiEmitter::stopDrawParticle), -1));
+                  std::bind2nd(std::mem_func(&MultiEmitter::stopDrawParticle), -1));
 }
 
 void EffectKeeper::enableSort() {

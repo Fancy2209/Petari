@@ -5,7 +5,11 @@
 extern "C" {
 #endif
 
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 #include "revolution/mem/list.h"
 #include "revolution/os.h"
 

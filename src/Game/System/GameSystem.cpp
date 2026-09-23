@@ -45,7 +45,11 @@ namespace NrvGameSystem {
     NEW_NERVE(GameSystemNormal, GameSystem, Normal);
 };  // namespace NrvGameSystem
 
+#if __MWERKS__
 void main(void) {
+#else
+int main(int argc, char*argv[]) {
+#endif
     OSInitFastCast();
     DVDInit();
     VIInit();
@@ -68,6 +72,9 @@ void main(void) {
     while (true) {
         pGameSystem->frameLoop();
     }
+    #ifndef __MWERKS__
+    return 0;
+    #endif
 }
 
 GameSystem::GameSystem()

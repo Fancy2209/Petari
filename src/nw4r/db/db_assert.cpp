@@ -2,7 +2,11 @@
 #include "nw4r/db/console.h"
 #include "nw4r/db/directPrint.h"
 #include "nw4r/db/mapFile.h"
+#if __MWERKS__
 #include <va_list.h>
+#else
+#include <stdarg.h>
+#endif
 
 namespace nw4r {
     namespace db {
@@ -64,12 +68,19 @@ namespace nw4r {
             return;
         }
 
-        __declspec(weak) void VPanic(const char* file, int line, const char* fmt, va_list vlist, bool halt) {
+        #ifndef PLATFORM_PS3
+        __declspec(weak)
+        #else
+        __attribute__((weak))
+        #endif
+        void VPanic(const char* file, int line, const char* fmt, va_list vlist, bool halt) {
             register u32 stackPointer;
+                    #if !PLATFORM_PS3
             asm {
         mr  stackPointer, r1
             }
             stackPointer = *((u32*)stackPointer);
+        #endif
             (void)OSDisableInterrupts();
             (void)OSDisableScheduler();
 
@@ -100,7 +111,12 @@ namespace nw4r {
             }
         }
 
-        __declspec(weak) void Panic(const char* file, int line, const char* fmt, ...) {
+        #ifndef PLATFORM_PS3
+        __declspec(weak)
+        #else
+        __attribute__((weak))
+        #endif
+        void Panic(const char* file, int line, const char* fmt, ...) {
             va_list vlist;
             va_start(vlist, fmt);
             nw4r::db::VPanic(file, line, fmt, vlist, true);

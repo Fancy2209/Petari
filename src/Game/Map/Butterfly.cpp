@@ -16,6 +16,7 @@
 #include "Game/Util/SceneUtil.hpp"
 #include "Game/Util/SoundUtil.hpp"
 #include "Game/Util/StarPointerUtil.hpp"
+#include <macros.h>
 
 void Butterfly_FORCE_MATCH_SDATA2() {
     (void)1.0f;

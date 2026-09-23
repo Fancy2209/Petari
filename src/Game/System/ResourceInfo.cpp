@@ -2,7 +2,7 @@
 #include "Game/Util.hpp"
 #include <cstdio>
 #include <cstring>
-#include <size_t.h>
+#include <cstdint>
 
 ResFileInfo::ResFileInfo() {
     mName = 0;

@@ -1,6 +1,7 @@
 #include "JSystem/J2DGraph/J2DPane.hpp"
 #include "JSystem/J2DGraph/J2DAnimation.hpp"
 #include <cmath>
+#include <macros.h>
 
 J2DPane::J2DPane() : mBounds(), mGlobalBounds(), mClipRect(), mPaneTree(this) {
     mTransform = NULL;

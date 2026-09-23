@@ -1,6 +1,10 @@
 #pragma once
 
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 #include <revolution/types.h>
 
 template < typename T >
@@ -71,7 +75,7 @@ public:
 template < typename T, u32 LEN >
 class JASPtrArray : public JASPtrTable< T > {
 public:
-    JASPtrArray() : JASPtrTable(mPtrArray, LEN) {
+    JASPtrArray() : JASPtrTable<T>(mPtrArray, LEN) {
     }
 
     T* mPtrArray[LEN];  // 0x8

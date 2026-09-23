@@ -1,7 +1,7 @@
 #pragma once
 
 #include <revolution.h>
-#include <size_t.h>
+#include <cstdint>
 
 namespace MR {
     /// @brief Returns the length of the given null-terminated wide string.

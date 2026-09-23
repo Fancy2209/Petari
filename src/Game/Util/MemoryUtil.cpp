@@ -5,7 +5,11 @@
 #include <JSystem/JAudio2/JASMutex.hpp>
 #include <JSystem/JKernel/JKRExpHeap.hpp>
 #include <JSystem/JKernel/JKRSolidHeap.hpp>
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 
 namespace MR {
     CurrentHeapRestorer::CurrentHeapRestorer(JKRHeap* pHeap) {

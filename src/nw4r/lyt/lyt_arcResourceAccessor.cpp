@@ -1,6 +1,13 @@
 #include "nw4r/lyt/arcResourceAccessor.h"
 #include <cstdio>
+#if __MWERKS__
 #include <extras.h>
+#else
+#include <cstring>
+#ifndef stricmp
+#define stricmp strcasecmp
+#endif
+#endif
 #include <revolution/arc.h>
 
 namespace {

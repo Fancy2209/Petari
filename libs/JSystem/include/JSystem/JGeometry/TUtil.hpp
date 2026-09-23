@@ -4,6 +4,10 @@
 #include <cmath>
 #include <revolution/types.h>
 
+#ifndef FLT_EPSILON
+#define FLT_EPSILON 1.1920929e-7f
+#endif
+
 static f32 flt_80630CA0[0x408];
 
 namespace JGeometry {

@@ -27,9 +27,16 @@ f32 EffectObjGravityDust::getClippingRadius() const {
     return mScale.length() * 500.0f;
 }
 
+#if __MWERKS__
 TVec3f* EffectObjGravityDust::getClippingCenterOffset() const {
     return &(TVec3f(0.0f, 500.0f * mScale.y, 0.0f));
 }
+#else
+TVec3f clippingCenterOffset = TVec3f(0.0f, 500.0f * mScale.y, 0.0f);
+TVec3f* EffectObjGravityDust::getClippingCenterOffset() const {
+    return (TVec3f *)&clippingCenterOffset;
+}
+#endif
 
 EffectObjGravityDust::~EffectObjGravityDust() {
 }

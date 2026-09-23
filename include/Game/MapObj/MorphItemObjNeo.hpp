@@ -3,6 +3,7 @@
 #include "Game/Effect/SimpleEffectObj.hpp"
 #include "Game/LiveActor/LiveActor.hpp"
 #include "Game/LiveActor/Nerve.hpp"
+#include "JSystem/JGeometry/TVec.hpp"
 #include <JSystem/JGeometry/TMatrix.hpp>
 
 class NameObjArchiveListCollector;
@@ -156,11 +157,16 @@ public:
     virtual f32 getFarClipDistance() const {
         return 50.0f;
     }
-
+    #if __MWERKS__
     virtual TVec3f* getClippingCenterOffset() const {
         return &(TVec3f(0.0f, 200.0f, 0.0f));
     }
-
+    #else
+    TVec3f clippingCenterOffset = TVec3f(0.0f, 200.0f, 0.0f);
+    virtual TVec3f* getClippingCenterOffset() const {
+        return (TVec3f *)&clippingCenterOffset;
+    }
+    #endif
     virtual bool isSyncClipping() const {
         return true;
     }
@@ -177,9 +183,16 @@ public:
     virtual f32 getFarClipDistance() const {
         return 50.0f;
     };
+    #if __MWERKS__
     virtual TVec3f* getClippingCenterOffset() const {
         return &(TVec3f(0.0f, 200.0f, 0.0f));
-    };
+    }
+    #else
+    TVec3f clippingCenterOffset = TVec3f(0.0f, 200.0f, 0.0f);
+    virtual TVec3f* getClippingCenterOffset() const {
+        return (TVec3f *)&clippingCenterOffset;
+    }
+    #endif
     virtual bool isSyncClipping() const {
         return true;
     };
@@ -197,11 +210,16 @@ public:
     virtual f32 getFarClipDistance() const {
         return 50.0f;
     }
-
+    #if __MWERKS__
     virtual TVec3f* getClippingCenterOffset() const {
         return &TVec3f(0.0f, 580.0f, 0.0f);
     }
-
+    #else
+    TVec3f clippingCenterOffset = TVec3f(0.0f, 580.0f, 0.0f);
+    virtual TVec3f* getClippingCenterOffset() const {
+        return (TVec3f *)&clippingCenterOffset;
+    }
+    #endif
     virtual bool isSyncClipping() const {
         return true;
     }

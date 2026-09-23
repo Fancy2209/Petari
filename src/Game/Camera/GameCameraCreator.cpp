@@ -7,7 +7,11 @@
 #include "Game/Util/JMapIdInfo.hpp"
 #include "Game/Util/SceneUtil.hpp"
 #include <cstring>
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 
 GameCameraCreator::GameCameraCreator(CameraParamChunkHolder* pChunkHolder) {
     mChunkHolder = pChunkHolder;

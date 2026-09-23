@@ -11,7 +11,11 @@
 #include "JSystem/JKernel/JKRMemArchive.hpp"
 #include "JSystem/JUtility/JUTException.hpp"
 
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 #include <stdint.h>
 
 extern "C" int abs(int);

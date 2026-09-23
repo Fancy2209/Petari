@@ -228,8 +228,11 @@ void Sandstorm::exeStormEnd() {
         }
 
         // BUG: Invokes `__ptmf_test` instead of calling the function.
-
+        #ifdef __MWERKS__
         if (isSunakazeKun) {
+        #else
+        if (isSunakazeKun()) {
+        #endif
             MR::startSound(this, "SE_OJ_SANDSTORM_S_BIND_END");
         } else {
             MR::startSound(this, "SE_OJ_SANDSTORM_BIND_END");

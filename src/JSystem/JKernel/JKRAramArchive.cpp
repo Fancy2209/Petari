@@ -5,7 +5,11 @@
 #include "JSystem/JKernel/JKRDvdAramRipper.hpp"
 #include "JSystem/JKernel/JKRHeap.hpp"
 #include "JSystem/JUtility/JUTException.hpp"
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 
 extern "C" int abs(int);
 

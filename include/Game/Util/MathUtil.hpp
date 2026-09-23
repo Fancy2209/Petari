@@ -677,8 +677,12 @@ namespace MR {
     }
 
 #else
-    f32 frsqrte(f32);
-    f32 fastSqrtf(f32);
+    f32 frsqrte(f32 f) {
+         return 1.0f / sqrt(f);
+    }
+    f32 fastSqrtf(f32 f) {
+        return sqrt(f);
+    }
 #endif
 
     template < typename T >

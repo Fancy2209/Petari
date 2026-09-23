@@ -13,6 +13,7 @@
 
 #define JGADGET_LINK_LIST(type, node) JGadget::TLinkList< type, -offsetof(type, node) >
 
+#ifndef PLATFORM_PS3
 namespace std {
 
     struct input_iterator_tag {};
@@ -33,6 +34,9 @@ namespace std {
     };
 
 }  // namespace std
+#else
+#include <iterator>
+#endif
 
 namespace JGadget {
 
