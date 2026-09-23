@@ -2,6 +2,7 @@
 #include "JSystem/JKernel/JKRAramPiece.hpp"
 #include "JSystem/JSupport/JSUFileStream.hpp"
 #include "JSystem/JUtility/JUTException.hpp"
+#include <stdint.h>
 
 const u32 stack_size = 0x4000;
 

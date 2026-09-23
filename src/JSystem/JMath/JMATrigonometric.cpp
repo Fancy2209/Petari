@@ -1,6 +1,7 @@
 #include "JSystem/JMath/JMATrigonometric.hpp"
 #include <cmath>
 
+#ifdef __MWERKS__
 namespace JMath {
     template < >
     f32 TAtanTable< 1024, f32 >::atan2_(f32 y, f32 x) const {
@@ -42,8 +43,8 @@ namespace JMath {
     template < int Bits, typename T >
     TSinCosTable< Bits, T >::TSinCosTable() {
         for (s32 i = 0; i < static_cast< s32 >(LEN); ++i) {
-            table[i].a1 = sin(i * static_cast< f64 >(TAngleConstant_< T >::RADIAN_DEG360()) / LEN);
-            table[i].b1 = cos(i * static_cast< f64 >(TAngleConstant_< T >::RADIAN_DEG360()) / LEN);
+            table[i].first = sin(i * static_cast< f64 >(TAngleConstant_< T >::RADIAN_DEG360()) / LEN);
+            table[i].second = cos(i * static_cast< f64 >(TAngleConstant_< T >::RADIAN_DEG360()) / LEN);
         }
     }
 
@@ -69,3 +70,4 @@ namespace JMath {
     TAtanTable< 1024, f32 > sAtanTable;
     TAsinAcosTable< 1024, f32 > sAsinAcosTable;
 }
+#endif

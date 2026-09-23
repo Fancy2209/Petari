@@ -5,6 +5,7 @@
 #include "Game/MapObj/MapPartsRailMover.hpp"
 #include "Game/Util.hpp"
 #include <algorithm>
+#include <functional>
 
 namespace {
     const f32 sMoveRadiusDefault = 750.0f;
@@ -90,7 +91,7 @@ void ElectricBall::init(const JMapInfoIter& rIter) {
 
 void ElectricBall::initAfterPlacement() {
     std::for_each(mBalls.begin(), mBalls.end(),
-                  std::binder2nd< std::mem_fun1_ref_t< void, Ball, const TPos3f& >, const TPos3f& >(
+                  std::bind2nd(
                       std::mem_fun1_ref_t< void, Ball, const TPos3f& >(&Ball::updatePosition), mBaseMtx));
 
     Ball* ball = getNearestBall();
@@ -114,7 +115,7 @@ void ElectricBall::control() {
         mBaseMtx.setTrans(mPosition);
 
         std::for_each(mBalls.begin(), mBalls.end(),
-                      std::binder2nd< std::mem_fun1_ref_t< void, Ball, const TPos3f& >, const TPos3f& >(
+            std::bind2nd(
                           std::mem_fun1_ref_t< void, Ball, const TPos3f& >(&Ball::updatePosition), mBaseMtx));
 
         MR::startLevelSound(this, "SE_OJ_LV_BIRIKYU_MOVE");
@@ -148,7 +149,7 @@ void ElectricBall::initBalls(const JMapInfoIter& rIter) {
 
     std::for_each_array(
         mBalls.begin(), mBalls.end(),
-        std::binder2nd< std::mem_fun1_t< void, Ball, const TPos3f& >, const TPos3f& >(std::mem_func(&Ball::updatePosition), mBaseMtx));
+        std::bind2nd(std::mem_func(&Ball::updatePosition), mBaseMtx));
 
     TVec3f vec(mRadius, 0.0f, 0.0f);
     f32 f1 = TWO_PI / mBalls.size();

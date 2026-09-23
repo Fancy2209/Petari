@@ -18,6 +18,7 @@ namespace nw4r {
         }
 
         inline f32 FAbs(register f32 x) {
+        #if __MWERKS__
             register f32 ax;
 
             __asm {
@@ -26,12 +27,20 @@ namespace nw4r {
             ;
 
             return ax;
+        #else
+            return __builtin_fabs(x);
+        #endif
         }
 
         inline f32 FSelect(register f32 cond, register f32 ifPos, register f32 ifNeg) {
+            #if __MWERKS__
             register f32 ret;
             asm { fsel   ret, cond, ifPos, ifNeg }
             return ret;
+            #else
+            if(cond) return ifPos; 
+            else return ifNeg;
+            #endif
         }
     };  // namespace math
 };  // namespace nw4r

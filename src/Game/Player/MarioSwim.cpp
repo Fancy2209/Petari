@@ -16,6 +16,7 @@
 #include "Game/Util/MtxUtil.hpp"
 #include "Game/Util/SceneUtil.hpp"
 #include "Game/Util/SoundUtil.hpp"
+#include <macros.h>
 
 void MarioSwim_FORCE_MATCH_SDATA2() {
     (void)1.0f;

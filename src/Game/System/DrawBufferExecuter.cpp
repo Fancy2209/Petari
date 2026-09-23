@@ -2,6 +2,7 @@
 #include "Game/LiveActor/LiveActor.hpp"
 #include "Game/System/DrawBuffer.hpp"
 #include "Game/Util/LightUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 DrawBufferExecuter::DrawBufferExecuter(const char* pName, J3DModel* pModel, s32 a1)

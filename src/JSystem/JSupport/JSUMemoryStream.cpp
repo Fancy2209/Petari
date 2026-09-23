@@ -1,5 +1,6 @@
 #include "JSystem/JSupport/JSUMemoryInputStream.hpp"
 #include "JSystem/JSupport/JSUMemoryOutputStream.hpp"
+#include <cstdint>
 #include <cstring>
 
 void JSUMemoryInputStream::setBuffer(const void* pBuffer, s32 length) {
@@ -13,7 +14,7 @@ u32 JSUMemoryInputStream::readData(void* pDest, s32 length) {
         length = mLength - mPosition;
     }
     if (length > 0) {
-        memcpy(pDest, (void*)((int)mBuffer + mPosition), length);
+        memcpy(pDest, (void*)((intptr_t)mBuffer + mPosition), length);
         mPosition += length;
     }
     return length;
@@ -52,7 +53,7 @@ s32 JSUMemoryOutputStream::writeData(const void* pSrc, s32 length) {
         length = mLength - mPosition;
     }
     if (length > 0) {
-        memcpy((void*)((int)mBuffer + mPosition), pSrc, length);
+        memcpy((void*)((intptr_t)mBuffer + mPosition), pSrc, length);
         mPosition += length;
     }
     return length;

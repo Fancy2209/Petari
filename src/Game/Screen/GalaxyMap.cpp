@@ -198,13 +198,13 @@ void GalaxyMap::movementForCapture() {
 void GalaxyMap::calcAnimForCapture(const nw4r::lyt::DrawInfo& rDrawInfo) {
     MR::calcAnimLayoutWithDrawInfo(this, rDrawInfo);
     std::for_each(mDomeIcon.begin(), mDomeIcon.end(),
-                  std::binder2nd< std::mem_fun1_t< void, GalaxyMapDomeIcon, const nw4r::lyt::DrawInfo& >, const nw4r::lyt::DrawInfo& >(
+                  std::bind2nd(
                       std::mem_func(&GalaxyMapDomeIcon::calcAnimForCapture), rDrawInfo));
     std::for_each(mIcon.begin(), mIcon.end(),
-                  std::binder2nd< std::mem_fun1_t< void, GalaxyMapIcon, const nw4r::lyt::DrawInfo& >, const nw4r::lyt::DrawInfo& >(
+                  std::bind2nd(
                       std::mem_func(&GalaxyMapIcon::calcAnimForCapture), rDrawInfo));
     std::for_each(mCometIcon.begin(), mCometIcon.end(),
-                  std::binder2nd< std::mem_fun1_t< void, GalaxyMapCometIcon, const nw4r::lyt::DrawInfo& >, const nw4r::lyt::DrawInfo& >(
+                  std::bind2nd(
                       std::mem_func(&GalaxyMapCometIcon::calcAnimForCapture), rDrawInfo));
 }
 

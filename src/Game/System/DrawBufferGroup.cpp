@@ -4,6 +4,7 @@
 #include "Game/Util/LiveActorUtil.hpp"
 #include "Game/Util/ModelUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <JSystem/J3DGraphBase/J3DSys.hpp>
 #include <algorithm>
 

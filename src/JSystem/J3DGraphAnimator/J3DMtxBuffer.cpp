@@ -191,6 +191,7 @@ void J3DMtxBuffer::calcWeightEnvelopeMtx() {
     f32* weights;
     u8* pScale;
 
+    #if __MWERKS__
     __REGISTER f32 var_f1;
     __REGISTER f32 var_f2;
     __REGISTER f32 var_f3;
@@ -213,29 +214,40 @@ void J3DMtxBuffer::calcWeightEnvelopeMtx() {
     __REGISTER f32 var_f25;
     __REGISTER f32 var_f24;
     __REGISTER f32* var_r7 = J3DUnit01;
+    #else
+    __REGISTER Mtx mtx;
+    #endif
 
     i = -1;
     max = mJointTree->getWEvlpMtxNum();
     indices = mJointTree->getWEvlpMixMtxIndex() - 1;
     weights = mJointTree->getWEvlpMixWeight() - 1;
 
+    #if __MWERKS__
     asm {
         psq_l var_f24, 0(var_r7), 0, 0
         ps_merge00 var_f11, var_f24, var_f24
         ps_merge00 var_f13, var_f24, var_f24
         ps_merge00 var_f30, var_f24, var_f24
     }
+    #endif
 
     while (++i < max) {
         pScale = &mpEvlpScaleFlagArr[i];
         *pScale = 1;
         weightAnmMtx = mpWeightEvlpMtx[i];
 
+        #if __MWERKS__
         asm {
             ps_merge00 var_f10, var_f24, var_f24
             ps_merge00 var_f12, var_f24, var_f24
             ps_merge00 var_f31, var_f24, var_f24
         }
+        #else
+        weightAnmMtx[0][0] = weightAnmMtx[0][1] = weightAnmMtx[0][2] = weightAnmMtx[0][3] = 
+        weightAnmMtx[1][0] = weightAnmMtx[1][1] = weightAnmMtx[1][2] = weightAnmMtx[1][3] = 
+        weightAnmMtx[2][0] = weightAnmMtx[2][1] = weightAnmMtx[2][2] = weightAnmMtx[2][3] = 0.0f;
+        #endif
 
         j = 0;
         mixNum = mJointTree->getWEvlpMixMtxNum(i);
@@ -245,6 +257,7 @@ void J3DMtxBuffer::calcWeightEnvelopeMtx() {
             worldMtx = mpAnmMtx[idx];
 
             weight = *++weights;
+            #if __MWERKS__
             asm {
                 psq_l var_f2, 0x0(invMtx), 0, 0
                 psq_l var_f1, 0x0(worldMtx), 0, 0
@@ -289,9 +302,24 @@ void J3DMtxBuffer::calcWeightEnvelopeMtx() {
                 ps_madds0 var_f13, var_f26, weight, var_f13
                 ps_madds0 var_f30, var_f7, weight, var_f30
             }
+            #else
+            weightAnmMtx[0][0] += mtx[0][0] * weight;
+            weightAnmMtx[0][1] += mtx[0][1] * weight;
+            weightAnmMtx[0][2] += mtx[0][2] * weight;
+            weightAnmMtx[0][3] += mtx[0][3] * weight;
+            weightAnmMtx[1][0] += mtx[1][0] * weight;
+            weightAnmMtx[1][1] += mtx[1][1] * weight;
+            weightAnmMtx[1][2] += mtx[1][2] * weight;
+            weightAnmMtx[1][3] += mtx[1][3] * weight;
+            weightAnmMtx[2][0] += mtx[2][0] * weight;
+            weightAnmMtx[2][1] += mtx[2][1] * weight;
+            weightAnmMtx[2][2] += mtx[2][2] * weight;
+            weightAnmMtx[2][3] += mtx[2][3] * weight;
+            #endif
 
             *pScale &= mpScaleFlagArr[idx];
         } while (++j < mixNum);
+        #if __MWERKS__
         asm {
             psq_st var_f11, 8(weightAnmMtx), 0, 0
             ps_merge00 var_f11, var_f24, var_f24
@@ -300,6 +328,7 @@ void J3DMtxBuffer::calcWeightEnvelopeMtx() {
             psq_st var_f30, 40(weightAnmMtx), 0, 0
             ps_merge00 var_f30, var_f24, var_f24
         }
+        #endif
     }
 }
 

@@ -213,7 +213,7 @@ bool JKRMemArchive::removeResource(void* pResource) {
 
 s32 JKRMemArchive::fetchResource_subroutine(unsigned char* pSrc, unsigned long srcSize, unsigned char* pDst, unsigned long dstSize, int compression) {
     switch (compression) {
-    case JKR_COMPRESSION_NONE:
+    case JKR_COMPRESSION_NONE: {
         if (srcSize > dstSize) {
             srcSize = dstSize;
         }
@@ -221,8 +221,9 @@ s32 JKRMemArchive::fetchResource_subroutine(unsigned char* pSrc, unsigned long s
         memcpy(pDst, pSrc, srcSize);
 
         return srcSize;
+    }
     case JKR_COMPRESSION_SZP:
-    case JKR_COMPRESSION_SZS:
+    case JKR_COMPRESSION_SZS: {
         u32 size = JKRDecompExpandSize(pSrc);
 
         if (size > dstSize) {
@@ -231,9 +232,11 @@ s32 JKRMemArchive::fetchResource_subroutine(unsigned char* pSrc, unsigned long s
 
         JKRDecomp::orderSync(pSrc, pDst, size, 0);
         return size;
-    default:
+    }
+    default: {
         JUTException::panic(__FILE__, 723, "??? bad sequence\n");
         break;
+        }
     }
 
     return 0;

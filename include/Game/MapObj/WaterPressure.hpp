@@ -8,5 +8,5 @@ public:
     virtual ~WaterPressure();
 
 private:
-    u8 mPad[(0xC8) - sizeof(PressureBase)];
+    //u8 mPad[(0xC8) - sizeof(PressureBase)];
 };

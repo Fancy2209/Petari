@@ -7,7 +7,11 @@
 #include "JSystem/J3DGraphBase/J3DShapeMtx.hpp"
 #include "JSystem/JKernel/JKRHeap.hpp"
 #include <cstdio>
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 
 J3DError J3DDisplayListObj::newDisplayList(u32 maxSize) {
     mMaxSize = ALIGN_NEXT(maxSize, 0x20);

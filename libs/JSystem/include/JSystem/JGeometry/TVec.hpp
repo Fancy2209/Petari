@@ -21,7 +21,11 @@ namespace JGeometry {
         rDest[2] = -rSrc[2];
     }
 #else
-    inline void negateInternal(const f32* rSrc, f32* rDest);
+    inline void negateInternal(const f32* rSrc, f32* rDest) {
+        rDest[0] = -rSrc[0];
+        rDest[1] = -rSrc[1];
+        rDest[2] = -rSrc[2];
+    }
 #endif
 
 #ifdef __MWERKS__
@@ -39,7 +43,11 @@ namespace JGeometry {
         }
     }
 #else
-    static void subInternal(const f32* vec1, const f32* vec2, f32* dst);
+    static void subInternal(const f32* vec1, const f32* vec2, f32* dst) {
+        dst[0] = vec1[0] - vec2[0];
+        dst[1] = vec1[1] - vec2[1];
+        dst[2] = vec1[2] - vec2[2];
+    }
 #endif
 
 #ifdef __MWERKS__
@@ -55,7 +63,11 @@ namespace JGeometry {
         dst[2] = vec1[2] * vec2[2];
     }
 #else
-    void mulInternal(const f32* vec1, const f32* vec2, f32* dst);
+    void mulInternal(const f32* vec1, const f32* vec2, f32* dst) {
+        dst[0] = vec1[0] * vec2[0];
+        dst[1] = vec1[1] * vec2[1];
+        dst[2] = vec1[2] * vec2[2];
+    }
 #endif
 
     template < typename T >
@@ -165,7 +177,12 @@ namespace JGeometry {
             return dot(*this);
         };
 
-        T squared(const TVec2< T >& rOther) const;  //{ return (x - rOther.x) * (x - rOther.x) + (y - rOther.y) * (y - rOther.y); };
+        T squared(const TVec2< T >& rOther) const
+        #if __MWERKS__
+        ;
+        #else
+        { return (x - rOther.x) * (x - rOther.x) + (y - rOther.y) * (y - rOther.y); };
+        #endif
 
         T dot(const TVec2< T >& rOther) const {
             return x * rOther.x + y * rOther.y;
@@ -336,7 +353,11 @@ namespace JGeometry {
             ;
         }
 #else
-        TVec3(const Vec& vec);
+        TVec3(const Vec& vec) {
+            x = vec.x;
+            y = vec.y;
+            z = vec.z;
+        }
 #endif
 #ifdef __MWERKS__
         // Used inlined and non-inlined?
@@ -356,7 +377,11 @@ namespace JGeometry {
             ;
         }
 #else
-        TVec3(const TVec3< f32 >& vec);
+        TVec3(const TVec3< f32 >& vec) {
+            x = vec.x;
+            y = vec.y;
+            z = vec.z;
+        }
 #endif
 
         template < typename T >
@@ -413,6 +438,10 @@ namespace JGeometry {
             stfs b_x, 8(v_b)
             }
             ;
+#else
+            x = vec.x;
+            y = vec.y;
+            z = vec.z;
 #endif
         }
 
@@ -657,6 +686,8 @@ namespace JGeometry {
             }
 
             return _fp1;
+#else
+            return (this->x * rOther.x) + (this->y * rOther.y) + (this->z * rOther.z);
 #endif
         }
 
@@ -798,7 +829,9 @@ namespace JGeometry {
             return sqdist;
         };
 #else
-        f32 squared(const TVec3& rB) const;
+        f32 squared(const TVec3& rB) const {
+            return JMathInlineVEC::PSVECSquareDistance(this, rB);
+        }
 #endif
 
         bool isZero() const {
@@ -1102,7 +1135,7 @@ namespace JGeometry {
             f32 crossPart = dir.length();
 
             if (crossPart <= JGeometry::TUtil< f32 >::epsilon()) {
-                set< f32 >(0.0f, 0.0f, 0.0f, 1.0f);
+                this->template set< f32 >(0.0f, 0.0f, 0.0f, 1.0f);
             } else {
                 f32 dotPart = rA.dot(rB);
                 f32 halfAngle = ratio * (JMAATan2(crossPart, dotPart) * 0.5f);

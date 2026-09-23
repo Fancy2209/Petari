@@ -43,6 +43,7 @@ void ClipAreaShape::drawVolumeShape(const TPos3f& rMtx, const TVec3f& rPos) cons
 bool ClipAreaShapeSphere::isInArea(register const TVec3f &rVec) const {
   register const ClipAreaShapeSphere *sphere = this;
 
+    #ifdef __MWERKS__
     __asm volatile {
         psq_l f1, 0(rVec), 0, 0
         lfs f0, sphere->mRadius
@@ -54,6 +55,9 @@ bool ClipAreaShapeSphere::isInArea(register const TVec3f &rVec) const {
         mfcr r3
         srwi r3, r3, 31
     };
+    #else
+    #warning "TODO: ClipAreaShapeSphere::isInArea"
+    #endif
 }
 // clang-format on
 

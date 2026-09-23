@@ -10,7 +10,11 @@
 #include <revolution/types.h>
 #include <cstdlib>
 #include <cstring>
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 
 JKRDvdArchive::JKRDvdArchive(s32 entryNum, EMountDirection mountDir) : JKRArchive(entryNum, MOUNT_MODE_DVD) {
     mMountDir = mountDir;

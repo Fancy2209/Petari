@@ -188,15 +188,15 @@ void JUTException::panic_f(const char* file, int line, const char* format, ...) 
     va_list args;
     va_start(args, format);
     panic_f_va(file, line, format, args);
-    va_end();
+    va_end(args);
 }
 
 #define __signbit(x) ((*reinterpret_cast< unsigned char* >(&(x))) & 0x80)
 
 void JUTException::showFloatSub(int index, f32 value) {
-    if (isnan(value)) {
+    if (std::isnan(value)) {
         sConsole->print_f("F%02d: Nan      ", index);
-    } else if (isinf(value)) {
+    } else if (std::isinf(value)) {
         if (__signbit(value)) {
             sConsole->print_f("F%02d:+Inf     ", index);
         } else {

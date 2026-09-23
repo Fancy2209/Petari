@@ -1,6 +1,7 @@
 #include "Game/System/DrawBufferHolder.hpp"
 #include "Game/System/DrawBufferGroup.hpp"
 #include "Game/Util/MemoryUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 
 namespace {

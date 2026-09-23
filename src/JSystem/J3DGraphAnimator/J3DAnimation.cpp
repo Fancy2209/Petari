@@ -548,6 +548,8 @@ inline f32 J3DHermiteInterpolation(__REGISTER f32 pp1, __REGISTER s16 const* pp2
     }
 
     return value;
+#else
+    return JMAHermiteInterpolation(pp1, *pp2, *pp3, *pp4, *pp5, *pp6, *pp7);
 #endif
 }
 

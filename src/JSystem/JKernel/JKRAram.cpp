@@ -7,6 +7,7 @@
 #include "JSystem/JKernel/JKRExpHeap.hpp"
 #include "JSystem/JUtility/JUTException.hpp"
 #include <cstring>
+#include <cstdint>
 #include <revolution.h>
 
 static u8* firstSrcData();

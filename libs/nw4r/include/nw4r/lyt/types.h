@@ -3,7 +3,11 @@
 #include "nw4r/math/types.h"
 #include "nw4r/ut/LinkList.h"
 #include <cstddef>
+#ifdef __MWERKS__
 #include <mem.h>
+#else
+#include <cstring>
+#endif
 #include <revolution.h>
 
 namespace nw4r {

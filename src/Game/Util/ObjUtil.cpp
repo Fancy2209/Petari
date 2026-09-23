@@ -45,7 +45,11 @@
 #include <JSystem/JGeometry/TMatrix.hpp>
 #include <JSystem/JGeometry/TUtil.hpp>
 #include <cstdio>
+#if __MWERKS__
 #include <va_list.h>
+#else
+#include <stdarg.h>
+#endif
 
 namespace {
     static const TVec3f sDefaultPlayerPos = TVec3f(0, 0, 0);

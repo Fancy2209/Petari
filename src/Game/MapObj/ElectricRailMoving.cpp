@@ -68,7 +68,7 @@ void ElectricRailMoving::draw() const {
     if (MR::isValidDraw(this)) {
         GXSetTexCoordGen2(GX_TEXCOORD1, GX_TG_MTX2x4, GX_TG_TEX0, 0x21u, 0, 0x7D);
         GXLoadTexMtxImm(_9C, 0x21, GX_MTX2x4);
-        GXColor c = {-1, -1, -1, _CC};
+        GXColor c = {(u8)-1, (u8)-1, (u8)-1, _CC};
         GXSetTevColor(GX_TEVREG1, c);
 
         if (isNerve(GET_NERVE(ElectricRailMoving, ElectricRailMovingNrvWait))) {

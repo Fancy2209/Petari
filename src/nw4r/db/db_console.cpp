@@ -1,5 +1,9 @@
 #include "nw4r/db/console.h"
+#if __MWERKS__
 #include <va_list.h>
+#else
+#include <stdarg.h>
+#endif
 
 namespace nw4r {
     namespace db {

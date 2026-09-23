@@ -71,3 +71,37 @@
 #include "Game/Util/TriggerChecker.hpp"
 #include "Game/Util/ValueControl.hpp"
 #include "Game/Util/VectorUtil.hpp"
+
+#ifdef PLATFORM_PS3
+#include <algorithm>
+namespace std {
+    template < class InputIterator, class Function >
+    inline Function for_each_array(InputIterator* pFirst, InputIterator* pLast, Function f) {
+        for (; pFirst != pLast; pFirst++) {
+            f(pFirst);
+        }
+
+        return f;
+    }
+    
+    template < class Result, class Type >
+    inline mem_fun_t< Result, Type > mem_func(Result (Type::*pFunction)()) {
+        return mem_fun_t< Result, Type >(pFunction);
+    }
+
+    template < class Result, class Type >
+    inline const_mem_fun_t< Result, Type > mem_func(Result (Type::*pFunction)() const) {
+        return const_mem_fun_t< Result, Type >(pFunction);
+    }
+
+    template < class Result, class Type, class Arg >
+    inline mem_fun1_t< Result, Type, Arg > mem_func(Result (Type::*pFunction)(Arg)) {
+        return mem_fun1_t< Result, Type, Arg >(pFunction);
+    }
+
+    template < class Result, class Type, class Arg >
+    inline const_mem_fun1_t< Result, Type, Arg > mem_func(Result (Type::*pFunction)(Arg) const) {
+        return const_mem_fun1_t< Result, Type, Arg >(pFunction);
+    }
+}
+#endif
