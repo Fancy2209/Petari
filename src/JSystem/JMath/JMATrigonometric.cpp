@@ -1,8 +1,8 @@
 #include "JSystem/JMath/JMATrigonometric.hpp"
 #include <cmath>
 
-#ifdef __MWERKS__
 namespace JMath {
+#ifdef __MWERKS__
     template < >
     f32 TAtanTable< 1024, f32 >::atan2_(f32 y, f32 x) const {
         if (y >= 0.0f) {
@@ -65,9 +65,9 @@ namespace JMath {
         mTable[0] = 0.0f;
         _1000 = TAngleConstant_< T >::RADIAN_DEG090() / 2;
     }
+#endif
 
     TSinCosTable< 14, f32 > sSinCosTable;
     TAtanTable< 1024, f32 > sAtanTable;
     TAsinAcosTable< 1024, f32 > sAsinAcosTable;
 }
-#endif
