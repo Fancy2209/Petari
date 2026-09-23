@@ -190,7 +190,7 @@ void Mario::startHandy() {
 }
 
 bool Mario::taskOnHipDropBlurHopper(u32) {
-    if (!getPlayer()->mMovementStates._B || mMovementStates._1 || isStatusActive(MarioStatus_Swim)) {
+    if (!getPlayer()->mMovementStates._0B || mMovementStates._1 || isStatusActive(MarioStatus_Swim)) {
         if (gIsLuigi) {
             stopEffect("ホッパー尻落ルイージ");
         } else {
@@ -204,7 +204,7 @@ bool Mario::taskOnHipDropBlurHopper(u32) {
 }
 
 bool Mario::taskOnHipDropBlur(u32) {
-    if (!getPlayer()->mMovementStates._B || mMovementStates._1 || isStatusActive(MarioStatus_Swim)) {
+    if (!getPlayer()->mMovementStates._0B || mMovementStates._1 || isStatusActive(MarioStatus_Swim)) {
         if (gIsLuigi) {
             stopEffect("尻落ルイージ");
         } else {
@@ -219,7 +219,7 @@ bool Mario::taskOnHipDropBlur(u32) {
 
 bool Mario::taskOnHipDropSlide(u32 flags) {
     if (flags == 0x100) {
-        if (!getPlayer()->mMovementStates._B) {
+        if (!getPlayer()->mMovementStates._0B) {
             return false;
         }
     }

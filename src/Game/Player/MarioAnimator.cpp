@@ -291,9 +291,9 @@ void MarioAnimator::update() {
                 }
 
                 player = getPlayer();
-                if (player->mMovementStates._B) {
+                if (player->mMovementStates._0B) {
                     getPlayer()->mMovementStates.jumping = false;
-                    getPlayer()->mMovementStates._B = false;
+                    getPlayer()->mMovementStates._0B = false;
                     stopAnimation(nullptr, "基本");
                 }
 
@@ -1187,7 +1187,7 @@ void MarioAnimator::changePickupAnimation(const HitSensor* pSensor) {
                 playEffect("ひろいクイック");
                 mActor->clearNullAnimation(-3);
                 startPadVib(2);
-            } else if (getPlayer()->mMovementStates.jumping && !getPlayer()->mMovementStates._B) {
+            } else if (getPlayer()->mMovementStates.jumping && !getPlayer()->mMovementStates._0B) {
                 changeAnimation("ひろい空中");
                 mActor->clearNullAnimation(-3);
                 getPlayer()->stopWalk();

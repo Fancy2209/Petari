@@ -995,7 +995,7 @@ void MarioActor::control2() {
         }
 
         _978 = mVelocity;
-        if (getDrawStates()._B) {
+        if (getDrawStates()._0B) {
             mBinder->_1EC._1 = false;
         } else {
             mBinder->_1EC._1 = true;
@@ -1855,7 +1855,7 @@ void MarioActor::calcAnimInMovement() {
                     scale = 700.0f;
                 }
 
-                if (getMovementStates()._B && !getMovementStates()._1) {
+                if (getMovementStates()._0B && !getMovementStates()._1) {
                     vec += mMario->mJumpVec;
                 }
 
@@ -2260,7 +2260,7 @@ void MarioActor::calcAndSetBaseMtx() {
     bool isAir;
     if (!b1 && mPlayerMode == 4 && !mMario->isStatusActive(MarioStatus_Stick) && !mMario->isStatusActive(MarioStatus_SideStep) &&
         !mMario->isStatusActive(MarioStatus_Bury) && !getMovementStates()._23 && !getMovementStates()._A &&
-        ((isAir = getMario()->getMovementStates()._B && getMario()->getMovementStates().jumping), !isAir)) {
+        ((isAir = getMario()->getMovementStates()._0B && getMario()->getMovementStates().jumping), !isAir)) {
         _9F4 = mMario->mAirGravityVec;
         TVec3f vec(-getGravityVector() * getConst().getTable()->mBeePoseHeadToFootLength);
         MtxPtr pTranslation = MR::tmpMtxTrans(-vec);
@@ -2772,7 +2772,7 @@ void MarioActor::setPress(u8 myChar, s32 myInt) {
 
     _390 = myInt;
 
-    mMario->mMovementStates._B = false;
+    mMario->mMovementStates._0B = false;
     mMario->mMovementStates._F = false;
 
     mMario->stopJump();

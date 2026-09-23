@@ -1239,7 +1239,7 @@ bool Mario::updateBinderInfo() {
                     _1C._D = true;
                 }
             }
-            if (mMovementStates.jumping && mMovementStates._B) {
+            if (mMovementStates.jumping && mMovementStates._0B) {
                 TVec3f lastMove;
                 mActor->getLastMove(&lastMove);
                 if (MR::isNearZero(lastMove.dot(*getGravityVec()))) {

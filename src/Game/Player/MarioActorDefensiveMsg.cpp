@@ -299,7 +299,7 @@ bool MarioActor::receiveMsgPush(HitSensor* pSender, HitSensor* pReceiver) {
                 return false;
             }
 
-            if (mMario->mMovementStates._B && mMario->mMovementStates.jumping && tryHipDropAttack(pSender)) {
+            if (mMario->mMovementStates._0B && mMario->mMovementStates.jumping && tryHipDropAttack(pSender)) {
                 return false;
             }
         }
@@ -335,7 +335,7 @@ bool MarioActor::receiveMsgPush(HitSensor* pSender, HitSensor* pReceiver) {
                 }
 
                 if (!mMario->isRising() && !MR::sendMsgPush(pSender, pReceiver)) {
-                    if (getMovementStates()._B) {
+                    if (getMovementStates()._0B) {
                         mMario->startHipDropSlide(pSender);
                     } else {
                         mMario->startJumpDropSlide(pSender);

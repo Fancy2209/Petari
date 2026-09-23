@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Game/Util/Array.hpp"
+#include "Game/Util.hpp"
 #include <revolution.h>
 
 class NameObj;

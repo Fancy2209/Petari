@@ -149,7 +149,7 @@ bool MarioTeresa::update() {
         _58 = 0;
     }
 
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
     _20 = checkHeight();
     _24 = mActor->getConst().getTable()->mTeresaWaitHeight;
     checkAccel();

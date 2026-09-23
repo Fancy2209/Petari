@@ -481,7 +481,7 @@ bool MarioDamage::start() {
     startPadVib(3);
     getPlayer()->mMovementStates._1 = false;
     getPlayer()->mMovementStates.jumping = true;
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
     getPlayer()->mMovementStates._3E = 0;
     _1C += -mActor->_240 * mActor->getConst().getTable()->mJumpHeightDamage;
     getPlayer()->mJumpVec = _1C;
@@ -994,7 +994,7 @@ bool Mario::doNeedle(const Triangle* pTriangle) {
     }
 
     mActor->resetPlayerModeOnDamage();
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
     getPlayer()->mMovementStates._A = false;
     mActor->damageDropThrowMemoSensor();
     mFireDance->_29 = 1;
@@ -1032,7 +1032,7 @@ bool Mario::doFireDance() {
     }
 
     mActor->resetPlayerModeOnDamage();
-    getPlayer()->mMovementStates._B = false;
+    getPlayer()->mMovementStates._0B = false;
     getPlayer()->mMovementStates._A = false;
     mActor->damageDropThrowMemoSensor();
     mFireDance->_29 = 0;

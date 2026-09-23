@@ -6,6 +6,7 @@
 #include "Game/Util/JMapUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 #include "Game/Util/StringUtil.hpp"
+#include "Game/Util.hpp"
 #include <algorithm>
 #include <cstdio>
 #include <cstring>

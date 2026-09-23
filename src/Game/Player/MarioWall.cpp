@@ -33,7 +33,7 @@ void Mario::checkWallStick() {
         changeStatus(mWall);
         stopWalk();
         mMovementStates.jumping = false;
-        mMovementStates._B = false;
+        mMovementStates._0B = false;
         mMovementStates._6 = false;
         mMovementStates._17 = false;
         fixWallingPosition(true);
@@ -278,7 +278,7 @@ bool Mario::isEnableStickWall() {
         return false;
     }
 
-    if (mMovementStates._B) {
+    if (mMovementStates._0B) {
         return false;
     }
 

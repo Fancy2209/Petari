@@ -70,7 +70,7 @@ void Mario::mainMove() {
             }
         }
     } else if (_3C8 != 0) {
-        _1C._B = true;
+        _1C._0B = true;
         _3C8 = 0;
     }
 
@@ -876,9 +876,9 @@ bool Mario::retainMoveDir(f32 stickX, f32 stickY, TVec3f* moveDir) {
     if (_3CE < 2) {
         limit = 0.1f;
     }
-    if (_10._B) {
+    if (_10._0B) {
         if (isStickOn()) {
-            _10._B = false;
+            _10._0B = false;
         }
         difference = 1.0f;
     }
@@ -920,7 +920,7 @@ bool Mario::retainMoveDir(f32 stickX, f32 stickY, TVec3f* moveDir) {
         }
         _40E = 30;
         if (!isStickOn()) {
-            _10._B = true;
+            _10._0B = true;
         }
         _2B4 = angle;
         _29C = _368;

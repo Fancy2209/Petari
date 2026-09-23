@@ -65,7 +65,7 @@ void MarioActor::attackOrPushSensor(HitSensor* pSensor, f32 distance) {
         tryTornadoPull(pSensor);
     }
 
-    if (mMario->mMovementStates._B && !mMario->mMovementStates._1 &&
+    if (mMario->mMovementStates._0B && !mMario->mMovementStates._1 &&
         distance < radius + mSensorRadiusHipDropAttack + mMario->mJumpVec.dot(getGravityVector())) {
         if (tryHipDropAttack(pSensor) || tryGetItem(pSensor)) {
             return;
@@ -306,7 +306,7 @@ bool MarioActor::tryHipDropAttack(HitSensor* pSensor) {
 
 bool MarioActor::checkAndTryTrampleAttack(HitSensor* pSensor, f32 distance, bool force) {
     f32 radius = pSensor->mRadius;
-    bool trample = getMovementStates()._B != true;
+    bool trample = getMovementStates()._0B != true;
     bool falling = false;
     if (isJumping() && !mMario->isRising()) {
         falling = true;
@@ -464,12 +464,12 @@ bool MarioActor::tryGetItem(HitSensor* pSensor) {
             moving = true;
         }
 
-        if (getMovementStates()._B) {
+        if (getMovementStates()._0B) {
             moving = false;
         }
 
         if (!moving && !mMario->isSwimming() && !getMovementStates()._1 && !_424) {
-            if (getMovementStates()._B) {
+            if (getMovementStates()._0B) {
                 return false;
             }
 
@@ -613,7 +613,7 @@ void MarioActor::attackOrPushPolygons() {
         sendWallTouch(mMario->mSideWallTriangle->mSensor, bodySensor);
     }
 
-    if (mMario->getMovementStates().jumping && !mMario->getMovementStates()._1 && mMario->getMovementStates()._B) {
+    if (mMario->getMovementStates().jumping && !mMario->getMovementStates()._1 && mMario->getMovementStates()._0B) {
         _3E8 = true;
     } else {
         if (_3E8) {

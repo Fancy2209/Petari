@@ -55,7 +55,7 @@ void GameDataSomeGalaxyStorage::resetAllData() {
     mPowerStarOwnedFlags = 0b00000000;
     mAlreadyVisitedFlags = 0b00000000;
     _A = 0;
-    _B = 0;
+    _0B = 0;
 
     for (s32 idx = 0; idx < 8; idx++) {
         mMaxCoinNum[idx] = 0;

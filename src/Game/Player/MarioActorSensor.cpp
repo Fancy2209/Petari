@@ -58,7 +58,7 @@ void MarioActor::updateHitSensor(HitSensor* sensor) {
         }
 
         sensor->mPosition.set(_2A0);
-        if (mMario->mMovementStates._B && !mMario->mMovementStates._1) {
+        if (mMario->mMovementStates._0B && !mMario->mMovementStates._1) {
             sensor->mPosition.add(mMario->mJumpVec);
         }
 
