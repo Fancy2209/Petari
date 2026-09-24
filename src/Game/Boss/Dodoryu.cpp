@@ -257,7 +257,7 @@ namespace {
     NEW_NERVE(DodoryuRabbitNrvRabbitPleasure, DodoryuRabbit, Pleasure);
 };  // namespace
 
-void FORCE_SCALE() {
+void Dodoryu_FORCE_SCALE() {
     TVec3f vec;
     vec.scale(1.0f);
 }

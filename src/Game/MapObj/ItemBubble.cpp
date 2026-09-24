@@ -17,7 +17,7 @@ namespace NrvItemBubble {
     NEW_NERVE(ItemBubbleNrvBreak, ItemBubble, Break);
 };  // namespace NrvItemBubble
 
-void FORCE_OPERATOR() {
+void ItemBubble_FORCE_OPERATOR() {
     TVec3f vec;
     vec *= 1.0f;
 }

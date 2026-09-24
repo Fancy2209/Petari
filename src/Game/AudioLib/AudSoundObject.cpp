@@ -8,7 +8,7 @@
 #include <JSystem/JAudio2/JAISound.hpp>
 #include <JSystem/JGadget/hashcode.hpp>
 
-void FORCE_MATCH_SDATA2() {
+void AudSoundObject_FORCE_MATCH_SDATA2() {
     f32 f1 = 1.0f;
 }
 
