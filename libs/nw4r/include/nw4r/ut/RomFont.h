@@ -16,34 +16,34 @@ namespace nw4r {
             void* Unload();
             static u32 GetRequireBufferSize();
 
-            virtual int GetWidth() const;
-            virtual int GetHeight() const;
-            virtual int GetAscent() const;
-            virtual int GetDescent() const;
-            virtual int GetBaselinePos() const;
-            virtual int GetCellHeight() const;
-            virtual int GetCellWidth() const;
-            virtual int GetMaxCharWidth() const;
-            virtual Type GetType() const;
-            virtual GXTexFmt GetTextureFormat() const;
-            virtual int GetLineFeed() const;
-            virtual const CharWidths GetDefaultCharWidths() const;
+            virtual int GetWidth() const ATTRIBUTE_WEAK;
+            virtual int GetHeight() const ATTRIBUTE_WEAK;
+            virtual int GetAscent() const ATTRIBUTE_WEAK;
+            virtual int GetDescent() const ATTRIBUTE_WEAK;
+            virtual int GetBaselinePos() const ATTRIBUTE_WEAK;
+            virtual int GetCellHeight() const ATTRIBUTE_WEAK;
+            virtual int GetCellWidth() const ATTRIBUTE_WEAK;
+            virtual int GetMaxCharWidth() const ATTRIBUTE_WEAK;
+            virtual Type GetType() const ATTRIBUTE_WEAK;
+            virtual GXTexFmt GetTextureFormat() const ATTRIBUTE_WEAK;
+            virtual int GetLineFeed() const ATTRIBUTE_WEAK;
+            virtual const CharWidths GetDefaultCharWidths() const ATTRIBUTE_WEAK;
 
-            virtual void SetDefaultCharWidths(const CharWidths& widths);
+            virtual void SetDefaultCharWidths(const CharWidths& widths) ATTRIBUTE_WEAK;
 
-            virtual bool SetAlternateChar(CharCode c);
+            virtual bool SetAlternateChar(CharCode c) ATTRIBUTE_WEAK;
 
-            virtual void SetLineFeed(int linefeed);
+            virtual void SetLineFeed(int linefeed) ATTRIBUTE_WEAK;
 
-            virtual int GetCharWidth(CharCode c) const;
+            virtual int GetCharWidth(CharCode c) const ATTRIBUTE_WEAK;
 
-            virtual const CharWidths GetCharWidths(CharCode c) const;
+            virtual const CharWidths GetCharWidths(CharCode c) const ATTRIBUTE_WEAK;
 
-            virtual void GetGlyph(Glyph* glyphPtr, CharCode c) const;
+            virtual void GetGlyph(Glyph* glyphPtr, CharCode c) const ATTRIBUTE_WEAK;
 
-            virtual bool HasGlyph(CharCode c) const;
+            virtual bool HasGlyph(CharCode c) const ATTRIBUTE_WEAK;
 
-            virtual FontEncoding GetEncoding() const;
+            virtual FontEncoding GetEncoding() const ATTRIBUTE_WEAK;
 
         private:
             const static int CHAR_PTR_BUFFER_SIZE = 3;
