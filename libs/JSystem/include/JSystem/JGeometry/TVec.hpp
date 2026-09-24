@@ -672,7 +672,11 @@ namespace JGeometry {
         }
 
 #else
-        void setPSZeroVec();
+        void setPSZeroVec() {
+            this->x = 0;
+            this->y = 0;
+            this->z = 0;
+        }
 #endif
         f32 dot(const TVec3& rOther) const NO_INLINE {
             // TODO: this is *never* uninlined except in the specific
