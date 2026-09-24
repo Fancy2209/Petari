@@ -16,7 +16,11 @@ public:
     virtual void start();
     virtual void end();
     virtual bool receiveMsg(u32);
-    virtual void control() = 0;
+    #ifdef __MWERKS__
+    virtual void control();
+    #else
+    virtual void control() {}
+    #endif
 
     void moveToInitPos();
     void startWithSignalMotion();
