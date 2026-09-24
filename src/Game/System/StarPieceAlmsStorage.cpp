@@ -15,10 +15,6 @@ StarPieceAlmsStorage::StarPieceAlmsStorage() : mValueArray() {
     }
 }
 
-#ifndef __MWERKS__
-StarPieceAlmsStorage::~StarPieceAlmsStorage() {}
-#endif
-
 s32 StarPieceAlmsStorage::getValue(int idx) const {
     return mValueArray[idx];
 }
