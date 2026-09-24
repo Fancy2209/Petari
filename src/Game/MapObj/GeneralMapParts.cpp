@@ -317,7 +317,11 @@ void GeneralMapParts::receiveMsgSwitchBOff() {
 
 void GeneralMapParts::broadcastMsgToAllFunctions(u32 msg) {
     std::for_each(mFunctionArray.begin(), mFunctionArray.end(),
+#ifdef __MWERKS__
                   std::binder2nd< std::mem_fun1_t< bool, MapPartsFunction, u32 >, u32 >(std::mem_func(&MapPartsFunction::receiveMsg), msg));
+#else
+                  std::bind2nd(std::mem_func(&MapPartsFunction::receiveMsg), msg));
+#endif
 }
 
 bool GeneralMapParts::isFixed() const {
