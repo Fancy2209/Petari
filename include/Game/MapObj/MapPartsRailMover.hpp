@@ -16,7 +16,7 @@ public:
     virtual void start();
     virtual void end();
     virtual bool receiveMsg(u32);
-    virtual void control();
+    virtual void control() = 0;
 
     void moveToInitPos();
     void startWithSignalMotion();
