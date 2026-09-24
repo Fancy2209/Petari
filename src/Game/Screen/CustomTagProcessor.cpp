@@ -149,6 +149,10 @@ CustomTagProcessor::Impl::GroupFunctionInfo* CustomTagProcessor::Impl::findGroup
 
 namespace nw4r {
     namespace ut {
+        #ifndef __MWERKS__
+        template <>
+        f32 TextWriterBase< char >::PrintImpl(StreamType str, int length) {}
+        #endif
         template <>
         f32 TextWriterBase< wchar_t >::PrintImpl(StreamType str, int length) {
             NW4R_POINTER_ASSERT_AT(308, this);

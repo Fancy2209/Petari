@@ -27,6 +27,10 @@ namespace nw4r {
             }
         }  // namespace detail
 
+        #ifndef __MWERKS__
+        Pane::Pane() {}
+        #endif
+
         Pane::Pane(const res::Pane* pRes) {
             Init();
 
