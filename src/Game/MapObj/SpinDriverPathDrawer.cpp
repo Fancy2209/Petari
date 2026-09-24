@@ -9,6 +9,7 @@
 #include "Game/Util/MathUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 #include "Game/Util/RailUtil.hpp"
+#include "revolution/gx/GXVert.h"
 #include <JSystem/JUtility/JUTTexture.hpp>
 
 void SpinDriverPathDrawer_FORCE_MATCH_SDATA2() {
@@ -364,9 +365,14 @@ void SpinDriverPathDrawer::draw() const {
 }
 
 void SpinDriverPathDrawer::sendPoint(const TVec3f& rA1, f32 a2, f32 a3) const {
+#ifdef __MWERKS__
     GXWGFifo.f32 = rA1.x;
     GXWGFifo.f32 = rA1.y;
     GXWGFifo.f32 = rA1.z;
     GXWGFifo.f32 = a2;
     GXWGFifo.f32 = a3;
+#else
+    GXPosition3f32(rA1.x, rA1.y, rA1.z);
+    GXTexCoord2f32(a2, a3);
+#endif
 }

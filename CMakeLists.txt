@@ -15,6 +15,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/libs/nw4r/include
 )
 add_executable(mariogalaxy
+    ${CMAKE_SOURCE_DIR}/src/port/stubs_game.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DManage.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DGrafContext.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DScreen.cpp

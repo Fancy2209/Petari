@@ -477,8 +477,10 @@ namespace {
         GXDisableBreakPt();
         GXAbortFrame();
         DrawSyncManager::sInstance->clearFifo();
+        #ifdef __MWERKS__
         GX_WRITE_U8(0x61);
         GX_WRITE_U32(0x5800000f);
+        #endif
         GXSetDrawDone();
         DrawSyncManager::prepareReset();
     }

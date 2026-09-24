@@ -16,6 +16,7 @@ extern volatile PPCWGPipe GXWGFifo;
 #define __GXCDEF(prfx, n, t) __GXCDEF##n(prfx##n##t, t, t)
 #define __GXCDEFX(func, n, t) __GXCDEF##n(func, t, t)
 
+#ifdef __MWERKS__
 #define __GXCDEF1(func, ts, td)                                                                                                                      \
     static void func(const ts x) {                                                                                                                   \
         GXWGFifo.td = (td)x;                                                                                                                         \
@@ -45,6 +46,12 @@ extern volatile PPCWGPipe GXWGFifo;
         GXWGFifo.td = (td)w;                                                                                                                         \
         return;                                                                                                                                      \
     }
+#else
+#define __GXCDEF1(func, ts, td) void func(const ts x);
+#define __GXCDEF2(func, ts, td) void func(const ts x, const ts y);
+#define __GXCDEF3(func, ts, td) void func(const ts x, const ts y, const ts z);
+#define __GXCDEF4(func, ts, td) void func(const ts x, const ts y, const ts z, const ts w);
+#endif
 
 __GXCDEF(GXCmd, 1, u8)
 __GXCDEF(GXCmd, 1, u16)
