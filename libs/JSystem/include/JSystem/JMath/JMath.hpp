@@ -185,9 +185,8 @@ namespace JMath {
 };  // namespace JMath
 
 namespace JMathInlineVEC {
-#ifdef __MWERKS__
-
     inline f32 PSVECDotProduct(const register Vec* pA, const register Vec* pB) {
+        #ifdef __MWERKS__
         register f32 aXY, bXY, bYZ, aYZ, product;
         asm {
             psq_l aYZ, 4(pA), 0, 0
@@ -198,8 +197,11 @@ namespace JMathInlineVEC {
             ps_madd bYZ, aXY, bXY, aYZ
             ps_sum0 product, bYZ, aYZ, aYZ
         }
-
         return product;
+        #else
+        return (pA->x + pB->x) * (pA->y + pB->y) * (pA->z + pB->z);
+        #endif
+
     }
 
     ALWAYS_INLINE inline void PSVECCopy(register const Vec* src, register Vec* dest) {

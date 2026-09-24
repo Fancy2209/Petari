@@ -6,6 +6,7 @@
 #include <JSystem/JGeometry/TUtil.hpp>
 #include <JSystem/JMath/JMATrigonometric.hpp>
 #include <JSystem/JMath/JMath.hpp>
+#include <math.h>
 #include <revolution/mtx.h>
 
 extern "C" int __fpclassifyf(f32);
@@ -1628,6 +1629,7 @@ f32 JMASqrt(__REGISTER f32 value) {
         return value;
     }
 
+    #ifdef __MWERKS__
     __REGISTER f32 inverse;
     __asm { frsqrte inverse, value }
     f32 estimate = inverse * value;
@@ -1635,4 +1637,7 @@ f32 JMASqrt(__REGISTER f32 value) {
     inverse *= estimate;
     inverse *= 0.5f;
     return inverse;
+    #else
+    return sqrt(value);
+    #endif
 }
