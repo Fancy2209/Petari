@@ -5,6 +5,9 @@
 #include "Game/Scene/SceneFunction.hpp"
 #include "Game/Scene/SceneObjHolder.hpp"
 #include "Game/Util/ObjUtil.hpp"
+#ifndef __MWERKS__
+#include "Game/Util.hpp"
+#endif
 #include <algorithm>
 
 SwitchWatcherHolder::SwitchWatcherHolder() : NameObj("SwitchWatcherHolder"), mSwitchWatcher() {
