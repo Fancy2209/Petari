@@ -316,8 +316,8 @@ struct JAISoundFader {
 template < typename T >
 struct JAISoundStrategy {
     virtual ~JAISoundStrategy() {};
-    virtual void calc(T*);
-    virtual void mix(T*, JASSoundParams*);
+    virtual void calc(T*) = 0;
+    virtual void mix(T*, JASSoundParams*) = 0;
 };
 
 template < typename T >
