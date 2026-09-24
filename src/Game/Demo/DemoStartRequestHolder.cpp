@@ -182,6 +182,7 @@ DemoStartRequestHolder::DemoStartRequestHolder() : mNumInfos(), mRequestBuffer(m
     }
 }
 
+#ifdef __MWERKS__
 template <>
 MR::FixedRingBuffer< const DemoStartInfo*, 16 >::iterator::iterator(const DemoStartInfo** pHead, const DemoStartInfo** pTail) {
     mHead = pHead;
@@ -189,7 +190,6 @@ MR::FixedRingBuffer< const DemoStartInfo*, 16 >::iterator::iterator(const DemoSt
     mEnd = pTail + 16;
 }
 
-#ifdef __MWERKS__
 template <>
 void MR::FixedRingBuffer< const DemoStartInfo*, 16 >::push_back(const DemoStartInfo* const& rValue) {
     if ((u32)mCount >= 16) {

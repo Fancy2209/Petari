@@ -40,13 +40,19 @@
 #include <revolution/sc.h>
 #include <revolution/vi/vifuncs.h>
 
-static char sAudioResFile[] = "/AudioRes/SMR.szs";
-static char sJaiSeqArc[] = "/AudioRes/Seqs/JaiSeq.arc";
-static char sJaiChordArc[] = "/AudioRes/Seqs/JaiChord.arc";
-static char sJaiMeArc[] = "/AudioRes/Seqs/JaiMe.arc";
-static char sJaiRemixArc[] = "/AudioRes/Info/JaiRemixSeq.arc";
-static char sJaiAudioArc[] = "AudioRes/SMR.baa";
-static char sJaiSeqResArc[] = "/AudioRes/JaiSeq.arc";
+#if __MWERKS__
+#define STATIC_CHAR static char
+#else
+#define STATIC_CHAR char
+#endif
+
+STATIC_CHAR sAudioResFile[] = "/AudioRes/SMR.szs";
+STATIC_CHAR sJaiSeqArc[] = "/AudioRes/Seqs/JaiSeq.arc";
+STATIC_CHAR sJaiChordArc[] = "/AudioRes/Seqs/JaiChord.arc";
+STATIC_CHAR sJaiMeArc[] = "/AudioRes/Seqs/JaiMe.arc";
+STATIC_CHAR sJaiRemixArc[] = "/AudioRes/Info/JaiRemixSeq.arc";
+STATIC_CHAR sJaiAudioArc[] = "AudioRes/SMR.baa";
+STATIC_CHAR sJaiSeqResArc[] = "/AudioRes/JaiSeq.arc";
 
 AudSystem* AudSystem::msBasic;
 

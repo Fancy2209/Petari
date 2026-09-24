@@ -326,10 +326,26 @@ namespace MR {
         public:
             inline iterator() {
             }
-
-            iterator(T* head, T* tail);
-
+            
+            #ifdef __MWERKS__
+            iterator(T* pHead, T* pTail);
             void operator++();
+            #else
+            iterator(T* pHead, T* pTail) {
+                mHead = pHead;
+                mTail = pTail;
+                mEnd = pTail + 16;
+            }
+
+            void operator++() {
+                const T* pEnd = mEnd;
+                mHead++;
+
+                if (pEnd <= mHead) {
+                    mHead = mTail;
+                }
+            }
+            #endif
 
             T* mHead;  // 0x0
             T* mTail;  // 0x4
@@ -353,17 +369,6 @@ namespace MR {
             *mEnd.mHead = val;
             ++mEnd;
             mCount++;
-        }
-        #endif
-
-        #ifndef __MWERKS__
-        void operator++() {
-            const T** pEnd = mEnd;
-            mHead++;
-
-            if (pEnd <= mHead) {
-                mHead = mEnd;
-            }
         }
         #endif
 
