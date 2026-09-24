@@ -56,6 +56,17 @@ const char* BenefitItemObj_FORCE_MATCH() {
     return "影クリップ判定";
 }
 
+#ifndef __MWERKS__
+namespace NrvBenefitItemObj {
+    NEW_NERVE_BODY(HostTypeNrvWait);
+    NEW_NERVE_BODY(HostTypeNrvShoot);
+    NEW_NERVE_BODY(HostTypeNrvCatch);
+    NEW_NERVE_BODY(HostTypeNrvAppearGround);
+    NEW_NERVE_BODY(HostTypeNrvPreEscape);
+    NEW_NERVE_BODY(HostTypeNrvEscape);
+};  // namespace NrvBenefitItemObj
+#endif
+
 void ShadowClipActor::endClipped() {
     LiveActor::endClipped();
 

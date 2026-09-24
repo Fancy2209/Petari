@@ -69,26 +69,26 @@ typedef int BOOL;
 #define NO_INLINE
 #endif
 #else
-#define ALWAYS_INLINE
+#define ALWAYS_INLINE __attribute__((always_inline))
 #define NO_INLINE
 #endif
 
 #if __MWERKS__
 #define ATTRIBUTE_ALIGN(num) __attribute__((aligned(num)))
 #else
-#define ATTRIBUTE_ALIGN(num)
+#define ATTRIBUTE_ALIGN(num) __attribute__((aligned(num)))
 #endif
 
 #if __MWERKS__
 #define ATTRIBUTE_PACKED __attribute__((packed))
 #else
-#define ATTRIBUTE_PACKED
+#define ATTRIBUTE_PACKED __attribute__((packed))
 #endif
 
 #if __MWERKS__
 #define ATTRIBUTE_WEAK __attribute__((weak))
 #else
-#define ATTRIBUTE_WEAK
+#define ATTRIBUTE_WEAK __attribute__((weak))
 #endif
 
 #ifndef TRUE

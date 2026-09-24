@@ -14,8 +14,8 @@ extern "C" {
 u32 __OSBusClock : (0x8000 << 16 | 0x00F8);
 u32 __MEM2End : (0x8000 << 16 | 0x3128);
 #else
-u32 __OSBusClock = 0x800000F8;
-u32 __MEM2End = 0x80003128;
+extern u32 __OSBusClock; // = 0x800000F8;
+extern u32 __MEM2End; // = 0x80003128;
 #endif
 
 #define OS_BUS_CLOCK __OSBusClock

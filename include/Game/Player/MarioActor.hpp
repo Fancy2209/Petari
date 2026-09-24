@@ -1009,14 +1009,14 @@ public:
 // header defined since these actually get defined in CamHeliEffector
 // and in sinit of NameObjFactory
 namespace NrvMarioActor {
-    NEW_NERVE(MarioActorNrvWait, MarioActor, Wait);
-    NEW_NERVE(MarioActorNrvGameOver, MarioActor, GameOver);
-    NEW_NERVE(MarioActorNrvGameOverAbyss, MarioActor, GameOverAbyss);
-    NEW_NERVE(MarioActorNrvGameOverAbyss2, MarioActor, GameOverAbyss);
-    NEW_NERVE(MarioActorNrvGameOverFire, MarioActor, GameOverFire);
-    NEW_NERVE(MarioActorNrvGameOverBlackHole, MarioActor, GameOverBlackHole2);
-    NEW_NERVE(MarioActorNrvGameOverNonStop, MarioActor, GameOverNonStop);
-    NEW_NERVE(MarioActorNrvGameOverSink, MarioActor, GameOverSink);
-    NEW_NERVE(MarioActorNrvTimeWait, MarioActor, TimeWait);
-    NEW_NERVE(MarioActorNrvNoRush, MarioActor, Wait);
+    NEW_NERVE_HEADER(MarioActorNrvWait, MarioActor, Wait);
+    NEW_NERVE_HEADER(MarioActorNrvGameOver, MarioActor, GameOver);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverAbyss, MarioActor, GameOverAbyss);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverAbyss2, MarioActor, GameOverAbyss);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverFire, MarioActor, GameOverFire);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverBlackHole, MarioActor, GameOverBlackHole2);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverNonStop, MarioActor, GameOverNonStop);
+    NEW_NERVE_HEADER(MarioActorNrvGameOverSink, MarioActor, GameOverSink);
+    NEW_NERVE_HEADER(MarioActorNrvTimeWait, MarioActor, TimeWait);
+    NEW_NERVE_HEADER(MarioActorNrvNoRush, MarioActor, Wait);
 };  // namespace NrvMarioActor

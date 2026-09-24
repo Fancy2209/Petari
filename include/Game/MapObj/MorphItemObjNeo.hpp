@@ -223,10 +223,10 @@ public:
 };
 
 namespace NrvMorphItemObjNeo {
-    NEW_NERVE(MorphItemObjNeoNrvWait, MorphItemObjNeo, Wait);
-    NEW_NERVE(MorphItemObjNeoNrvAppear, MorphItemObjNeo, Appear);
-    NEW_NERVE(MorphItemObjNeoNrvSwitchAppear, MorphItemObjNeo, SwitchAppear);
-    NEW_NERVE(MorphItemObjNeoNrvWait2, MorphItemObjNeo, Wait);
-    NEW_NERVE(MorphItemObjNeoNrvFly, MorphItemObjNeo, Fly);
-    NEW_NERVE(MorphItemObjNeoNrvDemo, MorphItemObjNeo, Wait);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvWait, MorphItemObjNeo, Wait);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvAppear, MorphItemObjNeo, Appear);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvSwitchAppear, MorphItemObjNeo, SwitchAppear);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvWait2, MorphItemObjNeo, Wait);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvFly, MorphItemObjNeo, Fly);
+    NEW_NERVE_HEADER(MorphItemObjNeoNrvDemo, MorphItemObjNeo, Wait);
 };  // namespace NrvMorphItemObjNeo

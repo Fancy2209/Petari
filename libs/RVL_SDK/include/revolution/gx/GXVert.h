@@ -10,7 +10,7 @@ extern "C" {
 #ifdef __MWERKS__
 volatile PPCWGPipe GXWGFifo : 0xCC008000;
 #else
-volatile PPCWGPipe GXWGFifo;
+extern volatile PPCWGPipe GXWGFifo;
 #endif
 
 #define __GXCDEF(prfx, n, t) __GXCDEF##n(prfx##n##t, t, t)

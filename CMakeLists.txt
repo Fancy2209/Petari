@@ -5,7 +5,7 @@ project(petari-ps3
 )
 set(CMAKE_CXX_STANDARD 11)
 
-add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing)
+add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing -Wno-write-strings -Wno-subobject-linkage)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include/
     ${CMAKE_SOURCE_DIR}/libs/JSystem/include

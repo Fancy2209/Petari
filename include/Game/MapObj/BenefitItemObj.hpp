@@ -96,10 +96,10 @@ public:
 };
 
 namespace NrvBenefitItemObj {
-    NEW_NERVE(HostTypeNrvWait, BenefitItemObj, Wait);
-    NEW_NERVE(HostTypeNrvShoot, BenefitItemObj, Shoot);
-    NEW_NERVE(HostTypeNrvCatch, BenefitItemObj, Catch);
-    NEW_NERVE(HostTypeNrvAppearGround, BenefitItemObj, AppearGround);
-    NEW_NERVE(HostTypeNrvPreEscape, BenefitItemObj, PreEscape);
-    NEW_NERVE(HostTypeNrvEscape, BenefitItemObj, Escape);
+    NEW_NERVE_HEADER(HostTypeNrvWait, BenefitItemObj, Wait);
+    NEW_NERVE_HEADER(HostTypeNrvShoot, BenefitItemObj, Shoot);
+    NEW_NERVE_HEADER(HostTypeNrvCatch, BenefitItemObj, Catch);
+    NEW_NERVE_HEADER(HostTypeNrvAppearGround, BenefitItemObj, AppearGround);
+    NEW_NERVE_HEADER(HostTypeNrvPreEscape, BenefitItemObj, PreEscape);
+    NEW_NERVE_HEADER(HostTypeNrvEscape, BenefitItemObj, Escape);
 };  // namespace NrvBenefitItemObj

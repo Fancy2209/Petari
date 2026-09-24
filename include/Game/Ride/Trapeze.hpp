@@ -75,18 +75,18 @@ public:
 
 // these have to be header bodies because for some reason they are actually linked in NameObjFactory
 namespace NrvTrapeze {
-    NEW_NERVE(TrapezeNrvStop, Trapeze, Stop);
-    NEW_NERVE(TrapezeNrvFree, Trapeze, Free);
-    NEW_NERVE(TrapezeNrvFreeInvalid, Trapeze, FreeInvalid);
-    NEW_NERVE(TrapezeNrvSwingWait, Trapeze, SwingWait);
-    NEW_NERVE(TrapezeNrvSwingSlideDownStart, Trapeze, SwingSlideDownStart);
-    NEW_NERVE(TrapezeNrvSwingSlideDown, Trapeze, SwingSlideDown);
-    NEW_NERVE(TrapezeNrvSwingFrontStart, Trapeze, SwingFrontStart);
-    NEW_NERVE(TrapezeNrvSwingFrontEnd, Trapeze, SwingFrontEnd);
-    NEW_NERVE(TrapezeNrvSwingBackStart, Trapeze, SwingBackStart);
-    NEW_NERVE(TrapezeNrvSwingBackEnd, Trapeze, SwingBackEnd);
-    NEW_NERVE(TrapezeNrvSlowSwingFrontStart, Trapeze, SwingFrontStart);
-    NEW_NERVE(TrapezeNrvSlowSwingFrontEnd, Trapeze, SwingFrontEnd);
-    NEW_NERVE(TrapezeNrvSlowSwingBackStart, Trapeze, SwingBackStart);
-    NEW_NERVE(TrapezeNrvSlowSwingBackEnd, Trapeze, SwingBackEnd);
+    NEW_NERVE_HEADER(TrapezeNrvStop, Trapeze, Stop);
+    NEW_NERVE_HEADER(TrapezeNrvFree, Trapeze, Free);
+    NEW_NERVE_HEADER(TrapezeNrvFreeInvalid, Trapeze, FreeInvalid);
+    NEW_NERVE_HEADER(TrapezeNrvSwingWait, Trapeze, SwingWait);
+    NEW_NERVE_HEADER(TrapezeNrvSwingSlideDownStart, Trapeze, SwingSlideDownStart);
+    NEW_NERVE_HEADER(TrapezeNrvSwingSlideDown, Trapeze, SwingSlideDown);
+    NEW_NERVE_HEADER(TrapezeNrvSwingFrontStart, Trapeze, SwingFrontStart);
+    NEW_NERVE_HEADER(TrapezeNrvSwingFrontEnd, Trapeze, SwingFrontEnd);
+    NEW_NERVE_HEADER(TrapezeNrvSwingBackStart, Trapeze, SwingBackStart);
+    NEW_NERVE_HEADER(TrapezeNrvSwingBackEnd, Trapeze, SwingBackEnd);
+    NEW_NERVE_HEADER(TrapezeNrvSlowSwingFrontStart, Trapeze, SwingFrontStart);
+    NEW_NERVE_HEADER(TrapezeNrvSlowSwingFrontEnd, Trapeze, SwingFrontEnd);
+    NEW_NERVE_HEADER(TrapezeNrvSlowSwingBackStart, Trapeze, SwingBackStart);
+    NEW_NERVE_HEADER(TrapezeNrvSlowSwingBackEnd, Trapeze, SwingBackEnd);
 };  // namespace NrvTrapeze

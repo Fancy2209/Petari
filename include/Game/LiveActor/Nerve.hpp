@@ -13,6 +13,7 @@ public:
     virtual void executeOnEnd(Spine* pSpine) const;
 };
 
+#ifdef __MWERKS__
 #define NEW_NERVE(name, parent_class, executor_name)                                                                                                 \
     class name : public Nerve {                                                                                                                      \
     public:                                                                                                                                          \
@@ -23,7 +24,42 @@ public:
         static name sInstance;                                                                                                                       \
     };                                                                                                                                               \
     name name::sInstance ATTRIBUTE_WEAK;
+#else
+#define NEW_NERVE(name, parent_class, executor_name)                                                                                                 \
+    class name : public Nerve {                                                                                                                      \
+    public:                                                                                                                                          \
+        virtual void execute(Spine* pSpine) const {                                                                                                  \
+            parent_class* actor = reinterpret_cast< parent_class* >(pSpine->mExecutor);                                                              \
+            actor->exe##executor_name();                                                                                                             \
+        };                                                                                                                                           \
+        static name sInstance;                                                                                                                       \
+    };                                                                                                                                               \
+    name name::sInstance;
+#endif
 
+// NEW_NERVE_HEAD defines just the nerve class, 
+// so it works on headers.
+// NEW_NERVE_BODY defines just the nerve sInstance,
+// meant to be used in the cpp file when NEW_NERVE_HEADER 
+// is used.
+#ifdef __MWERKS__
+#define NEW_NERVE_HEADER NEW_NERVE
+#define NEW_NERVE_BODY(name) 
+#else
+#define NEW_NERVE_HEADER(name, parent_class, executor_name)                                                                                                 \
+    class name : public Nerve {                                                                                                                      \
+    public:                                                                                                                                          \
+        virtual void execute(Spine* pSpine) const {                                                                                                  \
+            parent_class* actor = reinterpret_cast< parent_class* >(pSpine->mExecutor);                                                              \
+            actor->exe##executor_name();                                                                                                             \
+        };                                                                                                                                           \
+        static name sInstance;                                                                                                                       \
+    };
+
+#define NEW_NERVE_BODY(name)     name name::sInstance;
+#endif
+
+#ifdef __MWERKS__
 #define NEW_NERVE_ONEND(name, parent_class, executor_name, executorOnEnd_name)                                                                       \
     class name : public Nerve {                                                                                                                      \
     public:                                                                                                                                          \
@@ -38,6 +74,22 @@ public:
         static name sInstance;                                                                                                                       \
     };                                                                                                                                               \
     name name::sInstance ATTRIBUTE_WEAK;
+#else
+#define NEW_NERVE_ONEND(name, parent_class, executor_name, executorOnEnd_name)                                                                       \
+    class name : public Nerve {                                                                                                                      \
+    public:                                                                                                                                          \
+        virtual void execute(Spine* pSpine) const {                                                                                                  \
+            parent_class* actor = reinterpret_cast< parent_class* >(pSpine->mExecutor);                                                              \
+            actor->exe##executor_name();                                                                                                             \
+        };                                                                                                                                           \
+        virtual void executeOnEnd(Spine* pSpine) const {                                                                                             \
+            parent_class* actor = reinterpret_cast< parent_class* >(pSpine->mExecutor);                                                              \
+            actor->end##executorOnEnd_name();                                                                                                        \
+        };                                                                                                                                           \
+        static name sInstance;                                                                                                                       \
+    };                                                                                                                                               \
+    name name::sInstance;
+#endif
 
 /* easy alternative to get a nerve instance (in the standard format) */
 #define GET_NERVE(cls, nerve) (&Nrv##cls::nerve::sInstance)

@@ -34,6 +34,17 @@ namespace {
     static f32 cRotateRadiusMini = 30.0f;
 };  // namespace
 
+#ifndef __MWERKS__
+namespace NrvMorphItemObjNeo {
+    NEW_NERVE_BODY(MorphItemObjNeoNrvWait);
+    NEW_NERVE_BODY(MorphItemObjNeoNrvAppear);
+    NEW_NERVE_BODY(MorphItemObjNeoNrvSwitchAppear);
+    NEW_NERVE_BODY(MorphItemObjNeoNrvWait2);
+    NEW_NERVE_BODY(MorphItemObjNeoNrvFly);
+    NEW_NERVE_BODY(MorphItemObjNeoNrvDemo);
+};  // namespace NrvMorphItemObjNeo
+#endif
+
 void MorphItemObjNeo::makeArchiveList(NameObjArchiveListCollector* pCollector, const JMapInfoIter& rIter) {
     if (MR::isEqualObjectName(rIter, "MorphItemNeoHopper") || MR::isEqualObjectName(rIter, "Hopper")) {
         if (MR::isPlayerLuigi()) {

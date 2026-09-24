@@ -113,6 +113,21 @@ void MarioActor_DUMMY() {
     (void)JGeometry::TUtil< f32 >::acos(1.0f);
 }
 
+#ifndef __MWERKS__
+namespace NrvMarioActor {
+    NEW_NERVE_BODY(MarioActorNrvWait);
+    NEW_NERVE_BODY(MarioActorNrvGameOver);
+    NEW_NERVE_BODY(MarioActorNrvGameOverAbyss);
+    NEW_NERVE_BODY(MarioActorNrvGameOverAbyss2);
+    NEW_NERVE_BODY(MarioActorNrvGameOverFire);
+    NEW_NERVE_BODY(MarioActorNrvGameOverBlackHole);
+    NEW_NERVE_BODY(MarioActorNrvGameOverNonStop);
+    NEW_NERVE_BODY(MarioActorNrvGameOverSink);
+    NEW_NERVE_BODY(MarioActorNrvTimeWait);
+    NEW_NERVE_BODY(MarioActorNrvNoRush);
+};  // namespace NrvMarioActor
+#endif
+
 bool gIsLuigi;
 static f32 BASE_ROTATION = 0.0f;
 

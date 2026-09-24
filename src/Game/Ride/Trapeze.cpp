@@ -77,6 +77,25 @@ namespace {
     static Color8 sColorMinusX(0x64, 0x64, 0x64, 0xFF);
 };  // namespace
 
+#ifndef __MWERKS__
+namespace NrvTrapeze {
+    NEW_NERVE_BODY(TrapezeNrvStop);
+    NEW_NERVE_BODY(TrapezeNrvFree);
+    NEW_NERVE_BODY(TrapezeNrvFreeInvalid);
+    NEW_NERVE_BODY(TrapezeNrvSwingWait);
+    NEW_NERVE_BODY(TrapezeNrvSwingSlideDownStart);
+    NEW_NERVE_BODY(TrapezeNrvSwingSlideDown);
+    NEW_NERVE_BODY(TrapezeNrvSwingFrontStart);
+    NEW_NERVE_BODY(TrapezeNrvSwingFrontEnd);
+    NEW_NERVE_BODY(TrapezeNrvSwingBackStart);
+    NEW_NERVE_BODY(TrapezeNrvSwingBackEnd);
+    NEW_NERVE_BODY(TrapezeNrvSlowSwingFrontStart);
+    NEW_NERVE_BODY(TrapezeNrvSlowSwingFrontEnd);
+    NEW_NERVE_BODY(TrapezeNrvSlowSwingBackStart);
+    NEW_NERVE_BODY(TrapezeNrvSlowSwingBackEnd);
+};  // namespace NrvTrapeze
+#endif
+
 Trapeze::Trapeze(const char* pName)
     : LiveActor(pName), mSide(1.0f, 0.0f, 0.0f), mUp(0.0f, 1.0f, 0.0f), mFront(0.0f, 0.0f, 1.0f), mRopeLength(), mStickPoint(), mTrapezeModel(),
       mRider(), mHangPoint(), mGrabCoord(), mSwingVel(), mSwingReverse(), mIsSwingFront(), mIsSwingBack(), mWasSwingFront(), mWasSwingBack(),

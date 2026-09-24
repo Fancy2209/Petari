@@ -66,7 +66,7 @@ namespace JGeometry {
     }
 
 #else
-    void mulInternal(const f32* vec1, const f32* vec2, f32* dst) {
+    ALWAYS_INLINE inline void mulInternal(const f32* vec1, const f32* vec2, f32* dst) {
         dst[0] = vec1[0] * vec2[0];
         dst[1] = vec1[1] * vec2[1];
         dst[2] = vec1[2] * vec2[2];
@@ -273,9 +273,11 @@ namespace JGeometry {
         T x, y;
     };
 
+    #ifdef __MWERKS__
     template <>
     TVec2< f32 >::TVec2() {
     }
+    #endif
 
     template < typename T >
     struct TVec3 {
