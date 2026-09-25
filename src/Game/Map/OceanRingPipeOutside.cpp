@@ -7,8 +7,6 @@
 #include "Game/Util/MtxUtil.hpp"
 #include "Game/Util/ObjUtil.hpp"
 #include "Game/Util/SchedulerUtil.hpp"
-#include "revolution/gd/GDBase.h"
-#include "revolution/gx/GXEnum.h"
 #include <JSystem/JKernel/JKRHeap.hpp>
 #include <JSystem/JUtility/JUTTexture.hpp>
 
@@ -49,7 +47,7 @@ void OceanRingPipeOutside::initDisplayList() {
     DCInvalidateRange(mDispList, length);
     GDLObj obj;
     GDInitGDLObj(&obj, mDispList, length);
-    GDSetCurrent(&obj);
+    __GDCurrentDL = &obj;
     sendGD();
     GDPadCurr32();
     mDispListLength = obj.ptr - obj.start;
@@ -152,7 +150,7 @@ void OceanRingPipeOutside::loadMaterial() const {
 }
 
 void OceanRingPipeOutside::sendGD() const {
-    GXPrimitive something = GX_TRIANGLESTRIP;
+    u8 something = 0x98;
     s32 vv;
     s32 v;
     f32 f29;
@@ -163,16 +161,19 @@ void OceanRingPipeOutside::sendGD() const {
     for (s32 i = 0; i < mRingPipe->_9C - 1; i++) {
         f32 f27 = 0.0f;
         vv = mRingPipe->_98;
-        GDBegin(something, GX_VTXFMT0, (u16)(vv << 1));
+        GDWrite_u8(something);
+        GDWrite_u16((u16)(vv << 1));
         for (s32 j = 0; j < mRingPipe->_98; j++) {
             v = j * mRingPipe->_9C;
             u16 cl2 = i + v + 1;
             u16 cl = i + v;
-            GDNormal2u16(cl2, cl2);
+            GDWrite_u16(cl2);
+            GDWrite_u16(cl2);
             GDWrite_f32(f27);
             GDWrite_f32(f29);
 
-            GDNormal2u16(cl, cl);
+            GDWrite_u16(cl);
+            GDWrite_u16(cl);
             GDWrite_f32(f27);
             GDWrite_f32(f28);
 
