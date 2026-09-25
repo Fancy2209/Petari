@@ -548,6 +548,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/DriftWood.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/SpiderThread.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/MapObj/EarthenPipe.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/System/BCSVInclude.gcc.s
     ${CMAKE_SOURCE_DIR}/src/Game/System/GameDataFunction.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/System/FileRipper.cpp
@@ -645,6 +646,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/System/ResourceInfo.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/System/GameEventFlagTable.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/System/GameSystemFrameControl.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudBgm.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudParams.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudTrackController.cpp
@@ -678,6 +680,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudMeNameConverter.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudBgmRhythmStrategy.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AudioLib/AudSoundObject_Gohara.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/NWC24System.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/LuigiMailDirector.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/UTF16Util.cpp
@@ -685,6 +688,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/NWC24Function.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/ReceiverTagMail.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NWC24/NWC24SendThread.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/PlantStalk.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/TamakoroTutorial.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/Plant.cpp
@@ -707,6 +711,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/SlingShooter.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/SledRopePoint.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Ride/PlantLeaf.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/PoltaStateGenerateRock.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/KoopaStateGuard.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/KoopaFireShort.cpp
@@ -876,6 +881,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/DinoPackunTailNode.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/PoltaStateGroundRockAttack.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Boss/KoopaStateDamageEscape.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/NameObj/NameObjArchiveListCollector.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NameObj/NameObjGroup.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NameObj/NameObj.cpp
@@ -996,6 +1002,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Player/MarioWait.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Player/MarioActorShadow.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Player/MarioSwimDamage.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/PlayTimerScene.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/GameSceneScenarioOpeningCameraState.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/GameScene.cpp
@@ -1021,6 +1028,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/IntermissionScene.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/GameScenePauseControl.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Scene/PlacementInfoOrdered.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Util/StringUtil.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Util/SchedulerUtil.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Util/CollisionPartsFilter.cpp
@@ -1097,6 +1105,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Util/PostureHolder.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Util/ParabolicPath.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Util/ActorSwitchUtil.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkSpeakerCtrl.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkTable.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkSystem.cpp
@@ -1104,6 +1113,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkData.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkMixingBuffer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Speaker/SpkWave.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/OnimasuJump.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/RingBeamer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/KoopaJrShipCannonMainShell.cpp
@@ -1214,6 +1224,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/Birikyu.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/AnimScaleController.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Enemy/BegomanBaby.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Screen/SceneWipeHolder.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Screen/CountUpPaneRumbler.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Screen/MovieStarter.cpp
@@ -1477,6 +1488,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Camera/CameraWaterPlanet.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Camera/CameraDirector.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Camera/CameraRegisterHolder.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/AnmPlayer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/LayoutAnmPlayer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/XanimeResource.cpp
@@ -1489,6 +1501,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/BckCtrl.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/MaterialAnmBuffer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Animation/BrkPlayer.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudMeTrackCallback.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudRhythmWrap.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudMeTrack.cpp
@@ -1504,6 +1517,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudMeObject.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudRhythmSeqParser.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/RhythmLib/AudRhythmHolder.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/WaterArea.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/GlaringLightArea.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/CameraRepulsiveArea.cpp
@@ -1541,6 +1555,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/BigBubbleCameraArea.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/AreaObjContainer.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/AreaObj/SpinGuidanceArea.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/TalkState.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/MiiFaceParts.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/Rabbit.cpp
@@ -1619,6 +1634,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/Butler.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/PenguinSkater.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/NPC/TicoStarRing.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Map/SwitchWatcher.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Map/GravityDust.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Map/Air.cpp
@@ -1701,6 +1717,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Map/KoopaBattleMapDamagePlate.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Map/SleepControllerHolder.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Map/LightDirector.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/ParticleResourceHolder.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/ParticleCalcExecutor.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/EffectObjGravityDust.cpp
@@ -1723,6 +1740,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/SingleEmitter.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/AutoEffectGroup.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Effect/ParticleDrawExecutor.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/DemoPadRumbler.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/DemoExecutor.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/StarReturnDemoStarter.cpp
@@ -1754,6 +1772,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/DemoTimeKeeper.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/DemoCtrlBase.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/Demo/GrandStarReturnDemoStarter.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudStageBgmTable.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudBgmConductor.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudEffectDirector.cpp
@@ -1762,6 +1781,7 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudCameraWatcher.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudTamakoroBgmCtrl.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/GameAudio/AudTalkSoundData.cpp
+
     ${CMAKE_SOURCE_DIR}/src/Game/LiveActor/ClippingActorInfo.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/LiveActor/MirrorReflectionModel.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/LiveActor/LodCtrl.cpp

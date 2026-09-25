@@ -39,10 +39,11 @@ ctx.*
 # Generated configs
 objdiff.json
 compile_commands.json
-build_pc/
-build_ps3/
 
 # Miscellaneous
 /*.txt
-!CMakeLists.txt
 *.exe
+
+!CMakeLists.txt
+build_pc/
+build_ps3/
