@@ -946,7 +946,7 @@ void MarioActor::createTextureDL(DLholder* pHolder, u16 texMapID, u16 texIndex) 
     u8 tempDL[0x200] ATTRIBUTE_ALIGN(32);
     GDLObj obj;
     GDInitGDLObj(&obj, tempDL, sizeof(tempDL));
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
 
     ResTIMG* texture = _B64[texIndex];
     GDSetTexImgPtr(static_cast< GXTexMapID >(texMapID), reinterpret_cast< u8* >(texture) + texture->mImageDataOffset);

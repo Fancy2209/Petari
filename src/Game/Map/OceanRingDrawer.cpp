@@ -76,7 +76,7 @@ void OceanRingPartDrawer::initDisplayList(f32* pTexCoordU0, f32* pTexCoordU1, f3
     DCInvalidateRange(mDispList, size);
     GDLObj obj;
     GDInitGDLObj(&obj, mDispList, size);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
     drawGD(pTexCoordU0, pTexCoordU1, pTexCoordU2);
     GDPadCurr32();
     mDispListLength = obj.ptr - obj.start;
@@ -403,7 +403,7 @@ void OceanRingDrawer::initDisplayList() {
     DCInvalidateRange(mDispList, length);
     GDLObj obj;
     GDInitGDLObj(&obj, mDispList, length);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
     drawGD();
     GDPadCurr32();
     mDispListLength = obj.ptr - obj.start;

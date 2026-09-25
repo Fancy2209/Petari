@@ -233,7 +233,7 @@ void ElectricRailMoving::initDisplayList() {
 
     GDLObj dl;
     GDInitGDLObj(&dl, _DC, _E0);
-    __GDCurrentDL = &dl;
+    GDSetCurrent(&dl);
 
     drawPlane(30.0f, 30.0f, -30.0f, -30.0f);
     drawPlane(-30.0f, 30.0f, 30.0f, -30.0f);

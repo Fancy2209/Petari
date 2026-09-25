@@ -99,7 +99,7 @@ ElectricRailShadowDrawer::ElectricRailShadowDrawer(const LiveActor* pActor, Elec
 
     GDLObj pObj;
     GDInitGDLObj(&pObj, mDisplayListBuffer, mDisplayListBufferSize);
-    __GDCurrentDL = &pObj;
+    GDSetCurrent(&pObj);
 
     drawShadowVolumeShape(pSeparator, count);
 
@@ -461,7 +461,7 @@ void ElectricRail::initDisplayList() {
 
     GDLObj obj;
     GDInitGDLObj(&obj, mDisplayListBuffer, mDisplayListSize);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
 
     drawPlane(30.0, 30.0, -30.0, -30.0);
     drawPlane(-30.0, 30.0, 30.0, -30.0);

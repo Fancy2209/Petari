@@ -13,11 +13,11 @@
 namespace {
     class GDCurrentRestorer {
     public:
-        GDCurrentRestorer() : mObj(__GDCurrentDL) {
+        GDCurrentRestorer() : mObj(GDGetCurrent()) {
         }
 
         ~GDCurrentRestorer() {
-            __GDCurrentDL = mObj;
+            GDSetCurrent(mObj);
         }
 
     private:

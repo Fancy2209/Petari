@@ -326,7 +326,7 @@ void OceanSphere::initDisplayList() {
     DCInvalidateRange(mDispListFace, sizeFace);
     GDLObj obj;
     GDInitGDLObj(&obj, mDispListFace, sizeFace);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
     drawSphere(false, true);
     GDPadCurr32();
     mDispListFaceLen = obj.ptr - obj.start;
@@ -335,7 +335,7 @@ void OceanSphere::initDisplayList() {
     mDispListBack = new (0x20) u8[sizeBack];
     DCInvalidateRange(mDispListBack, sizeBack);
     GDInitGDLObj(&obj, mDispListBack, sizeBack);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
     drawSphere(true, true);
     GDPadCurr32();
     mDispListBackLen = obj.ptr - obj.start;

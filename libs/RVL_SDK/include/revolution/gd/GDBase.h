@@ -109,6 +109,10 @@ static inline void GDSetCurrent(GDLObj* dl) {
     __GDCurrentDL = dl;
 }
 
+static inline GDLObj* GDGetCurrent(void) {
+    return __GDCurrentDL;
+}
+
 static inline u32 GDGetCurrOffset(void) {
     return (u32)(__GDCurrentDL->ptr - __GDCurrentDL->start);
 }

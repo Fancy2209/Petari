@@ -277,7 +277,7 @@ void MarioActor::updateAlphaDL(u8 alpha) {
     GDLObj displayList;
     MR::ProhibitSchedulerAndInterrupts lock(false);
     GDInitGDLObj(&displayList, buffer, sizeof(buffer));
-    __GDCurrentDL = &displayList;
+    GDSetCurrent(displayList);    
     GXColor color = {0, 0, 0, 255};
     color.a = alpha;
     GDSetTevColor(GX_TEVREG2, color);
@@ -303,7 +303,7 @@ void MarioActor::updateSimpleAlphaDL(u8 alpha) {
     GDLObj displayList;
     MR::ProhibitSchedulerAndInterrupts lock(false);
     GDInitGDLObj(&displayList, buffer, sizeof(buffer));
-    __GDCurrentDL = &displayList;
+    GDSetCurrent(displayList);
     GDSetDstAlpha(GX_TRUE, alpha);
     GDPadCurr32();
     u32 size = (displayList.ptr - displayList.start + 31) & ~31;
@@ -318,7 +318,7 @@ void MarioActor::updateReflectAlphaDL(u8 alpha) {
     GDLObj displayList;
     MR::ProhibitSchedulerAndInterrupts lock(false);
     GDInitGDLObj(&displayList, buffer, sizeof(buffer));
-    __GDCurrentDL = &displayList;
+    GDSetCurrent(displayList);
     GXColor color = {0, 0, 0, 255};
     color.a = alpha;
     GDSetTevColor(GX_TEVREG2, color);
@@ -337,7 +337,7 @@ void MarioActor::updateLightDL(const Color8& rAmbient, const Color8& rMaterial, 
     GDLObj displayList;
     MR::ProhibitSchedulerAndInterrupts lock(false);
     GDInitGDLObj(&displayList, buffer, sizeof(buffer));
-    __GDCurrentDL = &displayList;
+    GDSetCurrent(displayList);
     GXColor ambientColor = rAmbient.mGXColor;
     GDSetChanAmbColor(GX_COLOR0A0, ambientColor);
     GXColor materialColor = rMaterial.mGXColor;
@@ -373,7 +373,7 @@ void MarioActor::createRainbowDL() {
         for (u32 index = 0; index < 8; index++) {
             _94[alpha * 8 + index] = new DLchanger(1, 32);
             GDInitGDLObj(&displayList, buffer, sizeof(buffer));
-            __GDCurrentDL = &displayList;
+            GDSetCurrent(displayList);
             GXColor color = {0, 0, 0, 0};
 
             if (index & 1) {
