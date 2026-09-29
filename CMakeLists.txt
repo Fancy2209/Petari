@@ -5,7 +5,7 @@ project(petari-ps3
 )
 set(CMAKE_CXX_STANDARD 11)
 
-add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing -Wno-write-strings -Wno-subobject-linkage)
+add_definitions(-DPLATFORM_PS3 -Wno-multichar -Wno-enum-compare -Wno-deprecated-declarations -Wno-narrowing -Wno-write-strings)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include/
     ${CMAKE_SOURCE_DIR}/libs/JSystem/include
@@ -15,7 +15,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/libs/nw4r/include
 )
 add_executable(mariogalaxy
-    ${CMAKE_SOURCE_DIR}/src/port/stubs_game.cpp
+    ${CMAKE_SOURCE_DIR}/src/port/stubs.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DManage.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DGrafContext.cpp
     ${CMAKE_SOURCE_DIR}/src/JSystem/J2DGraph/J2DScreen.cpp
@@ -1844,3 +1844,13 @@ add_executable(mariogalaxy
     ${CMAKE_SOURCE_DIR}/src/Game/LiveActor/SensorHitChecker.cpp
     ${CMAKE_SOURCE_DIR}/src/Game/LiveActor/ActorStateKeeper.cpp
 )
+set(CMAKE_C_FLAGS -m32)
+set(CMAKE_CXX_FLAGS -m32)
+set(CMAKE_ASM_FLAGS -m32)
+set(CMAKE_LD_FLAGS -m32)
+set(ZLIB_LIBRARY_RELEASE /usr/lib32/libz.so)
+add_subdirectory(submodules/SDL EXCLUDE_FROM_ALL)
+set(SIPHON_FETCH_CONFLUENCE ON)
+add_subdirectory(submodules/Siphon EXCLUDE_FROM_ALL)
+# Link to the actual SDL3 library. SDL3::SDL3 is the shared SDL library, SDL3::SDL3-static is the static SDL libarary.
+target_link_libraries(mariogalaxy PRIVATE SDL3::SDL3 siphon)

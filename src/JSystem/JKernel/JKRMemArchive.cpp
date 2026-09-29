@@ -54,11 +54,11 @@ void JKRMemArchive::fixedInit(long entryNum) {
 }
 
 bool JKRMemArchive::mountFixed(void* a1, JKRMemBreakFlag breakFlag) {
-    if (check_mount_already(reinterpret_cast< s32 >(a1)) != nullptr) {
+    if (check_mount_already(__builtin_bswap32(reinterpret_cast< s32 >(a1))) != nullptr) {
         return false;
     }
 
-    fixedInit(reinterpret_cast< s32 >(a1));
+    fixedInit(__builtin_bswap32(reinterpret_cast< s32 >(a1)));
 
     if (!open(a1, 0xFFFF, breakFlag)) {
         return false;

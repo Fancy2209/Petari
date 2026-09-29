@@ -1,4 +1,5 @@
 #pragma inline_max_size(250)
+#include "JSystem/JKernel/JKRAram.hpp"
 #include "JSystem/JKernel/JKRDvdRipper.hpp"
 #include "JSystem/JKernel/JKRCompression.hpp"
 #include "JSystem/JKernel/JKRDecomp.hpp"
@@ -429,6 +430,3 @@ static int JKRDecompressFromDVD(JKRDvdFile* dvdFile, void* dst, u32 fileSize, u3
     OSUnlockMutex(&decompMutex);
     return result;
 }
-
-
-

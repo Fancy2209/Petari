@@ -227,14 +227,12 @@ public:
     u8 _69;
 };
 
-//#ifdef __MWERKS__
-void* operator new(u32, int);
-void* operator new(u32, JKRHeap*);
-void* operator new(u32, JKRHeap*, int);
-void* operator new[](u32, int);
+void* operator new(size_t, int);
+void* operator new[](size_t, int);
+void* operator new(size_t, JKRHeap*);
+void* operator new(size_t, JKRHeap*, int);
 
-void* operator new[](u32, JKRHeap*, int);
-//#endif
+void* operator new[](size_t, JKRHeap*, int);
 
 inline void* JKRAllocFromHeap(JKRHeap* pHeap, u32 size, int alignment) {
     return JKRHeap::alloc(size, alignment, pHeap);
@@ -280,7 +278,7 @@ inline u32 JKRGetFreeSize(JKRHeap* pHeap) {
     return pHeap->getFreeSize();
 }
 
-inline void* JKRAlloc(u32 size, int alignment) {
+inline void* JKRAlloc(size_t size, int alignment) {
     return JKRHeap::alloc(size, alignment, nullptr);
 }
 

@@ -1,6 +1,7 @@
 #include "JSystem/JKernel/JKRHeap.hpp"
 #include "JSystem/JUtility/JUTException.hpp"
 #include <revolution/os/OSBootInfo.h>
+#include <stdint.h>
 
 JKRHeap* JKRHeap::sSystemHeap;
 JKRHeap* JKRHeap::sCurrentHeap;
@@ -73,23 +74,40 @@ bool JKRHeap::initArena(char** memory, u32* size, int maxHeaps) {
         return false;
     }
 
-    arenaStart = OSInitAlloc(arenaLo, arenaHi, maxHeaps);
-    OSBootInfo* code = (OSBootInfo*)OSPhysicalToCached(0);
-    ramStart = (void*)(((u32)arenaStart + 31) & 0xFFFFFFE0);
-    ramEnd = (void*)((u32)arenaHi & 0xFFFFFFE0);
+#ifdef PLATFORM_PS3
+    // PC: Simple arena setup without GameCube-specific memory management
+    arenaLo = (void*)ALIGN_NEXT((uintptr_t)arenaLo, 0x20);
+    arenaHi = (void*)ALIGN_PREV((uintptr_t)arenaHi, 0x20);
 
-    JKRHeap::mCodeStart = code;
-    JKRHeap::mCodeEnd = ramStart;
-    JKRHeap::mUserRamStart = ramStart;
-    JKRHeap::mUserRamEnd = ramEnd;
-    JKRHeap::mMemorySize = code->memorySize;
+    mCodeStart = nullptr;
+    mCodeEnd = nullptr;
+    mUserRamStart = arenaLo;
+    mUserRamEnd = arenaHi;
+    mMemorySize = (uintptr_t)arenaHi - (uintptr_t)arenaLo;
 
-    OSSetArenaLo(ramEnd);
-    OSSetArenaHi(ramEnd);
-
-    *memory = (char*)ramStart;
-    *size = (u32)ramEnd - (u32)ramStart;
+    *memory = (char*)arenaLo;
+    *size = (uintptr_t)arenaHi - (uintptr_t)arenaLo;
     return true;
+#else
+    arenaLo = OSInitAlloc(arenaLo, arenaHi, maxHeaps);
+    arenaLo = (void*)ALIGN_NEXT((uintptr_t)arenaLo, 0x20);
+    arenaHi = (void*)ALIGN_PREV((uintptr_t)arenaHi, 0x20);
+
+    OSBootInfo* codeStart = (OSBootInfo*)OSPhysicalToCached(0);
+    mCodeStart = codeStart;
+    mCodeEnd = arenaLo;
+
+    mUserRamStart = arenaLo;
+    mUserRamEnd = arenaHi;
+    mMemorySize = codeStart->memorySize;
+
+    OSSetArenaLo(arenaHi);
+    OSSetArenaHi(arenaHi);
+
+    *memory = (char*)arenaLo;
+    *size = (uintptr_t)arenaHi - (uintptr_t)arenaLo;
+    return true;
+#endif
 }
 
 JKRHeap* JKRHeap::becomeSystemHeap() {
@@ -247,14 +265,14 @@ void JKRHeap::dispose_subroutine(u32 start, u32 end) {
 }
 
 bool JKRHeap::dispose(void* ptr, u32 size) {
-    u32 begin = (u32)ptr;
-    u32 end = (u32)ptr + size;
+    u32 begin = (uintptr_t)ptr;
+    u32 end = (uintptr_t)ptr + size;
     dispose_subroutine(begin, end);
     return false;
 }
 
 void JKRHeap::dispose(void* begin, void* end) {
-    dispose_subroutine((u32)begin, (u32)end);
+    dispose_subroutine((uintptr_t)begin, (uintptr_t)end);
 }
 
 void JKRHeap::dispose() {
@@ -268,9 +286,9 @@ void JKRHeap::dispose() {
 }
 
 void JKRHeap::copyMemory(void* pDst, void* pSrc, u32 size) {
-    u32 count = (size + 3) / 4;
-    u32* dst_32 = (u32*)pDst;
-    u32* src_32 = (u32*)pSrc;
+    u32 count = (size + 3) / sizeof(uintptr_t);
+    uintptr_t* dst_32 = (uintptr_t*)pDst;
+    uintptr_t* src_32 = (uintptr_t*)pSrc;
 
     while (count > 0) {
         *dst_32 = *src_32;
@@ -295,27 +313,27 @@ JKRErrorHandler JKRHeap::setErrorHandler(JKRErrorHandler errorHandler) {
     return prev;
 }
 
-void* operator new(u32 size) {
-    return JKRHeap::alloc(size, 4, nullptr);
+void* operator new(size_t size) {
+    return JKRHeap::alloc(size, sizeof(uintptr_t), nullptr);
 }
 
-void* operator new(u32 size, int align) {
+void* operator new(size_t size, int align) {
     return JKRHeap::alloc(size, align, nullptr);
 }
 
-void* operator new(u32 size, JKRHeap* pHeap, int align) {
+void* operator new(size_t size, JKRHeap* pHeap, int align) {
     return JKRHeap::alloc(size, align, pHeap);
 }
 
-void* operator new[](u32 size) {
-    return JKRHeap::alloc(size, 4, nullptr);
+void* operator new[](size_t size) {
+    return JKRHeap::alloc(size, sizeof(uintptr_t), nullptr);
 }
 
-void* operator new[](u32 size, int align) {
+void* operator new[](size_t size, int align) {
     return JKRHeap::alloc(size, align, nullptr);
 }
 
-void* operator new[](u32 size, JKRHeap* pHeap, int align) {
+void* operator new[](size_t size, JKRHeap* pHeap, int align) {
     return JKRHeap::alloc(size, align, pHeap);
 }
 

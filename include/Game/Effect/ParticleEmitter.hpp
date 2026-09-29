@@ -1,6 +1,7 @@
 #pragma once
 
 #include <JSystem/JGeometry/TVec.hpp>
+#include <JSystem/JParticle/JPAEmitter.hpp>
 #include <revolution/types.h>
 
 class JPABaseEmitter;
@@ -14,7 +15,9 @@ public:
     void pauseOn();
     void pauseOff();
     bool isValid() const;
-    bool isContinuousParticle() const NO_INLINE;
+    inline bool isContinuousParticle() const {
+        return mEmitter != nullptr && mEmitter->mMaxFrame == 0;
+    }
 
     // In MultiEmitterAccess
     void setGlobalRotation(const TVec3s&);

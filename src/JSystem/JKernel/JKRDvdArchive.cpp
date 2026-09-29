@@ -1,4 +1,5 @@
 #include "JSystem/JKernel/JKRDvdArchive.hpp"
+#include "JSystem/JKernel/JKRAram.hpp"
 #include "JSystem/JKernel/JKRAramArchive.hpp"
 #include "JSystem/JKernel/JKRArchive.hpp"
 #include "JSystem/JKernel/JKRCompression.hpp"

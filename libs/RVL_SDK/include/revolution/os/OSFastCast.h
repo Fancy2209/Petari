@@ -9,11 +9,11 @@ extern "C" {
 
 #ifndef __MWERKS__
 static inline void OSf32tou16(register f32* in, volatile register u16* out) { 
-    *out = *in;
+    *out = (u16)*in;
 }
 
 static inline void OSu16tof32(register u16* in, volatile register f32* out) { 
-    *out = *in;
+    *out = (f32)*in;
 }
 #else
 #ifdef __MWERKS__

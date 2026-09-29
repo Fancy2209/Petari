@@ -1,0 +1,6 @@
+[submodule "submodules/SDL"]
+	path = submodules/SDL
+	url = https://github.com/libsdl-org/SDL
+[submodule "submodules/Siphon"]
+	path = submodules/Siphon
+	url = https://github.com/Linifadomra/Siphon/

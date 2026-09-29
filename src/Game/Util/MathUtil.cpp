@@ -1156,7 +1156,7 @@ namespace MR {
     };
 };  // namespace MR
 
-f32 PSVECKillElement(__REGISTER const Vec* pSrc, __REGISTER const Vec* pKill, __REGISTER const Vec* pDst) {
+f32 PSVECKillElement(__REGISTER const Vec* pSrc, __REGISTER const Vec* pKill, __REGISTER Vec* pDst) {
 #ifdef __MWERKS__
     __REGISTER f32 dot;
     // clang-format off
@@ -1175,6 +1175,12 @@ f32 PSVECKillElement(__REGISTER const Vec* pSrc, __REGISTER const Vec* pKill, __
         psq_st     f2, 4(pDst),  0, 0
     }  // clang-format on
     return dot;
+#else
+    f32 m = PSVECDotProduct(pSrc, pKill);
+    pDst->x = pSrc->x - pKill->x*m;
+    pDst->y = pSrc->y - pKill->y*m;
+    pDst->z = pSrc->z - pKill->z*m;
+    return m;
 #endif
 }
 

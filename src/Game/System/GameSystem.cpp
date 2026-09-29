@@ -48,7 +48,9 @@ namespace NrvGameSystem {
 #if __MWERKS__
 void main(void) {
 #else
+extern "C" void OSInit(void);
 int main(int argc, char*argv[]) {
+    OSInit();
 #endif
     OSInitFastCast();
     DVDInit();

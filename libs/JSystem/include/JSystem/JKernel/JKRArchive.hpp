@@ -60,8 +60,13 @@ public:
     struct SDIFileEntry {
         /* 0x0 */ u16 mFileID;
         /* 0x2 */ u16 mHash;
+        #if __BYTE_ORDER__ == __LITTLE_ENDIAN__
+        /* 0x4 */ u32 mFlag : 24;
+        /* 0x5 */ u32 mNameOffset : 8;
+        #else
         /* 0x4 */ u32 mFlag : 8;
         /* 0x5 */ u32 mNameOffset : 24;
+        #endif
         union {
             /* 0x8 */ u32 mDataOffset;
             /* 0x8 */ u32 mDirIndex;

@@ -2,6 +2,7 @@
 
 #include "Game/NameObj/NameObj.hpp"
 #include "Game/Util/HashUtil.hpp"
+#include <cstdint>
 
 class EventSequence;
 
@@ -90,7 +91,7 @@ public:
 
     template < typename T >
     void addEventSequence(const char* pName) {
-        mHashTable->add(pName, reinterpret_cast< u32 >(new T()), false);
+        mHashTable->add(pName, reinterpret_cast< uintptr_t >(new T()), false);
     }
 
 private:

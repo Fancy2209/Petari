@@ -47,7 +47,7 @@ void OceanRingPipeOutside::initDisplayList() {
     DCInvalidateRange(mDispList, length);
     GDLObj obj;
     GDInitGDLObj(&obj, mDispList, length);
-    __GDCurrentDL = &obj;
+    GDSetCurrent(&obj);
     sendGD();
     GDPadCurr32();
     mDispListLength = obj.ptr - obj.start;
